@@ -1,0 +1,39 @@
+<mjml>
+    <mj-body background-color="#f5f7ff">
+        <mj-section padding="20px">
+            <mj-column>
+                <mj-image
+                    width="80px"
+                    src="https://cdn-icons-png.flaticon.com/512/893/893268.png"
+                ></mj-image>
+
+                <mj-text
+                    font-size="24px"
+                    font-weight="bold"
+                    text-align="center"
+                >
+                    Xác thực OTP
+                </mj-text>
+
+                <mj-text text-align="center" color="#666">
+                    Mã OTP của bạn (hiệu lực trong 5 phút):
+                </mj-text>
+
+                <mj-text
+                    text-align="center"
+                    font-size="34px"
+                    font-weight="bold"
+                    color="#4a73ff"
+                >
+                    {{ OTP }}
+                </mj-text>
+
+                <mj-divider border-color="#dcdcdc" />
+
+                <mj-text text-align="center" color="#999" font-size="12px">
+                    Nếu bạn không yêu cầu OTP, hãy bỏ qua email này.
+                </mj-text>
+            </mj-column>
+        </mj-section>
+    </mj-body>
+</mjml>

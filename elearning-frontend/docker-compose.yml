@@ -1,0 +1,14 @@
+version: '3'
+
+networks:
+  app-network:
+    external: true
+
+services:
+  x-ecom-fe:
+    container_name: x-ecom-fe
+    image: dongnguyen2k/x-ecom-fe:develop
+    ports:
+      - "3001:3001"
+    networks:
+      - app-network

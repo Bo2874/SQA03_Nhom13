@@ -1,0 +1,20 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /forget-password
+Disallow: /new-password
+Disallow: /register
+Disallow: /cart
+Disallow: /payment-success
+Disallow: /user/my-account
+Disallow: /user/notification
+Disallow: /user/orders
+Disallow: /user/voucher
+Disallow: /checkout
+Disallow: /user/my-address
+
+# Host
+Host: http://localhost:3000
+
+# Sitemaps
+Sitemap: http://localhost:3000/sitemap.xml

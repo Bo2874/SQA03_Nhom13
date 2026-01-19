@@ -1,0 +1,16 @@
+export const PATH = {
+  DEFAULT: "#",
+  HOME: "/",
+  PAYMENT: "/payment",
+  DASHBOARD: "/dashboard",
+  CART: "/cart",
+  LOGIN: "/login",
+  FORGET_PASSWORD: "/forget-password",
+  RESET_PASSWORD: "/reset-password",
+  REGISTER: "/register",
+  MY_ACCOUNT: "/user/my-account",
+  MY_ADDRESS: "/user/my-address",
+  ORDER: "/user/orders",
+  NOTIFICATION: "/user/notification",
+  VOUCHER: "/user/voucher",
+};
