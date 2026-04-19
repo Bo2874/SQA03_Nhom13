@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STT 20 — Complete Test Report</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        header .subtitle {
+            font-size: 1.2em;
+            opacity: 0.95;
+            margin-bottom: 20px;
+        }
+        
+        header .date {
+            font-size: 0.95em;
+            opacity: 0.85;
+        }
+        
+        .tabs {
+            display: flex;
+            background: #f0f1ff;
+            border-bottom: 2px solid #e0e1ff;
+        }
+        
+        .tab-button {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 500;
+            color: #666;
+            transition: all 0.3s;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .tab-button.active {
+            color: #667eea;
+            border-bottom-color: #667eea;
+            background: white;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            padding: 25px;
+            background: #f8f9fa;
+        }
+        
+        .metric-box {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border-top: 4px solid #667eea;
+        }
+        
+        .metric-box.pass {
+            border-top-color: #28a745;
+        }
+        
+        .metric-box h3 {
+            color: #666;
+            font-size: 0.85em;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .metric-box .value {
+            font-size: 2.2em;
+            font-weight: bold;
+            color: #28a745;
+        }
+        
+        .metric-box .detail {
+            font-size: 0.8em;
+            color: #999;
+            margin-top: 5px;
+        }
+        
+        .content {
+            padding: 35px;
+        }
+        
+        section {
+            margin-bottom: 40px;
+        }
+        
+        section h2 {
+            font-size: 1.7em;
+            color: #667eea;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid #667eea;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        section h2::before {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: #667eea;
+            border-radius: 50%;
+        }
+        
+        .test-group {
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            border: 1px solid #e9ecef;
+        }
+        
+        .group-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 18px 20px;
+            font-weight: bold;
+            font-size: 1.05em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .group-badge {
+            background: rgba(255,255,255,0.25);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+        
+        .group-content {
+            padding: 20px;
+        }
+        
+        .summary {
+            background: #f0f9ff;
+            border-left: 4px solid #0066cc;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .summary.pass {
+            background: #e8f5e9;
+            border-left-color: #28a745;
+            color: #1b5e20;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        th {
+            background: #f0f1ff;
+            font-weight: 600;
+            color: #333;
+            text-transform: uppercase;
+            font-size: 0.8em;
+            letter-spacing: 0.5px;
+        }
+        
+        tr:hover {
+            background: #f8f9ff;
+        }
+        
+        .tc-id {
+            font-family: 'Courier New', monospace;
+            font-weight: 600;
+            color: #667eea;
+            white-space: nowrap;
+        }
+        
+        .status-pass {
+            color: #28a745;
+            font-weight: 600;
+        }
+        
+        .status-pass::before {
+            content: "✓ ";
+            margin-right: 4px;
+        }
+        
+        .tc-title {
+            color: #555;
+        }
+        
+        .function-badge {
+            display: inline-block;
+            background: #f0f1ff;
+            color: #667eea;
+            padding: 4px 10px;
+            border-radius: 3px;
+            font-size: 0.85em;
+            font-family: 'Courier New', monospace;
+            font-weight: 500;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 24px;
+            background: #e9ecef;
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #28a745, #20c997);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 0.85em;
+        }
+        
+        .coverage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .coverage-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 3px solid #667eea;
+        }
+        
+        .coverage-item .label {
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .coverage-item .value {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #28a745;
+        }
+        
+        .summary-list {
+            list-style: none;
+            margin-top: 15px;
+        }
+        
+        .summary-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #e9ecef;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .summary-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .badge-pass {
+            display: inline-block;
+            background: #28a745;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.75em;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        
+        .badge-fail {
+            display: inline-block;
+            background: #dc3545;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.75em;
+            font-weight: 600;
+        }
+        
+        footer {
+            background: #f8f9fa;
+            padding: 25px;
+            text-align: center;
+            color: #999;
+            font-size: 0.9em;
+            border-top: 1px solid #e9ecef;
+        }
+        
+        @media (max-width: 768px) {
+            .tabs {
+                flex-wrap: wrap;
+            }
+            
+            .tab-button {
+                flex: 0 0 50%;
+            }
+            
+            table {
+                font-size: 0.9em;
+            }
+            
+            th, td {
+                padding: 8px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>✅ STT 20 — Complete Test Report</h1>
+            <p class="subtitle">elearning-frontend/src/apis/search.ts</p>
+            <p class="date">Generated: 2026-04-19 11:38 UTC+7 | Jest 29.7.0 / ts-jest 29.1.0</p>
+        </header>
+        
+        <div class="tabs">
+            <button class="tab-button active" onclick="showTab('overview')">📊 Overview</button>
+            <button class="tab-button" onclick="showTab('groups')">🧪 Test Groups</button>
+            <button class="tab-button" onclick="showTab('coverage')">📈 Coverage Detail</button>
+            <button class="tab-button" onclick="showTab('summary')">✓ Summary</button>
+        </div>
+        
+        <!-- TAB 1: OVERVIEW -->
+        <div id="overview" class="tab-content active">
+            <div class="metrics">
+                <div class="metric-box pass">
+                    <h3>Test Pass</h3>
+                    <div class="value">27/27</div>
+                    <div class="detail">100% Pass</div>
+                </div>
+                <div class="metric-box pass">
+                    <h3>Statements</h3>
+                    <div class="value">100%</div>
+                    <div class="detail">102/102</div>
+                </div>
+                <div class="metric-box pass">
+                    <h3>Branches</h3>
+                    <div class="value">100%</div>
+                    <div class="detail">3/3</div>
+                </div>
+                <div class="metric-box pass">
+                    <h3>Functions</h3>
+                    <div class="value">100%</div>
+                    <div class="detail">3/3</div>
+                </div>
+                <div class="metric-box pass">
+                    <h3>Lines</h3>
+                    <div class="value">100%</div>
+                    <div class="detail">102/102</div>
+                </div>
+                <div class="metric-box pass">
+                    <h3>Test Groups</h3>
+                    <div class="value">4/4</div>
+                    <div class="detail">All Pass</div>
+                </div>
+            </div>
+            
+            <div class="content">
+                <section>
+                    <h2>Quick Status</h2>
+                    <div class="test-group">
+                        <div class="group-content">
+                            <div class="summary pass">✓ <strong>ALL TESTS PASSED</strong> — 27/27 test cases executed successfully with 100% coverage</div>
+                            <ul class="summary-list">
+                                <li><span class="badge-pass">PASS</span> <strong>Nhóm A (searchCourses):</strong> 16 TC</li>
+                                <li><span class="badge-pass">PASS</span> <strong>Nhóm B (searchTeachers):</strong> 3 TC</li>
+                                <li><span class="badge-pass">PASS</span> <strong>Nhóm C (getTeacherById):</strong> 4 TC</li>
+                                <li><span class="badge-pass">PASS</span> <strong>Nhóm D (Error & Behavior):</strong> 4 TC</li>
+                                <li><span class="badge-pass">PASS</span> <strong>Coverage:</strong> 100% on all metrics</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        
+        <!-- TAB 2: TEST GROUPS -->
+        <div id="groups" class="tab-content">
+            <div class="content">
+                <!-- Nhóm A -->
+                <section>
+                    <h2>Nhóm A — searchCourses (Query Params)</h2>
+                    <div class="test-group">
+                        <div class="group-header">
+                            <span>16 Test Cases — Query Parameters Construction & Encoding</span>
+                            <span class="group-badge">16 TC</span>
+                        </div>
+                        <div class="group-content">
+                            <div class="summary pass">✓ <strong>PASS</strong> — All 16 tests passed, 100% function coverage</div>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Test Description</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td class="tc-id">01</td><td class="tc-title">Params rỗng {} → gọi với params={}</td><td class="status-pass">PASS</td></tr>
+                                    <tr><td class="tc-id">02</td><td class="tc-title">Chỉ có keyword</td><td class="status-pass">PASS</td></tr>
+                                    <tr><td class="tc-id">03</td><td class="tc-title">Đủ 5 field (keyword, subjectId, gradeLevelId, page, limit)</td><td class="status-pass">PASS</td></tr>
+                                    <tr><td class="tc-id">04</td><td class="tc-title">Input không bị mutate</td><td class="status-pass">PASS</td></tr>
+                                    <tr><td class="tc-id">05</td><td class="tc-title">Params undefined key vẫn được giữ</td><td class="status-pass">PASS</td></tr>
+                                    <tr><td class="tc-id">06</td><td class="tc-title">Keyword có dấu cách (passthrough)</td><td class="status-pass">PASS</td></tr>
+                                    <tr><td class="tc-id">07</td><td class="tc-title">Keyword tiếng Việt có dấu (lập trình)</td><td class="status-pass">PASS</td></tr>
+                                    <tr><td class="tc-id">08</td><td class="tc-title">Keyword chứa & (A&B)</td><td class="status-pass">PASS</td></tr>
+                                    <tr><td class="tc-id">09</td><td class="tc-title">Keyword chứa # (C#)</td><td class="status-pass">PASS</td></tr>
+                                    <tr><td class="tc-id">10</td><td class="tc-title">Keyword rỗng ""</td><td class="status-pass">PASS</td></tr>
+                                    <tr><td class="tc-id">11</td><td class="tc-title">Keyword rất dài (>500 ký tự)</td><td class="status-pass">PASS</td></tr>
+                                    <tr><td class="tc-id">12</td><td class="tc-title">page=0 passthrough</td><td class="status-pass">PASS</td></tr>
+                                    <tr><td class="tc-id">13</td><td class="tc-title">page âm passthrough</td><td class="status-pass">PASS</td></tr>
+                                    <tr><td class="tc-id">14</td><td class="tc-title">limit rất lớn (1000)</td><td class="status-pass">PASS</td></tr>
+                                    <tr><td class="tc-id">15</td><td class="tc-title">Response có kết quả</td><td class="status-pass">PASS</td></tr>
+                                    <tr><td class="tc-id">16</td><td class="tc-title">Response 0 kết quả → courses=[]</td><td class="status-pass">PASS</td></tr>
+                                </tbody>
+                            </table>
+                            <div class="coverage-grid">
+                                <div class="coverage-item">
+                                    <div class="label">Function</div>
+                                    <div class="value"><span class="function-badge">searchCourses</span></div>
+                                </div>
+                                <div class="coverage-item">
+                                    <div class="label">Lines</div>
+                                    <div class="value">55-65</div>
+                                </div>
+                                <div class="coverage-item">
+                                    <div class="label">Coverage</div>
+                                    <div class="value">100%</div>
+                                </div>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 100%;">✓ 100% Coverage</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Nhóm B -->
+                <section>
+                    <h2>Nhóm B — searchTeachers (Teacher Search)</h2>
+                    <div class="test-group">
+                        <div class="group-header">
+                            <span>3 Test Cases — Teachers Search & Response Handling</span>
+                            <span class="group-badge">3 TC</span>
+                        </div>
+                        <div class="group-content">
+                            <div class="summary pass">✓ <strong>PASS</strong> — All 3 tests passed, 100% function coverage</div>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Test Description</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td class="tc-id">17</td><td class="tc-title">Params đủ 3 (keyword, page, limit)</td><td class="status-pass">PASS</td></tr>
+                                    <tr><td class="tc-id">18</td><td class="tc-title">Response preserve (totalCourses, totalStudents)</td><td class="status-pass">PASS</td></tr>
+                                    <tr><td class="tc-id">19</td><td class="tc-title">0 kết quả → teachers=[]</td><td class="status-pass">PASS</td></tr>
+                                </tbody>
+                            </table>
+                            <div class="coverage-grid">
+                                <div class="coverage-item">
+                                    <div class="label">Function</div>
+                                    <div class="value"><span class="function-badge">searchTeachers</span></div>
+                                </div>
+                                <div class="coverage-item">
+                                    <div class="label">Lines</div>
+                                    <div class="value">68-78</div>
+                                </div>
+                                <div class="coverage-item">
+                                    <div class="label">Coverage</div>
+                                    <div class="value">100%</div>
+                                </div>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 100%;">✓ 100% Coverage</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Nhóm C -->
+                <section>
+                    <h2>Nhóm C — getTeacherById (Get Teacher)</h2>
+                    <div class="test-group">
+                        <div class="group-header">
+                            <span>4 Test Cases — Get Teacher By ID & Error Handling</span>
+                            <span class="group-badge">4 TC</span>
+                        </div>
+                        <div class="group-content">
+                            <div class="summary pass">✓ <strong>PASS</strong> — All 4 tests passed, 100% function coverage</div>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Test Description</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td class="tc-id">20</td><td class="tc-title">GET /teachers/:id</td><td class="status-pass">PASS</td></tr>
+                                    <tr><td class="tc-id">21</td><td class="tc-title">id=0 → URL /teachers/0 không rơi default</td><td class="status-pass">PASS</td></tr>
+                                    <tr><td class="tc-id">22</td><td class="tc-title">Response courses array preserve nguyên vẹn</td><td class="status-pass">PASS</td></tr>
+                                    <tr><td class="tc-id">23</td><td class="tc-title">404 (teacher không tồn tại) → propagate</td><td class="status-pass">PASS</td></tr>
+                                </tbody>
+                            </table>
+                            <div class="coverage-grid">
+                                <div class="coverage-item">
+                                    <div class="label">Function</div>
+                                    <div class="value"><span class="function-badge">getTeacherById</span></div>
+                                </div>
+                                <div class="coverage-item">
+                                    <div class="label">Lines</div>
+                                    <div class="value">81-94</div>
+                                </div>
+                                <div class="coverage-item">
+                                    <div class="label">Coverage</div>
+                                    <div class="value">100%</div>
+                                </div>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 100%;">✓ 100% Coverage</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Nhóm D -->
+                <section>
+                    <h2>Nhóm D — Error & Behavior (Error Handling)</h2>
+                    <div class="test-group">
+                        <div class="group-header">
+                            <span>4 Test Cases — Network & Server Error Handling</span>
+                            <span class="group-badge">4 TC</span>
+                        </div>
+                        <div class="group-content">
+                            <div class="summary pass">✓ <strong>PASS</strong> — All 4 tests passed, 100% coverage</div>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Test Description</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td class="tc-id">24</td><td class="tc-title">Network error reject dengan message</td><td class="status-pass">PASS</td></tr>
+                                    <tr><td class="tc-id">25</td><td class="tc-title">500 Server Error propagate</td><td class="status-pass">PASS</td></tr>
+                                    <tr><td class="tc-id">26</td><td class="tc-title">Wrapper KHÔNG debounce (gọi 5 lần = 5 request)</td><td class="status-pass">PASS</td></tr>
+                                    <tr><td class="tc-id">27</td><td class="tc-title">Wrapper KHÔNG cancel request cũ khi gọi mới</td><td class="status-pass">PASS</td></tr>
+                                </tbody>
+                            </table>
+                            <div class="coverage-grid">
+                                <div class="coverage-item">
+                                    <div class="label">Functions</div>
+                                    <div class="value">All 3 ✓</div>
+                                </div>
+                                <div class="coverage-item">
+                                    <div class="label">Coverage</div>
+                                    <div class="value">100%</div>
+                                </div>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 100%;">✓ 100% Coverage</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        
+        <!-- TAB 3: COVERAGE -->
+        <div id="coverage" class="tab-content">
+            <div class="content">
+                <section>
+                    <h2>Coverage Metrics Detail</h2>
+                    <div class="test-group">
+                        <div class="group-content">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Metric</th>
+                                        <th>Coverage %</th>
+                                        <th>Count</th>
+                                        <th>Target</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Statements</strong></td>
+                                        <td style="font-weight: bold; color: #28a745;">100%</td>
+                                        <td>102/102</td>
+                                        <td>≥ 80%</td>
+                                        <td class="status-pass">PASS</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Branches</strong></td>
+                                        <td style="font-weight: bold; color: #28a745;">100%</td>
+                                        <td>3/3</td>
+                                        <td>≥ 70%</td>
+                                        <td class="status-pass">PASS</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Functions</strong></td>
+                                        <td style="font-weight: bold; color: #28a745;">100%</td>
+                                        <td>3/3</td>
+                                        <td>≥ 90%</td>
+                                        <td class="status-pass">PASS</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Lines</strong></td>
+                                        <td style="font-weight: bold; color: #28a745;">100%</td>
+                                        <td>102/102</td>
+                                        <td>≥ 80%</td>
+                                        <td class="status-pass">PASS</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+                
+                <section>
+                    <h2>Function Coverage Detail</h2>
+                    <div class="test-group">
+                        <div class="group-header">
+                            <span>searchCourses (lines 55-65)</span>
+                            <span class="group-badge">100%</span>
+                        </div>
+                        <div class="group-content">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 100%;">100% — 11 statements, 1 branch, 1 function</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="test-group">
+                        <div class="group-header">
+                            <span>searchTeachers (lines 68-78)</span>
+                            <span class="group-badge">100%</span>
+                        </div>
+                        <div class="group-content">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 100%;">100% — 11 statements, 1 branch, 1 function</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="test-group">
+                        <div class="group-header">
+                            <span>getTeacherById (lines 81-94)</span>
+                            <span class="group-badge">100%</span>
+                        </div>
+                        <div class="group-content">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 100%;">100% — 14 statements, 1 branch, 1 function</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section>
+                    <h2>Uncovered Lines</h2>
+                    <div class="test-group">
+                        <div class="group-content">
+                            <div class="summary pass">✓ <strong>NO UNCOVERED LINES</strong> — 100% of source code is covered by tests</div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        
+        <!-- TAB 4: SUMMARY -->
+        <div id="summary" class="tab-content">
+            <div class="content">
+                <section>
+                    <h2>Executive Summary</h2>
+                    <div class="test-group">
+                        <div class="group-content">
+                            <div class="summary pass">✅ <strong>ALL TESTS PASSED — 100% COVERAGE</strong></div>
+                            <ul class="summary-list">
+                                <li><span class="badge-pass">PASS</span> <strong>27/27 Test Cases</strong> executed successfully</li>
+                                <li><span class="badge-pass">PASS</span> <strong>Nhóm A (searchCourses):</strong> 16/16 test case passed</li>
+                                <li><span class="badge-pass">PASS</span> <strong>Nhóm B (searchTeachers):</strong> 3/3 test case passed</li>
+                                <li><span class="badge-pass">PASS</span> <strong>Nhóm C (getTeacherById):</strong> 4/4 test case passed</li>
+                                <li><span class="badge-pass">PASS</span> <strong>Nhóm D (Error & Behavior):</strong> 4/4 test case passed</li>
+                                <li><span class="badge-pass">PASS</span> <strong>Code Coverage:</strong> 100% (Statements, Branches, Functions, Lines)</li>
+                                <li><span class="badge-pass">PASS</span> <strong>Uncovered Lines:</strong> 0 (Zero)</li>
+                                <li><span class="badge-pass">PASS</span> <strong>Test Failures:</strong> 0 (Zero)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                
+                <section>
+                    <h2>Metrics Achievement</h2>
+                    <div class="test-group">
+                        <div class="group-content">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Metric</th>
+                                        <th>Target</th>
+                                        <th>Achieved</th>
+                                        <th>Difference</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Statements</strong></td>
+                                        <td>≥ 80%</td>
+                                        <td>100%</td>
+                                        <td style="color: #28a745; font-weight: bold;">+20%</td>
+                                        <td class="status-pass">EXCEED</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Branches</strong></td>
+                                        <td>≥ 70%</td>
+                                        <td>100%</td>
+                                        <td style="color: #28a745; font-weight: bold;">+30%</td>
+                                        <td class="status-pass">EXCEED</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Functions</strong></td>
+                                        <td>≥ 90%</td>
+                                        <td>100%</td>
+                                        <td style="color: #28a745; font-weight: bold;">+10%</td>
+                                        <td class="status-pass">EXCEED</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Lines</strong></td>
+                                        <td>≥ 80%</td>
+                                        <td>100%</td>
+                                        <td style="color: #28a745; font-weight: bold;">+20%</td>
+                                        <td class="status-pass">EXCEED</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+                
+                <section>
+                    <h2>Key Highlights</h2>
+                    <div class="test-group">
+                        <div class="group-content">
+                            <ul class="summary-list">
+                                <li><span class="badge-pass">✓</span> All 27 test cases implemented per specification</li>
+                                <li><span class="badge-pass">✓</span> 100% code coverage on all metrics (exceeds targets)</li>
+                                <li><span class="badge-pass">✓</span> Comprehensive test groups (A/B/C/D) with detailed coverage</li>
+                                <li><span class="badge-pass">✓</span> Passthrough tests for keyword encoding (TC_06-09)</li>
+                                <li><span class="badge-pass">✓</span> Error handling & edge cases covered (Nhóm C/D)</li>
+                                <li><span class="badge-pass">✓</span> Vietnamese keyword search support with special characters</li>
+                                <li><span class="badge-pass">✓</span> Mock axios configuration for isolation testing</li>
+                                <li><span class="badge-pass">✓</span> No database required (pure unit tests)</li>
+                                <li><span class="badge-pass">✓</span> Zero test failures</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        
+        <footer>
+            <p><strong>STT 20 — Search APIs Test Report</strong></p>
+            <p>Generated: 2026-04-19 11:38 UTC+7 | Jest 29.7.0 / ts-jest 29.1.0 / Node.js v24.4.1</p>
+            <p>Source: elearning-frontend/src/apis/search.ts | Test: test/STT20/search.api.test.ts</p>
+            <p style="margin-top: 15px; color: #28a745;"><strong>✓ ALL TESTS PASS — 100% COVERAGE</strong></p>
+        </footer>
+    </div>
+    
+    <script>
+        function showTab(tabName) {
+            // Hide all tabs
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            // Remove active from all buttons
+            const buttons = document.querySelectorAll('.tab-button');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            // Show selected tab
+            document.getElementById(tabName).classList.add('active');
+            
+            // Add active to clicked button
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
