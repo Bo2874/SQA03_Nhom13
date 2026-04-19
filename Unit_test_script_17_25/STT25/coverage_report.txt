@@ -1,0 +1,69 @@
+PASS STT25/formatTime.test.ts
+  Nh├│m A ΓÇö calculateTimeLeft (Happy path)
+    ΓêÜ TC_TIME_01: C├▓n 1 ng├áy chß║╡n (6 ms)
+    ΓêÜ TC_TIME_02: C├▓n 2h 30m 45s (1 ms)
+    ΓêÜ TC_TIME_03: C├▓n 1 ng├áy 12h (1 ms)
+    ΓêÜ TC_TIME_04: C├▓n ch├¡nh x├íc 1 ph├║t
+    ΓêÜ TC_TIME_05: C├▓n ch├¡nh x├íc 59 gi├óy (1 ms)
+    ΓêÜ TC_TIME_06: C├▓n 1 giß╗¥ chß║╡n (1 ms)
+    ΓêÜ TC_TIME_07: C├▓n 30 ng├áy
+  Nh├│m B ΓÇö Boundary (CRITICAL)
+    ΓêÜ TC_TIME_08: endTime === now ΓåÆ [0,0,0,0]
+    ΓêÜ TC_TIME_09: endTime = now - 1ms ΓåÆ [0,0,0,0] (1 ms)
+    ΓêÜ TC_TIME_10: endTime = now + 1ms ΓåÆ [0,0,0,0] (1 ms)
+    ΓêÜ TC_TIME_11: endTime = now + 999ms ΓåÆ [0,0,0,0]
+    ΓêÜ TC_TIME_12: endTime = now + 1000ms ΓåÆ [0,0,0,1] (1 ms)
+    ΓêÜ TC_TIME_13: endTime = now + 59999ms ΓåÆ [0,0,0,59]
+    ΓêÜ TC_TIME_14: endTime = now + 60000ms ΓåÆ [0,0,1,0]
+  Nh├│m C ΓÇö Past time (kh├┤ng trß║ú ├óm)
+    ΓêÜ TC_TIME_15: endTime trong qu├í khß╗⌐ 1 giß╗¥ (1 ms)
+    ΓêÜ TC_TIME_16: endTime rß║Ñt xa trong qu├í khß╗⌐ (1 n─âm)
+    ΓêÜ TC_TIME_17: endTime = now - 1s (1 ms)
+  Nh├│m D ΓÇö Future time xa
+    ΓêÜ TC_TIME_18: 10 n─âm sau (1 ms)
+    ΓêÜ TC_TIME_19: 100 ng├áy 23h 59m 59s
+  Nh├│m E ΓÇö Transition
+    ΓêÜ TC_TIME_20: 59s, advance 1s ΓåÆ sang ph├║t mß╗¢i (1 ms)
+    ΓêÜ TC_TIME_21: Day transition (1 ng├áy ΓåÆ 23:59:59) (1 ms)
+    ΓêÜ TC_TIME_22: Hour transition gß║ºn mß╗æc ng├áy mß╗¢i (1 ms)
+  Nh├│m F ΓÇö Invalid input
+    ΓêÜ TC_TIME_23: endTime = null ΓåÆ throw TypeError (16 ms)
+    ΓêÜ TC_TIME_24: endTime = undefined ΓåÆ throw (2 ms)
+    ΓêÜ TC_TIME_25: endTime = new Date("invalid") ΓåÆ NaN array (1 ms)
+    ΓêÜ TC_TIME_26: endTime l├á Date object hß╗úp lß╗ç (1 ms)
+  Nh├│m G ΓÇö formatDate (Happy path)
+    ΓêÜ TC_TIME_27: Default format DD/MM/YY (1 ms)
+    ΓêÜ TC_TIME_28: Format MM/DD/YY (1 ms)
+    ΓêÜ TC_TIME_29: Ng├áy 1 chß╗» sß╗æ padStart "0"
+    ΓêÜ TC_TIME_30: Th├íng 1 chß╗» sß╗æ padStart (1 ms)
+    ΓêÜ TC_TIME_31: Year lß║Ñy 2 chß╗» sß╗æ cuß╗æi
+    ΓêÜ TC_TIME_32: N─âm 2099 ΓåÆ "99" (1 ms)
+    ΓêÜ TC_TIME_33: N─âm 2000 ΓåÆ "00"
+  Nh├│m H ΓÇö formatDate edge / invalid
+    ΓêÜ TC_TIME_34: ISO vß╗¢i timezone Z vs local ΓåÆ phß╗Ñ thuß╗Öc timezone (1 ms)
+    ΓêÜ TC_TIME_35: Invalid ISO "not-a-date" ΓåÆ NaN output (1 ms)
+    ΓêÜ TC_TIME_36: Empty string "" ΓåÆ NaN output
+    ΓêÜ TC_TIME_37: Timestamp number string ΓåÆ invalid ΓåÆ NaN output (1 ms)
+    ΓêÜ TC_TIME_38: Format "XX" as any ΓåÆ default DD/MM/YY (1 ms)
+  Nh├│m I ΓÇö Consistency & Performance
+    ΓêÜ TC_TIME_39: Gß╗ìi calculateTimeLeft 10000 lß║ºn (performance check) (21 ms)
+    ΓêÜ TC_TIME_40: Gß╗ìi c├╣ng endTime 2 lß║ºn li├¬n tiß║┐p ΓåÆ kß║┐t quß║ú giß╗æng nhau
+
+---------------|---------|----------|---------|---------|-------------------
+File           | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+---------------|---------|----------|---------|---------|-------------------
+All files      |     100 |      100 |     100 |     100 |                   
+ formatTime.ts |     100 |      100 |     100 |     100 |                   
+---------------|---------|----------|---------|---------|-------------------
+
+=============================== Coverage summary ===============================
+Statements   : 100% ( 32/32 )
+Branches     : 100% ( 6/6 )
+Functions    : 100% ( 2/2 )
+Lines        : 100% ( 32/32 )
+================================================================================
+Test Suites: 1 passed, 1 total
+Tests:       40 passed, 40 total
+Snapshots:   0 total
+Time:        3.306 s, estimated 8 s
+Ran all test suites matching STT25/.

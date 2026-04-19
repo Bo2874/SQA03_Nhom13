@@ -1,0 +1,38 @@
+PASS STT20/search.api.test.ts
+  Nh├│m A ΓÇö searchCourses
+    ΓêÜ TC_SEARCH_API_01: Params rß╗ùng {} ΓåÆ gß╗ìi vß╗¢i params={} (3 ms)
+    ΓêÜ TC_SEARCH_API_02: Chß╗ë c├│ keyword (1 ms)
+    ΓêÜ TC_SEARCH_API_03: ─Éß╗º 5 field (keyword, subjectId, gradeLevelId, page, limit)
+    ΓêÜ TC_SEARCH_API_04: Input kh├┤ng bß╗ï mutate
+    ΓêÜ TC_SEARCH_API_05: Params undefined key vß║½n ─æ╞░ß╗úc giß╗»
+    ΓêÜ TC_SEARCH_API_06: Keyword c├│ dß║Ñu c├ích
+    ΓêÜ TC_SEARCH_API_07: Keyword tiß║┐ng Viß╗çt c├│ dß║Ñu
+    ΓêÜ TC_SEARCH_API_08: Keyword chß╗⌐a &
+    ΓêÜ TC_SEARCH_API_09: Keyword chß╗⌐a #
+    ΓêÜ TC_SEARCH_API_10: Keyword rß╗ùng "" (1 ms)
+    ΓêÜ TC_SEARCH_API_11: Keyword rß║Ñt d├ái (>500 k├╜ tß╗▒)
+    ΓêÜ TC_SEARCH_API_12: page=0 passthrough
+    ΓêÜ TC_SEARCH_API_13: page ├óm passthrough
+    ΓêÜ TC_SEARCH_API_14: limit rß║Ñt lß╗¢n (1000) (1 ms)
+    ΓêÜ TC_SEARCH_API_15: C├│ kß║┐t quß║ú (2 ms)
+    ΓêÜ TC_SEARCH_API_16: 0 kß║┐t quß║ú (1 ms)
+  Nh├│m B ΓÇö searchTeachers
+    ΓêÜ TC_SEARCH_API_17: Params ─æß╗º 3 (keyword, page, limit)
+    ΓêÜ TC_SEARCH_API_18: Response teachers shape ─æß║ºy ─æß╗º (totalCourses, totalStudents) preserve (1 ms)
+    ΓêÜ TC_SEARCH_API_19: 0 kß║┐t quß║ú ΓåÆ teachers=[]
+  Nh├│m C ΓÇö getTeacherById
+    ΓêÜ TC_SEARCH_API_20: GET /teachers/:id
+    ΓêÜ TC_SEARCH_API_21: id=0 ΓåÆ URL /teachers/0 kh├┤ng r╞íi default
+    ΓêÜ TC_SEARCH_API_22: Response c├│ courses array (nested) preserve nguy├¬n vß║╣n (1 ms)
+    ΓêÜ TC_SEARCH_API_23: 404 (teacher kh├┤ng tß╗ôn tß║íi) ΓåÆ propagate (10 ms)
+  Nh├│m D ΓÇö ERROR & BEHAVIOR
+    ΓêÜ TC_SEARCH_API_24: Network error reject vß╗¢i message (1 ms)
+    ΓêÜ TC_SEARCH_API_25: 500 Server Error propagate
+    ΓêÜ TC_SEARCH_API_26: Wrapper KH├öNG debounce ΓÇö gß╗ìi 5 lß║ºn ΓåÆ 5 request
+    ΓêÜ TC_SEARCH_API_27: Wrapper KH├öNG cancel request c┼⌐ khi gß╗ìi mß╗¢i (1 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       27 passed, 27 total
+Snapshots:   0 total
+Time:        0.368 s, estimated 1 s
+Ran all test suites matching STT20/.

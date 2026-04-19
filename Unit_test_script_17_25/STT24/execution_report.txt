@@ -1,0 +1,37 @@
+PASS STT24/toast.test.ts
+  Nhóm A — Type routing (critical — tránh copy-paste bug)
+    √ TC_TOAST_01: successToast gọi đúng toast.success (2 ms)
+    √ TC_TOAST_02: errorToast gọi đúng toast.error
+    √ TC_TOAST_03: infoToast gọi trực tiếp toast() (không phải .info) (1 ms)
+    √ TC_TOAST_04: warningToast gọi trực tiếp toast() (1 ms)
+    √ TC_TOAST_05: Gọi successToast KHÔNG kích hoạt toast.error (regression guard) (1 ms)
+  Nhóm B — Message passthrough
+    √ TC_TOAST_06: Message truyền nguyên văn
+    √ TC_TOAST_07: Empty string vẫn gọi toast với ""
+    √ TC_TOAST_08: Message rất dài (1000 ký tự) passthrough không truncate
+    √ TC_TOAST_09: Message chứa HTML/script passthrough không escape
+    √ TC_TOAST_10: Message Unicode tiếng Việt có dấu passthrough
+  Nhóm C — Options/Config
+    √ TC_TOAST_11: successToast — duration === 2500 (3 ms)
+    √ TC_TOAST_12: successToast — position === "top-right" (1 ms)
+    √ TC_TOAST_13: successToast — style.background === "#333" và color === "#fff"
+    √ TC_TOAST_14: successToast — style.borderRadius "8px" và padding "12px 20px"
+    √ TC_TOAST_15: successToast — iconTheme.primary === "#10b981"
+    √ TC_TOAST_16: successToast — iconTheme.secondary === "#fff"
+    √ TC_TOAST_17: errorToast — iconTheme.primary === "#ef4444" (red)
+    √ TC_TOAST_18: errorToast — options base giống successToast (duration, position, style core)
+    √ TC_TOAST_19: infoToast — icon === "ℹ️"
+    √ TC_TOAST_20: infoToast — không set iconTheme (chỉ icon) (1 ms)
+    √ TC_TOAST_21: warningToast — icon === "⚠️"
+    √ TC_TOAST_22: warningToast — style.background override thành "#f59e0b"
+    √ TC_TOAST_23: warningToast — các style khác (color, borderRadius) vẫn giữ từ base
+  Nhóm D — Behavioral contract
+    √ TC_TOAST_24: successToast return undefined (void)
+    √ TC_TOAST_25: Gọi 10 lần liên tiếp — mỗi lần 1 call đến thư viện
+    √ TC_TOAST_26: 4 wrapper không tự throw nếu message là undefined/null
+
+Test Suites: 1 passed, 1 total
+Tests:       26 passed, 26 total
+Snapshots:   0 total
+Time:        0.371 s, estimated 1 s
+Ran all test suites matching STT24/.

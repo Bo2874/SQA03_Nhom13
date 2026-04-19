@@ -1,0 +1,65 @@
+PASS STT22/profile.api.test.ts
+  Nh├│m A ΓÇö getUser
+    ΓêÜ TC_PROFILE_API_01: GET users/profile (3 ms)
+    ΓêÜ TC_PROFILE_API_02: Response profile shape preserve (1 ms)
+    ΓêÜ TC_PROFILE_API_03: 401 khi ch╞░a login ΓåÆ propagate (23 ms)
+  Nh├│m B ΓÇö updateUserInfo
+    ΓêÜ TC_PROFILE_API_04: PUT users/profile vß╗¢i body IUserData
+    ΓêÜ TC_PROFILE_API_05: Body nguy├¬n vß║╣n 4 field
+    ΓêÜ TC_PROFILE_API_06: Input kh├┤ng bß╗ï mutate (1 ms)
+    ΓêÜ TC_PROFILE_API_07: 400 validation (email sai format) propagate (1 ms)
+  Nh├│m C ΓÇö uploadImage
+    ΓêÜ TC_PROFILE_API_08: POST /images/upload vß╗¢i FormData (1 ms)
+    ΓêÜ TC_PROFILE_API_09: FormData chß╗⌐a field "image" vß╗¢i ─æ├║ng file (1 ms)
+    ΓêÜ TC_PROFILE_API_10: Field name l├á "image" (khß╗¢p backend) (1 ms)
+    ΓêÜ TC_PROFILE_API_11: FormData kh├┤ng thß╗½a field (chß╗ë "image")
+    ΓêÜ TC_PROFILE_API_12: Header Content-Type === "multipart/form-data"
+    ΓêÜ TC_PROFILE_API_13: Config object chß╗ë c├│ `headers` key (1 ms)
+    ΓêÜ TC_PROFILE_API_14: File PNG vß║½n upload (wrapper kh├┤ng validate type)
+    ΓêÜ TC_PROFILE_API_15: File lß╗¢n (5MB) ΓÇö wrapper KH├öNG check size (2 ms)
+    ΓêÜ TC_PROFILE_API_16: Network error propagate (1 ms)
+    ΓêÜ TC_PROFILE_API_17: BE 413 Payload Too Large propagate (5 ms)
+  Nh├│m D ΓÇö Address CRUD
+    ΓêÜ TC_PROFILE_API_18: GET users/address (1 ms)
+    ΓêÜ TC_PROFILE_API_19: Response array preserve (1 ms)
+    ΓêÜ TC_PROFILE_API_20: GET users/address/:index
+    ΓêÜ TC_PROFILE_API_21: index=5 ─æ├║ng URL
+    ΓêÜ TC_PROFILE_API_22: 404 khi index v╞░ß╗út range (1 ms)
+    ΓêÜ TC_PROFILE_API_23: POST users/address vß╗¢i body IAddressProps
+    ΓêÜ TC_PROFILE_API_24: Body giß╗» ─æß╗º 8 field (1 ms)
+    ΓêÜ TC_PROFILE_API_25: Field primary:true giß╗» type boolean
+    ΓêÜ TC_PROFILE_API_26: Input kh├┤ng bß╗ï mutate
+    ΓêÜ TC_PROFILE_API_27: PUT users/address/:index vß╗¢i body (1 ms)
+    ΓêÜ TC_PROFILE_API_28: Body partial ΓÇö chß╗ë field thay ─æß╗òi
+    ΓêÜ TC_PROFILE_API_29: DELETE users/address/:index (1 ms)
+    ΓêÜ TC_PROFILE_API_30: 404 khi index invalid
+  Nh├│m E ΓÇö changePassword
+    ΓêÜ TC_PROFILE_API_31: POST users/change-password vß╗¢i body 2 field (1 ms)
+    ΓêÜ TC_PROFILE_API_32: SECURITY: Password nß║▒m trong BODY, kh├┤ng trong URL (1 ms)
+    ΓêÜ TC_PROFILE_API_33: oldPassword + newPassword giß╗» nguy├¬n type string
+    ΓêÜ TC_PROFILE_API_34: Body kh├┤ng leak field kh├íc (1 ms)
+    ΓêÜ TC_PROFILE_API_35: 401 (oldPassword sai) ΓåÆ propagate
+    ΓêÜ TC_PROFILE_API_36: 400 (newPassword kh├┤ng ─æß║ít policy) ΓåÆ propagate (1 ms)
+    ΓêÜ TC_PROFILE_API_37: Input kh├┤ng mutate (1 ms)
+  Nh├│m F ΓÇö ERROR & BEHAVIORAL CONTRACT
+    ΓêÜ TC_PROFILE_API_38: Tß║Ñt cß║ú function propagate 500
+    ΓêÜ TC_PROFILE_API_39: Tß║Ñt cß║ú function propagate network error (1 ms)
+
+------------|---------|----------|---------|---------|-------------------
+File        | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+------------|---------|----------|---------|---------|-------------------
+All files   |     100 |      100 |     100 |     100 |                   
+ profile.ts |     100 |      100 |     100 |     100 |                   
+------------|---------|----------|---------|---------|-------------------
+
+=============================== Coverage summary ===============================
+Statements   : 100% ( 65/65 )
+Branches     : 100% ( 9/9 )
+Functions    : 100% ( 9/9 )
+Lines        : 100% ( 65/65 )
+================================================================================
+Test Suites: 1 passed, 1 total
+Tests:       39 passed, 39 total
+Snapshots:   0 total
+Time:        4.554 s
+Ran all test suites matching STT22/.

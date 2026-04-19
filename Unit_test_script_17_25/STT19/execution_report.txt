@@ -1,0 +1,59 @@
+
+> test@1.0.0 test:19
+> jest STT19/ --config jest.config.js --verbose
+
+PASS STT19/exams.api.test.ts
+  Nh├│m A ΓÇö EXAMS CRUD
+    ΓêÜ TC_EXAMS_API_01: getExams kh├┤ng params ΓåÆ GET /exams (3 ms)
+    ΓêÜ TC_EXAMS_API_02: getExams params ─æß╗º 3 (page, limit, status)
+    ΓêÜ TC_EXAMS_API_03: getExamById encode id ─æ├║ng (1 ms)
+    ΓêÜ TC_EXAMS_API_04: getExamById id=0 ΓåÆ URL /exams/0 kh├┤ng fallback
+    ΓêÜ TC_EXAMS_API_05: createExam POST /exams body ─æ├║ng (1 ms)
+    ΓêÜ TC_EXAMS_API_06: createExam input kh├┤ng bß╗ï mutate
+    ΓêÜ TC_EXAMS_API_07: updateExam PUT /exams/:id
+    ΓêÜ TC_EXAMS_API_08: deleteExam DELETE /exams/:id
+    ΓêÜ TC_EXAMS_API_09: deleteExam 409 khi ─æ├ú c├│ attempt ΓåÆ propagate (1 ms)
+  Nh├│m B ΓÇö EXAM QUESTIONS
+    ΓêÜ TC_EXAMS_API_10: createExamQuestion POST URL ─æ├║ng, body KH├öNG chß╗⌐a examId
+    ΓêÜ TC_EXAMS_API_11: createExamQuestion destructure loß║íi bß╗Å examId, c├íc field kh├íc giß╗» nguy├¬n (1 ms)
+    ΓêÜ TC_EXAMS_API_12: getExamQuestions gß╗ìi getExamById rß╗ôi extract .result.questions (1 ms)
+    ΓêÜ TC_EXAMS_API_13: getExamQuestions exam kh├┤ng c├│ questions ΓåÆ trß║ú []
+    ΓêÜ TC_EXAMS_API_14: updateExamQuestion PUT nested 2 cß║Ñp
+    ΓêÜ TC_EXAMS_API_15: deleteExamQuestion DELETE nested (1 ms)
+  Nh├│m C ΓÇö EXAM ANSWERS (3 cß║Ñp nested)
+    ΓêÜ TC_EXAMS_API_16: createExamAnswer body loß║íi bß╗Å examId V├Ç questionId
+    ΓêÜ TC_EXAMS_API_17: createExamAnswer isCorrect=false vß║½n ─æ╞░ß╗úc gß╗¡i ─æ├║ng type
+    ΓêÜ TC_EXAMS_API_18: getQuestionAnswers t├¼m ─æ├║ng question rß╗ôi trß║ú answers
+    ΓêÜ TC_EXAMS_API_19: getQuestionAnswers question kh├┤ng tß╗ôn tß║íi ΓåÆ trß║ú []
+    ΓêÜ TC_EXAMS_API_20: updateExamAnswer URL 3 cß║Ñp ─æ├║ng
+    ΓêÜ TC_EXAMS_API_21: deleteExamAnswer URL 3 cß║Ñp ─æ├║ng
+    ΓêÜ TC_EXAMS_API_22: Nested swap guard swap examId Γåö questionId (14 ms)
+  Nh├│m D ΓÇö EXAM LEADERBOARD
+    ΓêÜ TC_EXAMS_API_23: getExamLeaderboard GET /exams/:id/leaderboard
+    ΓêÜ TC_EXAMS_API_24: getExamLeaderboard rß╗ùng (ch╞░a ai l├ám) ΓåÆ [] (1 ms)
+    ΓêÜ TC_EXAMS_API_25: getExamLeaderboard KH├öNG cache ΓÇö gß╗ìi 2 lß║ºn ΓåÆ 2 request
+  Nh├│m E ΓÇö EXAM ATTEMPTS (Student lifecycle)
+    startExamAttempt
+      ΓêÜ TC_EXAMS_API_26: startExamAttempt POST kh├┤ng body (1 ms)
+      ΓêÜ TC_EXAMS_API_27: startExamAttempt response attemptId ─æ╞░ß╗úc preserve
+      ΓêÜ TC_EXAMS_API_28: startExamAttempt 409 khi exam CLOSED ΓåÆ propagate
+    submitExamAttempt
+      ΓêÜ TC_EXAMS_API_29: submitExamAttempt URL ─æ├║ng format /attempts/:attemptId/submit
+      ΓêÜ TC_EXAMS_API_30: submitExamAttempt body wrap answers trong key responsesJson (1 ms)
+      ΓêÜ TC_EXAMS_API_31: submitExamAttempt answers nguy├¬n vß║╣n, KH├öNG re-order key
+      ΓêÜ TC_EXAMS_API_32: submitExamAttempt answers rß╗ùng {} vß║½n gß╗¡i
+      ΓêÜ TC_EXAMS_API_33: submitExamAttempt 400 exam CLOSED ΓåÆ propagate
+      ΓêÜ TC_EXAMS_API_34: submitExamAttempt gß╗ìi 2 lß║ºn KH├öNG dedupe
+    getMyExamAttempt
+      ΓêÜ TC_EXAMS_API_35: getMyExamAttempt GET /exams/:id/attempts/my-attempt
+      ΓêÜ TC_EXAMS_API_36: getMyExamAttempt 404 khi ch╞░a bß║»t ─æß║ºu ΓåÆ propagate
+  Nh├│m F ΓÇö ERROR & BEHAVIORAL CONTRACT
+    ΓêÜ TC_EXAMS_API_37: 401 Unauthorized propagate chung
+    ΓêÜ TC_EXAMS_API_38: Network error (ECONNREFUSED) propagate
+    ΓêÜ TC_EXAMS_API_39: getExamQuestions depends on getExamById ΓÇö nß║┐u BE trß║ú 500 th├¼ chain reject
+
+Test Suites: 1 passed, 1 total
+Tests:       39 passed, 39 total
+Snapshots:   0 total
+Time:        1.154 s
+Ran all test suites matching STT19/.

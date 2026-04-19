@@ -1,0 +1,138 @@
+================================================================================
+STT 20 — Search APIs Test Result Summary
+================================================================================
+
+Execution Date: 2026-04-19
+Test Status: ✅ ALL PASS (27/27)
+Coverage: 100% (All metrics)
+
+================================================================================
+📄 FILES LOCATION: test/STT20/
+================================================================================
+
+1. TEST FILES
+   - search.api.test.ts ..................... TypeScript test file (27 TC)
+   - jest.coverage.20.js .................... Jest configuration
+
+2. REPORTS (Markdown)
+   - STT20_COMPREHENSIVE_REPORT.md .......... Full detailed report with HTML
+   - STT20_RESULT.md ........................ Previous summary report
+   - README.md ............................. Quick reference guide
+   - RESULT_INDEX.txt ....................... This file
+
+3. EXECUTION OUTPUT (Text)
+   - execution_report_final.txt ............ Latest test run output (verbose)
+   - execution_report.txt .................. Previous test run output
+   - coverage_report.txt ................... Coverage summary
+   - coverage_full.txt ..................... Full coverage output
+
+4. HTML COVERAGE REPORT (Interactive)
+   - coverage/ ............................ HTML coverage directory
+     ├── index.html ........................ Main coverage overview page
+     ├── search.ts.html ................... Line-by-line coverage detail
+     ├── lcov.info ........................ Raw LCOV data (for CI/CD)
+     ├── base.css ......................... Stylesheet
+     ├── prettify.js ...................... Code syntax highlighting
+     ├── sorter.js ........................ Table sorting
+     ├── block-navigation.js .............. Navigation helper
+     └── ... (other assets)
+
+================================================================================
+📊 TEST RESULTS
+================================================================================
+
+Tests:       27 passed, 27 total ✅
+Test Suites: 1 passed, 1 total ✅
+Coverage:    100% (Statements, Branches, Functions, Lines) ✅
+
+Test Groups:
+  - Nhóm A (searchCourses):      16 TC ✅
+  - Nhóm B (searchTeachers):      3 TC ✅
+  - Nhóm C (getTeacherById):      4 TC ✅
+  - Nhóm D (Error & Behavior):    4 TC ✅
+  ─────────────────────────────────────
+  Total:                         27 TC ✅
+
+================================================================================
+🚀 HOW TO USE
+================================================================================
+
+1. Read Full Report:
+   - Open: test/STT20/STT20_COMPREHENSIVE_REPORT.md
+   - Contains: Full test results, coverage metrics, HTML embedded
+
+2. Quick Reference:
+   - Open: test/STT20/README.md
+   - Contains: Summary, file list, quick commands
+
+3. View HTML Coverage Report:
+   Option A (HTTP Server - Recommended):
+     $ cd test
+     $ node serve-coverage.js 8000 20
+     $ Open browser: http://localhost:8000/index.html
+
+   Option B (Direct - May have CSS issues):
+     $ start test/STT20/coverage/index.html
+
+4. Run Tests Again:
+     $ cd test
+     $ npm run test:20
+     $ npm run coverage:20
+
+================================================================================
+📈 COVERAGE METRICS
+================================================================================
+
+Statements:  100% ( 102/102 ) ✅ Target: ≥80%
+Branches:    100% (   3/3   ) ✅ Target: ≥70%
+Functions:   100% (   3/3   ) ✅ Target: ≥90%
+Lines:       100% ( 102/102 ) ✅ Target: ≥80%
+
+Uncovered Lines: NONE ✅
+
+================================================================================
+✨ HIGHLIGHTS
+================================================================================
+
+✅ All 27 test cases implemented per spec (.claude/STT20_apis_search.md)
+✅ 100% code coverage on all metrics
+✅ Zero test failures
+✅ HTML coverage report with interactive navigation
+✅ Passthrough tests for keyword encoding (TC_06-TC_09)
+✅ Error handling & edge cases covered (Nhóm C, D)
+✅ Supports Vietnamese keyword search with special characters
+✅ Mock axios configuration for isolation testing
+✅ No database required (pure unit tests)
+✅ Comprehensive documentation
+
+================================================================================
+📝 TEST CASE MAPPING
+================================================================================
+
+Nhóm A — searchCourses (16 TC):
+  TC_SEARCH_API_01-05 ... Query params construction & input immutability
+  TC_SEARCH_API_06-11 ... Keyword encoding (Vietnamese, special chars, passthrough)
+  TC_SEARCH_API_12-14 ... Pagination edge cases (0, negative, large)
+  TC_SEARCH_API_15-16 ... Response shape (with/without results)
+
+Nhóm B — searchTeachers (3 TC):
+  TC_SEARCH_API_17-19 ... Full params, response shape, empty results
+
+Nhóm C — getTeacherById (4 TC):
+  TC_SEARCH_API_20-23 ... URL construction, edge case id=0, nested array, 404
+
+Nhóm D — Error & Behavior (4 TC):
+  TC_SEARCH_API_24-27 ... Network error, 500 error, no debounce, no cancellation
+
+================================================================================
+🔗 SOURCE FILES
+================================================================================
+
+Source Code:  elearning-frontend/src/apis/search.ts
+Test Code:    test/STT20/search.api.test.ts
+Plan:         .claude/STT20_apis_search.md
+
+================================================================================
+Generated: 2026-04-19 11:38 UTC+7
+Status: ✅ READY FOR SUBMISSION
+================================================================================
