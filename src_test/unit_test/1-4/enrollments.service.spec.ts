@@ -132,6 +132,17 @@ describe('EnrollmentsService', () => {
     it('TC-03-004: ném ConflictException khi đã đăng ký (duplicate)', async () => {
       await expect(service.createEnrollment({ studentId: 2 } as any, seededCourse.id)).rejects.toThrow(ConflictException);
     });
+
+    it('TC-03-025: thành công với course status=PUBLISHED', async () => {
+      const publishedCourse = await queryRunner.manager.save(Course, {
+        title: 'Published Course 025', price: 0, discount: 0, status: 'PUBLISHED',
+        teacherId: 1, subjectId: 1, gradeLevelId: 1,
+      });
+      const result = await service.createEnrollment({ studentId: 5 } as any, publishedCourse.id);
+      const saved = await queryRunner.manager.findOne(Enrollment, { where: { id: result.id } });
+      expect(saved).not.toBeNull();
+      expect(saved.status).toBe('ACTIVE');
+    });
   });
 
   describe('findEnrollmentById', () => {
@@ -169,21 +180,72 @@ describe('EnrollmentsService', () => {
       await expect(service.markEpisodeComplete(seededCourse.id, seededEnrollment.id, 999999)).rejects.toThrow(BadRequestException);
     });
 
-    // it('TC-03-015: tự động chuyển status thành COMPLETED khi hoàn thành 100%', async () => {
-    //     const course = await queryRunner.manager.save(Course, { title: 'iso course 2', teacherId: 1, subjectId: 1, gradeLevelId: 1, status: 'APPROVED' });
-    //     const chapter = await queryRunner.manager.save(Chapter, { title: 'iso chap 2', course: { id: course.id }, order: 1 });
-    //     const ep1 = await queryRunner.manager.save(Episode, { title: 'iso ep1-2', chapter: { id: chapter.id }, order: 1, type: 'VIDEO' });
-    //     let enrollment = await queryRunner.manager.save(Enrollment, { course: { id: course.id }, student: { id: 5 }, status: 'ACTIVE' });
+    it('TC-03-021: tạo EpisodeCompletion và cập nhật progress 50% khi hoàn thành 1/2 episode', async () => {
+      const course = await queryRunner.manager.save(Course, {
+        title: 'Course 021', price: 0, discount: 0, status: 'APPROVED', teacherId: 1, subjectId: 1, gradeLevelId: 1,
+      });
+      const chapter = await queryRunner.manager.save(Chapter, { title: 'Chap 021', course: { id: course.id }, order: 1 });
+      const ep1 = await queryRunner.manager.save(Episode, { title: 'Ep1-021', chapter: { id: chapter.id }, order: 1, type: 'VIDEO' });
+      await queryRunner.manager.save(Episode, { title: 'Ep2-021', chapter: { id: chapter.id }, order: 2, type: 'VIDEO' });
 
-    //     enrollment = await queryRunner.manager.findOne(Enrollment, { where: { id: enrollment.id }, relations: ['course'] });
+      let enrollment = await queryRunner.manager.save(Enrollment, {
+        course: { id: course.id }, student: { id: 2 }, status: 'ACTIVE',
+      });
+      enrollment = await queryRunner.manager.findOne(Enrollment, { where: { id: enrollment.id }, relations: ['course'] });
 
-    //     await service.markEpisodeComplete(course.id, enrollment.id, ep1.id);
-        
-    //     const updatedEnrollment = await service.findEnrollmentById(course.id, enrollment.id);
-    //     expect(parseFloat(updatedEnrollment.progressPercentage as any)).toBe(100);
-    //     expect(updatedEnrollment.status).toBe(EnrollmentStatus.COMPLETED);
-    //     expect(updatedEnrollment.completedAt).not.toBeNull();
-    // });
+      await service.markEpisodeComplete(course.id, enrollment.id, ep1.id);
+
+      const completion = await queryRunner.manager.findOne(EpisodeCompletion, {
+        where: { enrollmentId: enrollment.id, episodeId: ep1.id },
+      });
+      expect(completion).not.toBeNull();
+
+      const updated = await service.findEnrollmentById(course.id, enrollment.id);
+      expect(parseFloat(updated.progressPercentage as any)).toBe(50);
+      expect(updated.status).not.toBe(EnrollmentStatus.COMPLETED);
+    });
+
+    it('TC-03-022: không tạo completion duplicate khi gọi markEpisodeComplete hai lần', async () => {
+      const course = await queryRunner.manager.save(Course, {
+        title: 'Course 022', price: 0, discount: 0, status: 'APPROVED', teacherId: 1, subjectId: 1, gradeLevelId: 1,
+      });
+      const chapter = await queryRunner.manager.save(Chapter, { title: 'Chap 022', course: { id: course.id }, order: 1 });
+      const ep1 = await queryRunner.manager.save(Episode, { title: 'Ep1-022', chapter: { id: chapter.id }, order: 1, type: 'VIDEO' });
+      await queryRunner.manager.save(Episode, { title: 'Ep2-022', chapter: { id: chapter.id }, order: 2, type: 'VIDEO' });
+
+      let enrollment = await queryRunner.manager.save(Enrollment, {
+        course: { id: course.id }, student: { id: 2 }, status: 'ACTIVE',
+      });
+      enrollment = await queryRunner.manager.findOne(Enrollment, { where: { id: enrollment.id }, relations: ['course'] });
+
+      await service.markEpisodeComplete(course.id, enrollment.id, ep1.id);
+      await service.markEpisodeComplete(course.id, enrollment.id, ep1.id);
+
+      const completions = await queryRunner.manager.find(EpisodeCompletion, {
+        where: { enrollmentId: enrollment.id, episodeId: ep1.id },
+      });
+      expect(completions).toHaveLength(1);
+    });
+
+    it('TC-03-023: tự động COMPLETED khi hoàn thành 100% (progress=100)', async () => {
+      const course = await queryRunner.manager.save(Course, {
+        title: 'Course 023', price: 0, discount: 0, status: 'APPROVED', teacherId: 1, subjectId: 1, gradeLevelId: 1,
+      });
+      const chapter = await queryRunner.manager.save(Chapter, { title: 'Chap 023', course: { id: course.id }, order: 1 });
+      const ep1 = await queryRunner.manager.save(Episode, { title: 'Ep1-023', chapter: { id: chapter.id }, order: 1, type: 'VIDEO' });
+
+      let enrollment = await queryRunner.manager.save(Enrollment, {
+        course: { id: course.id }, student: { id: 5 }, status: 'ACTIVE',
+      });
+      enrollment = await queryRunner.manager.findOne(Enrollment, { where: { id: enrollment.id }, relations: ['course'] });
+
+      await service.markEpisodeComplete(course.id, enrollment.id, ep1.id);
+
+      const updated = await service.findEnrollmentById(course.id, enrollment.id);
+      expect(parseFloat(updated.progressPercentage as any)).toBe(100);
+      expect(updated.status).toBe(EnrollmentStatus.COMPLETED);
+      expect(updated.completedAt).not.toBeNull();
+    });
   });
 
   describe('updateLastEpisode', () => {
@@ -242,9 +304,26 @@ describe('EnrollmentsService', () => {
     it('TC-03-013: với subscribed=false, trả về các enrollment có status khác ACTIVE', async () => {
         await queryRunner.manager.update(Enrollment, seededEnrollment.id, { status: EnrollmentStatus.COMPLETED });
         const result = await service.getStudentEnrollments(2, false, { page: 1, limit: 10 } as any);
-        
+
         expect(result.enrollments.length).toBeGreaterThan(0);
         expect(result.enrollments.every(e => e.status !== EnrollmentStatus.ACTIVE)).toBe(true);
+    });
+
+    it('TC-03-024: subscribed=null trả về tất cả enrollments không filter theo status', async () => {
+      await queryRunner.manager.update(Enrollment, seededEnrollment.id, { status: EnrollmentStatus.COMPLETED });
+      const course2 = await queryRunner.manager.save(Course, {
+        title: 'Course 024', price: 0, discount: 0, status: 'APPROVED', teacherId: 1, subjectId: 1, gradeLevelId: 1,
+      });
+      await queryRunner.manager.save(Enrollment, {
+        course: { id: course2.id }, student: { id: 2 }, status: EnrollmentStatus.ACTIVE,
+      });
+
+      const result = await service.getStudentEnrollments(2, null, { page: 1, limit: 10 } as any);
+
+      expect(result.enrollments.length).toBeGreaterThanOrEqual(2);
+      const statuses = result.enrollments.map(e => e.status);
+      expect(statuses).toContain(EnrollmentStatus.ACTIVE);
+      expect(statuses).toContain(EnrollmentStatus.COMPLETED);
     });
   });
 
@@ -264,6 +343,27 @@ describe('EnrollmentsService', () => {
       const result = await service.updateEnrollment(seededCourse.id, seededEnrollment.id, dto as any);
       expect(result.status).toBe(EnrollmentStatus.CANCELLED);
       expect(result.cancelledAt).not.toBeNull();
+    });
+
+    it('TC-03-018: ném NotFoundException khi enrollment không tồn tại', async () => {
+      await expect(
+        service.updateEnrollment(seededCourse.id, 999999, { status: EnrollmentStatus.CANCELLED } as any),
+      ).rejects.toThrow(NotFoundException);
+    });
+
+    it('TC-03-019: set completedAt khi status là COMPLETED', async () => {
+      const dto = { status: EnrollmentStatus.COMPLETED };
+      const result = await service.updateEnrollment(seededCourse.id, seededEnrollment.id, dto as any);
+      expect(result.status).toBe(EnrollmentStatus.COMPLETED);
+      expect(result.completedAt).not.toBeNull();
+    });
+
+    it('TC-03-020: cập nhật status ACTIVE không tự động set cancelledAt hay completedAt', async () => {
+      const dto = { status: EnrollmentStatus.ACTIVE };
+      const result = await service.updateEnrollment(seededCourse.id, seededEnrollment.id, dto as any);
+      expect(result.status).toBe(EnrollmentStatus.ACTIVE);
+      expect(result.cancelledAt).toBeNull();
+      expect(result.completedAt).toBeNull();
     });
   });
 });
