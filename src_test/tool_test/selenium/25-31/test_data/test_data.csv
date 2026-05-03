@@ -1,0 +1,15 @@
+key,value
+admin_email,admin@elearning.com
+admin_password,admin123
+teacher_email,tuanbip2@outlook.com
+teacher_password,123456
+teacher2_email,tuanbip@outlook.com
+teacher2_password,123456
+student_email,dugnam18@gmail.com
+student_password,vinh1950
+test_teacher_name,Selenium AutoTest
+test_teacher_email,test_auto_selenium@example.com
+test_teacher_password,Test@12345!
+test_teacher_phone,0900000001
+db_user,root
+db_password,12345678
