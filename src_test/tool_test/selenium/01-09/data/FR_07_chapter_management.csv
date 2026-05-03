@@ -1,0 +1,39 @@
+﻿tc_id,section,type,objective,email,fullname,phone,password,confirm_password,steps,expected,expected_messages,expected_in_sheet_result,note
+FR_007_001,Kiểm tra giao diện Quản lý chương học,UI/UX,Truy cập trang chi tiết khóa học,,,,,,"1. Đăng nhập Teacher
+ 2. Vào khóa học đã tạo","Hiển thị danh sách chương học. Nếu chưa có: hiển thị nút ""Thêm chương mới""",Thêm chương mới,Pass,
+FR_007_002,Kiểm tra giao diện Quản lý chương học,UI/UX,Kiểm tra modal Thêm chương,,,,,,"1. Bấm nút ""Thêm chương mới""
+ 2. Quan sát modal","Modal ""Thêm chương mới"" hiển thị với: Tiêu đề chương, Thứ tự. Nút ""Hủy"" và ""Tạo chương""",Thêm chương mới | Hủy | Tạo chương,Pass,
+FR_007_003,Kiểm tra giao diện Quản lý chương học,UI/UX,Kiểm tra placeholder,,,,,,"1. Mở modal Thêm chương
+ 2. Quan sát placeholder","Placeholder:
+ - Tiêu đề: ""Ví dụ: Chương 1: Đường thẳng và mặt phẳng trong không gian""
+ - Thứ tự: ""1, 2, 3, ...""","Ví dụ: Chương 1: Đường thẳng và mặt phẳng trong không gian | 1, 2, 3, ...",Pass,
+FR_007_004,Kiểm tra chức năng Thêm chương học,Function,Thêm chương thành công,,,,,,"1. Bấm ""Thêm chương mới""
+ 2. Nhập tiêu đề và thứ tự
+ 3. Bấm ""Tạo chương""","Hiển thị ""Tạo chương mới thành công!"" và chương xuất hiện trong danh sách",Tạo chương mới thành công!,Fail,Message 'Tạo chương mới thành công!' hiển thị qua alert() (ChapterModal.tsx L86) thay vì toast
+FR_007_005,Kiểm tra chức năng Thêm chương học,Negative,Thêm chương thiếu tiêu đề,,,,,,"1. Để trống tiêu đề
+ 2. Bấm Tạo chương","Hiển thị ""Tiêu đề chương không được để trống""",Tiêu đề chương không được để trống,Pass,
+FR_007_006,Kiểm tra chức năng Thêm chương học,Negative,Tiêu đề chương < 5 ký tự,,,,,,"1. Nhập tiêu đề 4 ký tự
+ 2. Bấm Tạo","Hiển thị ""Tiêu đề phải có ít nhất 5 ký tự""",Tiêu đề phải có ít nhất 5 ký tự,Pass,
+FR_007_007,Kiểm tra chức năng Thêm chương học,Negative,Tiêu đề vượt 200 ký tự,,,,,,"1. Nhập tiêu đề > 200 ký tự
+ 2. Bấm Tạo","Hiển thị ""Tiêu đề không được vượt quá 200 ký tự""",Tiêu đề không được vượt quá 200 ký tự,Pass,
+FR_007_008,Kiểm tra chức năng Thêm chương học,Negative,Thứ tự nhỏ hơn 1,,,,,,"1. Nhập thứ tự = 0
+ 2. Bấm Tạo","Hiển thị ""Thứ tự phải lớn hơn 0""",Thứ tự phải lớn hơn 0,Pass,
+FR_007_009,Kiểm tra chức năng Thêm chương học,Negative,Thứ tự âm,,,,,,"1. Nhập thứ tự âm
+ 2. Bấm Tạo",Hiển thị lỗi validation,,Pass,
+FR_007_010,Kiểm tra chức năng Thêm chương học,Negative,Để trống thứ tự,,,,,,"1. Để trống thứ tự
+ 2. Bấm Tạo","Hiển thị ""Thứ tự không được để trống""",Thứ tự không được để trống,Pass,
+FR_007_011,Kiểm tra chức năng Sửa chương học,Function,Sửa chương thành công,,,,,,"1. Bấm nút Sửa ở chương cần chỉnh
+ 2. Modal Chỉnh sửa chương hiển thị
+ 3. Sửa tiêu đề
+ 4. Bấm Cập nhật","Hiển thị ""Cập nhật chương thành công!"" và thông tin được cập nhật",Cập nhật chương thành công!,Fail,Message 'Cập nhật chương thành công!' hiển thị qua alert() (ChapterModal.tsx L82) thay vì toast
+FR_007_012,Kiểm tra chức năng Sửa chương học,Function,Sửa thứ tự chương,,,,,,"1. Mở modal Sửa chương
+ 2. Đổi thứ tự
+ 3. Lưu","Thứ tự chương được cập nhật, danh sách sắp xếp lại",,Pass,
+FR_007_013,Kiểm tra chức năng Xóa chương học,Function,Xóa chương thành công,,,,,,"1. Bấm nút Xóa ở chương
+ 2. Xác nhận trong dialog ""Bạn có chắc chắn muốn xóa chương này?""","Hiển thị ""Xóa chương thành công!"" và chương bị xóa khỏi danh sách",Xóa chương thành công!,Fail,Có 2 text khác nhau: page.tsx L95 'Bạn có chắc chắn muốn xóa chương này?' HOẶC edit/page.tsx L243 'Bạn có chắc chắn muốn xóa chương này? Tất cả bài học trong chương cũng sẽ bị xóa.' Message success dùng alert() (L99/L247)
+FR_007_014,Kiểm tra chức năng Xóa chương học,Function,Hủy xóa chương,,,,,,"1. Bấm Xóa chương
+ 2. Trong dialog, bấm Hủy",Chương không bị xóa,,Pass,
+FR_007_015,Kiểm tra chức năng Xóa chương học,Function,Xóa chương có bài giảng,,,,,,"1. Xóa chương có chứa bài giảng
+ 2. Xác nhận","Chương bị xóa, các bài giảng trong chương cũng bị xóa theo",,Pass,
+FR_007_016,Kiểm tra hiển thị chương và expand/collapse,UI/UX,Expand chương để xem bài giảng,,,,,,1. Click vào tên chương trong danh sách,"Chương mở rộng, hiển thị danh sách bài giảng bên trong, icon chevron xoay 90 độ",,Pass,
+FR_007_017,Kiểm tra hiển thị chương và expand/collapse,UI/UX,Collapse chương,,,,,,1. Click lại vào chương đã mở,"Chương đóng lại, ẩn danh sách bài giảng",,Pass,

@@ -1,0 +1,74 @@
+﻿tc_id,section,type,objective,email,fullname,phone,password,confirm_password,steps,expected,expected_messages,expected_in_sheet_result,note
+FR_001_001,Kiểm tra giao diện trang Đăng ký,UI/UX,Kiểm tra bố cục chung của trang Đăng ký,,,,,,"1. Mở trang Đăng ký (/register)
+ 2. Quan sát bố cục, màu sắc và font chữ","Form đăng ký nằm cân đối giữa màn hình, màu sắc nút và font chữ nhất quán, không bị tràn",,Pass,
+FR_001_002,Kiểm tra giao diện trang Đăng ký,UI/UX,Kiểm tra hiển thị đầy đủ các trường input,,,,,,"1. Mở trang Đăng ký
+ 2. Quan sát các trường nhập liệu","Hiển thị đầy đủ 5 trường: Email, Họ và tên, Số điện thoại (tùy chọn), Mật khẩu, Xác nhận mật khẩu",,Pass,
+FR_001_003,Kiểm tra giao diện trang Đăng ký,UI/UX,Kiểm tra hiển thị Placeholder,,,,,,"1. Mở trang Đăng ký
+ 2. Quan sát placeholder trong các ô input","Placeholder đúng:
+ - Email: ""example@gmail.com""
+ - Họ và tên: ""Nguyễn Văn A""
+ - SĐT: ""0123456789""
+ - Mật khẩu: ""Tối thiểu 6 ký tự""
+ - Xác nhận MK: ""Nhập lại mật khẩu""",example@gmail.com | Nguyễn Văn A | 0123456789 | Tối thiểu 6 ký tự | Nhập lại mật khẩu,Pass,
+FR_001_004,Kiểm tra giao diện trang Đăng ký,UI/UX,Kiểm tra nút Tiếp tục và link điều hướng,,,,,,"1. Mở trang Đăng ký
+ 2. Quan sát nút submit và các liên kết","Hiển thị nút ""Tiếp tục"", link ""Đăng nhập ngay"" dẫn đến /login",Tiếp tục | Đăng nhập ngay,Pass,
+FR_001_005,Kiểm tra giao diện trang Đăng ký,UI/UX,Kiểm tra icon hiển thị/ẩn mật khẩu,,,,Abc123456,,"1. Mở trang Đăng ký
+ 2. Nhập mật khẩu
+ 3. Click icon mắt để hiển thị mật khẩu
+ 4. Click lại để ẩn","Icon mắt toggle giữa hiện/ẩn. Mật khẩu hiển thị dạng text khi bật, dạng dots khi tắt",,Pass,
+FR_001_006,Kiểm tra chức năng Đăng ký tài khoản,Function,Đăng ký thành công với thông tin hợp lệ,newuser@gmail.com,Nguyễn Văn A,0912345678,Abc123456,Abc123456,"1. Mở trang Đăng ký
+ 2. Nhập đầy đủ thông tin hợp lệ
+ 3. Bấm ""Tiếp tục""
+ 4. Nhập mã OTP 6 số từ email
+ 5. Bấm ""Xác thực và Đăng ký""","Hiển thị toast ""Đăng ký tài khoản học sinh thành công! Vui lòng đăng nhập."" 
+và chuyển đến /login",Đăng ký tài khoản học sinh thành công! Vui lòng đăng nhập.,Pass,
+FR_001_007,Kiểm tra chức năng Đăng ký tài khoản,Negative,Đăng ký với email đã tồn tại,existing@gmail.com,Nguyễn Văn B,,Abc123456,Abc123456,"1. Mở trang Đăng ký
+ 2. Nhập email đã được đăng ký trước đó
+ 3. Nhập đầy đủ các trường khác
+ 4. Bấm ""Tiếp tục""",Hiển thị thông báo lỗi email đã tồn tại và không cho phép tiếp tục đăng ký,,Pass,
+FR_001_008,Kiểm tra chức năng Đăng ký tài khoản,Negative,Để trống tất cả các trường,,,,,,"1. Mở trang Đăng ký
+ 2. Không nhập gì
+ 3. Bấm ""Tiếp tục""","Hiển thị lỗi validation: ""Vui lòng nhập email"", ""Họ và tên là bắt buộc"", 
+""Vui lòng nhập mật khẩu"", ""Vui lòng nhập lại mật khẩu""",Vui lòng nhập email | Họ và tên là bắt buộc | Vui lòng nhập mật khẩu | Vui lòng nhập lại mật khẩu,Pass,
+FR_001_009,Kiểm tra chức năng Đăng ký tài khoản,Negative,Bấm nút Tiếp tục liên tục nhiều lần,test2@gmail.com,Nguyễn C,,Abc123456,Abc123456,"1. Nhập đầy đủ thông tin hợp lệ
+ 2. Bấm ""Tiếp tục"" liên tục 5 lần nhanh",Chỉ gửi 1 request OTP. Nút bị disable sau lần click đầu và hiển thị loading,,Pass,
+FR_001_010,Kiểm tra trường Email,Function,Nhập email đúng format,test@gmail.com,,,,,"1. Nhập email đúng format
+ 2. Click ra ngoài trường",Trường email không báo lỗi,,Pass,
+FR_001_011,Kiểm tra trường Email,Negative,Nhập email sai format (thiếu @),testgmail.com,,,,,"1. Nhập email thiếu ký tự @
+ 2. Click ra ngoài trường","Hiển thị thông báo lỗi ""Email không hợp lệ""",Email không hợp lệ,Pass,
+FR_001_012,Kiểm tra trường Email,Negative,Nhập email sai format (thiếu domain),test@,,,,,"1. Nhập email thiếu phần domain
+ 2. Click ra ngoài trường","Hiển thị thông báo lỗi ""Email không hợp lệ""",Email không hợp lệ,Pass,
+FR_001_013,Kiểm tra trường Email,Negative,Nhập email chỉ có domain sai,test@abc,,,,,"1. Nhập email với domain không có dấu chấm
+ 2. Click ra ngoài","Hiển thị thông báo ""Email không hợp lệ""",Email không hợp lệ,Pass,
+FR_001_014,Kiểm tra trường Email,Negative,Để trống trường Email,,,,,,"1. Để trống trường Email
+ 2. Click ra ngoài trường","Hiển thị thông báo ""Vui lòng nhập email""",Vui lòng nhập email,Pass,
+FR_001_015,Kiểm tra trường Mật khẩu,Function,Nhập mật khẩu hợp lệ (>= 6 ký tự),,,,Abc123456,,"1. Nhập mật khẩu có 6 ký tự trở lên
+ 2. Click ra ngoài trường",Trường mật khẩu không báo lỗi,,Pass,
+FR_001_016,Kiểm tra trường Mật khẩu,Negative,Nhập mật khẩu ngắn hơn 6 ký tự,,,,Ab1,,"1. Nhập mật khẩu chỉ có 3 ký tự
+ 2. Click ra ngoài trường","Hiển thị thông báo ""Mật khẩu phải có ít nhất 6 ký tự""",Mật khẩu phải có ít nhất 6 ký tự,Pass,
+FR_001_017,Kiểm tra trường Mật khẩu,Negative,Để trống trường Mật khẩu,,,,,,"1. Để trống trường Mật khẩu
+ 2. Click ra ngoài trường","Hiển thị thông báo ""Vui lòng nhập mật khẩu""",Vui lòng nhập mật khẩu,Pass,
+FR_001_018,Kiểm tra trường Mật khẩu,Negative,Xác nhận mật khẩu không khớp,,,,Abc123456,Xyz789000,"1. Nhập mật khẩu và xác nhận mật khẩu khác nhau
+ 2. Click ra ngoài trường","Hiển thị thông báo ""Mật khẩu xác nhận không khớp""",Mật khẩu xác nhận không khớp,Pass,
+FR_001_019,Kiểm tra trường Họ và tên,Function,Nhập họ tên hợp lệ,,Nguyễn Văn An,,,,"1. Nhập họ tên >= 2 ký tự
+ 2. Click ra ngoài trường",Trường Họ tên không báo lỗi,,Pass,
+FR_001_020,Kiểm tra trường Họ và tên,Negative,Nhập họ tên chỉ 1 ký tự,,A,,,,"1. Nhập họ tên chỉ 1 ký tự
+ 2. Click ra ngoài trường","Hiển thị thông báo ""Họ và tên phải có ít nhất 2 ký tự""",Họ và tên phải có ít nhất 2 ký tự,Pass,
+FR_001_021,Kiểm tra trường Họ và tên,Negative,Để trống trường Họ tên,,,,,,"1. Để trống trường Họ tên
+ 2. Click ra ngoài trường","Hiển thị thông báo ""Họ và tên là bắt buộc""",Họ và tên là bắt buộc,Pass,
+FR_001_022,Kiểm tra trường Số điện thoại (tùy chọn),Function,Nhập SĐT đúng format 10 số,,,0912345678,,,"1. Nhập SĐT 10 chữ số
+ 2. Click ra ngoài trường",Trường SĐT không báo lỗi,,Pass,
+FR_001_023,Kiểm tra trường Số điện thoại (tùy chọn),Function,Nhập SĐT 11 số,,,09123456789,,,"1. Nhập SĐT 11 chữ số
+ 2. Click ra ngoài trường",Trường SĐT không báo lỗi (regex chấp nhận 10-11 số),,Pass,
+FR_001_024,Kiểm tra trường Số điện thoại (tùy chọn),Negative,Nhập SĐT có chữ cái,,,091234abcd,,,"1. Nhập SĐT chứa chữ cái
+ 2. Click ra ngoài trường","Hiển thị thông báo ""Số điện thoại không hợp lệ""",Số điện thoại không hợp lệ,Pass,
+FR_001_025,Kiểm tra trường Số điện thoại (tùy chọn),Negative,Nhập SĐT ít hơn 10 số,,,09123,,,"1. Nhập SĐT chỉ 5 chữ số
+ 2. Click ra ngoài trường","Hiển thị thông báo ""Số điện thoại không hợp lệ""",Số điện thoại không hợp lệ,Pass,
+FR_001_026,Kiểm tra trường Số điện thoại (tùy chọn),Function,Để trống SĐT,,,,,,"1. Để trống trường SĐT
+ 2. Nhập đầy đủ các trường khác
+ 3. Bấm Tiếp tục","Không báo lỗi, cho phép đăng ký vì SĐT là trường tùy chọn",,Pass,
+FR_001_027,Kiểm tra bảo mật trường input,Negative,XSS injection vào trường Họ tên,test@gmail.com,<script>alert(1)</script>,,Abc123456,,"1. Nhập script tag vào trường Họ tên
+ 2. Điền các trường khác
+ 3. Bấm Tiếp tục","Hệ thống không thực thi script, escape hoặc từ chối input",,Pass,
+FR_001_028,Kiểm tra bảo mật trường input,Negative,Nhập Email có ký tự đặc biệt SQL injection,' OR 1=1 --@gmail.com,,,,,"1. Nhập email chứa SQL injection
+ 2. Bấm Tiếp tục","Hệ thống xử lý input an toàn, không bị SQL injection",,Pass,

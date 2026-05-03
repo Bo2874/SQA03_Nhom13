@@ -1,0 +1,48 @@
+﻿tc_id,section,type,objective,email,fullname,phone,password,confirm_password,steps,expected,expected_messages,expected_in_sheet_result,note
+FR_009_001,Kiểm tra giao diện Quản lý tài liệu,UI/UX,Kiểm tra modal Thêm tài liệu,,,,,,"1. Vào chi tiết khóa học
+ 2. Bấm nút Thêm tài liệu mới","Modal ""Thêm tài liệu mới"" hiển thị: Tên tài liệu, File tài liệu (upload/drag-drop). Nút ""Hủy"" và ""Thêm tài liệu""",Thêm tài liệu mới | Hủy | Thêm tài liệu,Pass,
+FR_009_002,Kiểm tra giao diện Quản lý tài liệu,UI/UX,Kiểm tra placeholder,,,,,,"1. Mở modal Thêm tài liệu
+ 2. Quan sát placeholder","Placeholder: Tên tài liệu: ""Nhập tên tài liệu...""",Nhập tên tài liệu...,Pass,
+FR_009_003,Kiểm tra giao diện Quản lý tài liệu,UI/UX,Kiểm tra helper text về format,,,,,,"1. Mở modal Thêm tài liệu
+ 2. Quan sát helper text dưới upload area","Hiển thị helper text: ""Hỗ trợ: DOC, DOCX, PPT, PPTX, XLS, XLSX, TXT. Tối đa 10MB.""","Hỗ trợ: DOC, DOCX, PPT, PPTX, XLS, XLSX, TXT. Tối đa 10MB.",Pass,
+FR_009_004,Kiểm tra chức năng Thêm tài liệu,Function,Thêm tài liệu DOCX thành công,,,,,,"1. Bấm Thêm tài liệu mới
+ 2. Nhập tên
+ 3. Upload file DOCX < 10MB
+ 4. Bấm ""Thêm tài liệu""","Hiển thị ""Thêm tài liệu thành công!"" và tài liệu xuất hiện trong danh sách",Thêm tài liệu thành công!,Fail,Message 'Thêm tài liệu thành công!' hiển thị qua alert() (MaterialModal.tsx L124) thay vì toast
+FR_009_005,Kiểm tra chức năng Thêm tài liệu,Function,Thêm tài liệu PDF thành công,,,,,,"1. Upload file PDF
+ 2. Nhập tên
+ 3. Submit",Tài liệu được thêm thành công,,Fail,Không hỗ trợ upload pdf
+FR_009_006,Kiểm tra chức năng Thêm tài liệu,Function,Thêm tài liệu PPTX,,,,,,"1. Upload file PPTX
+ 2. Nhập tên
+ 3. Submit",Tài liệu PPTX được thêm thành công,,Pass,
+FR_009_007,Kiểm tra chức năng Thêm tài liệu,Function,Thêm tài liệu XLSX,,,,,,"1. Upload file XLSX
+ 2. Nhập tên
+ 3. Submit",Tài liệu Excel được thêm thành công,,Pass,
+FR_009_008,Kiểm tra chức năng Thêm tài liệu,Function,Thêm tài liệu TXT,,,,,,"1. Upload file TXT
+ 2. Nhập tên
+ 3. Submit",Tài liệu TXT được thêm thành công,,Pass,
+FR_009_009,Kiểm tra validation tài liệu,Negative,Upload file không hỗ trợ (JPG),,,,,,"1. Bấm Thêm tài liệu
+ 2. Chọn file JPG","Hiển thị ""Vui lòng chọn file tài liệu hợp lệ (DOC, DOCX, PPT, PPTX, XLS, XLSX, TXT)""","Vui lòng chọn file tài liệu hợp lệ (DOC, DOCX, PPT, PPTX, XLS, XLSX, TXT)",Pass,
+FR_009_010,Kiểm tra validation tài liệu,Negative,Upload file không hỗ trợ (MP4),,,,,,1. Chọn file MP4,Hiển thị lỗi file không hợp lệ,,Pass,
+FR_009_011,Kiểm tra validation tài liệu,Negative,Upload file vượt 10MB,,,,,,"1. Chọn file > 10MB
+ 2. Upload","Hiển thị ""Kích thước file không được vượt quá 10MB. File hiện tại: {size}""",Kích thước file không được vượt quá 10MB. File hiện tại: {size},Pass,
+FR_009_012,Kiểm tra validation tài liệu,Negative,Để trống tên tài liệu,,,,,,"1. Upload file
+ 2. Không nhập tên
+ 3. Bấm Thêm","Hiển thị ""Vui lòng nhập tên tài liệu!""",Vui lòng nhập tên tài liệu!,Pass,
+FR_009_013,Kiểm tra validation tài liệu,Negative,Không upload file,,,,,,"1. Nhập tên
+ 2. Không upload file
+ 3. Bấm Thêm","Hiển thị ""Vui lòng upload file tài liệu!""",Vui lòng upload file tài liệu!,Pass,
+FR_009_014,Kiểm tra validation tài liệu,Function,Tên tài liệu tự động điền từ tên file,,,,,,"1. Upload file khi chưa nhập tên
+ 2. Quan sát trường Tên",Tên tài liệu được tự động điền từ tên file (không bao gồm extension),,Pass,
+FR_009_015,Kiểm tra chức năng Sửa tài liệu,Function,Sửa tên tài liệu,,,,,,"1. Bấm Sửa ở tài liệu
+ 2. Modal hiển thị
+ 3. Thay đổi tên
+ 4. Bấm Cập nhật","Hiển thị ""Cập nhật tài liệu thành công!"" và tên được cập nhật",Cập nhật tài liệu thành công!,Fail,Message 'Cập nhật tài liệu thành công!' hiển thị qua alert() (MaterialModal.tsx L116) thay vì toast
+FR_009_016,Kiểm tra chức năng Sửa tài liệu,Function,Thay thế file tài liệu,,,,,,"1. Bấm Sửa
+ 2. Bấm ""Chọn file khác""
+ 3. Chọn file mới
+ 4. Bấm Cập nhật",File được thay thế thành công,,Pass,
+FR_009_017,Kiểm tra chức năng Xóa tài liệu,Function,Xóa tài liệu thành công,,,,,,"1. Bấm nút Xóa ở tài liệu
+ 2. Xác nhận xóa",Tài liệu bị xóa khỏi danh sách,,Fail,Confirm 'Bạn có chắc chắn muốn xóa tài liệu này?' (page.tsx L148). Success 'Xóa tài liệu thành công!' hiển thị qua alert() (L152)
+FR_009_018,Kiểm tra Drag-and-drop,Function,Kéo thả file vào khu vực upload,,,,,,"1. Kéo file từ máy tính vào ô upload
+ 2. Thả ra","File được chọn, hiển thị tên file và kích thước. Tự động điền tên tài liệu",,Pass,

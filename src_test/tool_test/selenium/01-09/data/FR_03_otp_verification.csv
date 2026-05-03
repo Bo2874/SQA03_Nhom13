@@ -1,0 +1,35 @@
+﻿tc_id,section,type,objective,email,fullname,phone,password,confirm_password,steps,expected,expected_messages,expected_in_sheet_result,note
+FR_003_001,Kiểm tra giao diện màn hình OTP,UI/UX,Kiểm tra màn hình nhập OTP,,,,,,"1. Từ trang Đăng ký, nhập thông tin và bấm Tiếp tục
+ 2. Quan sát màn hình OTP","Hiển thị ""Xác thực OTP"", thông tin ""Mã OTP đã được gửi đến email: ngovanbo280704@gmail.com"", 
+ô nhập OTP 6 số, nút ""Xác thực và Đăng ký""",Xác thực OTP | Mã OTP đã được gửi đến email: ngovanbo280704@gmail.com | Xác thực và Đăng ký,Pass,
+FR_003_002,Kiểm tra giao diện màn hình OTP,UI/UX,Kiểm tra placeholder ô OTP,,,,,,"1. Mở màn hình nhập OTP
+ 2. Quan sát ô input OTP","Placeholder hiển thị ""000000"", căn giữa, font lớn và letter-spacing rộng",000000,Pass,
+FR_003_003,Kiểm tra giao diện màn hình OTP,UI/UX,Kiểm tra countdown và link gửi lại,,,,,,"1. Vào màn hình OTP
+ 2. Quan sát khu vực gửi lại mã","Hiển thị đếm ngược ""Gửi lại mã sau Xs"" và khi = 0 thì hiển thị link ""Gửi lại mã OTP""",Gửi lại mã sau Xs | Gửi lại mã OTP,Pass,
+FR_003_004,Kiểm tra giao diện màn hình OTP,UI/UX,Kiểm tra link quay lại form,,,,,,"1. Vào màn hình OTP
+ 2. Quan sát dưới cùng","Hiển thị link ""← Quay lại chỉnh sửa thông tin""",← Quay lại chỉnh sửa thông tin,Pass,
+FR_003_005,Kiểm tra chức năng Xác thực OTP,Function,Xác thực OTP thành công,,,,,,"1. Nhận OTP qua email
+ 2. Nhập đúng mã OTP 6 số
+ 3. Bấm ""Xác thực và Đăng ký""","Đăng ký thành công, hiển thị toast ""Đăng ký tài khoản học sinh thành công! Vui lòng đăng nhập."" và chuyển đến /login",Đăng ký tài khoản học sinh thành công! Vui lòng đăng nhập.,Pass,
+FR_003_006,Kiểm tra chức năng Xác thực OTP,Negative,Xác thực OTP sai,,,,,,"1. Nhập mã OTP sai
+ 2. Bấm Xác thực và Đăng ký","Hiển thị thông báo lỗi OTP không chính xác, không đăng ký thành công",,Pass,
+FR_003_007,Kiểm tra chức năng Xác thực OTP,Negative,Xác thực OTP đã hết hạn,,,,,,"1. Để OTP hết hạn (quá thời gian)
+ 2. Nhập mã cũ
+ 3. Bấm Xác thực",Hiển thị thông báo lỗi OTP đã hết hạn,,Pass,
+FR_003_008,Kiểm tra chức năng Xác thực OTP,Negative,Nhập OTP ít hơn 6 số,,,,,,"1. Nhập mã OTP chỉ 3 số
+ 2. Bấm Xác thực","Nút ""Xác thực và Đăng ký"" bị disable khi otp.length !== 6. Hiển thị lỗi ""Vui lòng nhập mã OTP 6 số""",Xác thực và Đăng ký | Vui lòng nhập mã OTP 6 số,Fail,"Không hiển thị lỗi ""Vui lòng nhập mã OTP 6 số"""
+FR_003_009,Kiểm tra chức năng Xác thực OTP,Negative,Để trống ô OTP,,,,,,"1. Để trống OTP
+ 2. Bấm Xác thực","Nút disable. Nếu có thể click, hiển thị ""Vui lòng nhập mã OTP 6 số""",Vui lòng nhập mã OTP 6 số,Pass,
+FR_003_010,Kiểm tra chức năng Xác thực OTP,Negative,Nhập OTP chứa chữ cái,,,,,,1. Thử nhập chữ cái vào ô OTP,"Hệ thống tự động loại bỏ chữ cái, chỉ cho phép nhập số (regex replace /\D/g)",,Pass,
+FR_003_011,Kiểm tra chức năng Gửi lại mã OTP,Function,Gửi lại OTP sau khi hết countdown,,,,,,"1. Vào màn hình OTP
+ 2. Đợi countdown 60 giây về 0
+ 3. Bấm ""Gửi lại mã OTP""","Gửi lại OTP thành công. Hiển thị toast ""Mã OTP mới đã được gửi!"". Countdown reset về 60 giây",Mã OTP mới đã được gửi!,Pass,
+FR_003_012,Kiểm tra chức năng Gửi lại mã OTP,Negative,Bấm Gửi lại OTP khi đang countdown,,,,,,"1. Ngay sau khi nhận OTP (countdown còn)
+ 2. Thử bấm ""Gửi lại mã OTP""","Link không hiển thị khi countdown > 0, chỉ hiển thị text ""Gửi lại mã sau Xs""",Gửi lại mã sau Xs,Pass,
+FR_003_013,Kiểm tra chức năng Gửi lại mã OTP,Function,Kiểm tra countdown 60 giây,,,,,,"1. Vào màn hình OTP
+ 2. Quan sát countdown","Countdown đếm ngược từ 60 về 0, mỗi giây giảm 1",,Pass,
+FR_003_014,Kiểm tra chức năng Quay lại form,Function,Bấm Quay lại chỉnh sửa thông tin,,,,,,"1. Ở màn hình OTP
+ 2. Bấm ""← Quay lại chỉnh sửa thông tin""",Quay lại form đăng ký bước 1. Thông tin đã nhập ở form trước được giữ nguyên (không bị reset),,Pass,
+FR_003_015,Kiểm tra chức năng Quay lại form,Function,"Sau khi quay lại, sửa thông tin và submit",,,,,,"1. Bấm Quay lại
+ 2. Sửa email
+ 3. Bấm ""Tiếp tục""","Gửi lại OTP đến email mới, chuyển sang màn hình nhập OTP",,Pass,

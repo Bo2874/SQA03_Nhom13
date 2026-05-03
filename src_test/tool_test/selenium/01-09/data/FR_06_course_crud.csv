@@ -1,0 +1,53 @@
+﻿tc_id,section,type,objective,email,fullname,phone,password,confirm_password,steps,expected,expected_messages,expected_in_sheet_result,note
+FR_006_001,Kiểm tra giao diện Tạo khóa học (Teacher),UI/UX,Kiểm tra modal Tạo khóa học,,,,,,"1. Đăng nhập Teacher
+ 2. Vào Quản lý khóa học
+ 3. Bấm Tạo khóa học","Modal hiển thị tiêu đề ""Tạo khóa học mới"" với các trường: Tiêu đề khóa học, Mô tả, Môn học (dropdown), Lớp (dropdown), Ảnh bìa. Nút ""Hủy"" và ""Tạo khóa học""",Tạo khóa học mới | Hủy | Tạo khóa học,Pass,
+FR_006_002,Kiểm tra giao diện Tạo khóa học (Teacher),UI/UX,Kiểm tra placeholder các trường,,,,,,"1. Mở modal Tạo khóa học
+ 2. Quan sát placeholder","Placeholder đúng:
+ - Tiêu đề: ""Ví dụ: Toán hình học không gian - Lớp 11""
+ - Mô tả: ""Mô tả ngắn gọn về nội dung khóa học...""
+ - Môn học: ""Chọn môn học""
+ - Lớp: ""Chọn lớp""",Ví dụ: Toán hình học không gian - Lớp 11 | Mô tả ngắn gọn về nội dung khóa học... | Chọn môn học | Chọn lớp,Pass,
+FR_006_003,Kiểm tra chức năng Tạo khóa học,Function,Tạo khóa học thành công,,,,,,"1. Bấm Tạo khóa học
+ 2. Nhập đầy đủ thông tin
+ 3. Bấm ""Tạo khóa học""","Hiển thị ""Tạo khóa học thành công!"" và khóa học xuất hiện trong danh sách với trạng thái DRAFT",Tạo khóa học thành công!,Fail,Dùng alert() thay vì toast notification (CourseModal.tsx L209). Nội dung 'Tạo khóa học thành công!' đúng nhưng hiển thị qua popup alert của trình duyệt
+FR_006_004,Kiểm tra chức năng Tạo khóa học,Negative,Tạo khóa học thiếu tiêu đề,,,,,,"1. Để trống Tiêu đề
+ 2. Bấm ""Tạo khóa học""","Hiển thị ""Tiêu đề không được để trống""",Tiêu đề không được để trống,Pass,
+FR_006_005,Kiểm tra chức năng Tạo khóa học,Negative,Tiêu đề ngắn hơn 5 ký tự,,,,,,"1. Nhập tiêu đề 4 ký tự
+ 2. Bấm Tạo khóa học","Hiển thị ""Tiêu đề phải có ít nhất 5 ký tự""",Tiêu đề phải có ít nhất 5 ký tự,Pass,
+FR_006_006,Kiểm tra chức năng Tạo khóa học,Negative,Tiêu đề vượt quá 200 ký tự,,,,,,"1. Nhập tiêu đề > 200 ký tự
+ 2. Bấm Tạo","Hiển thị ""Tiêu đề không được vượt quá 200 ký tự""",Tiêu đề không được vượt quá 200 ký tự,Pass,
+FR_006_007,Kiểm tra chức năng Tạo khóa học,Negative,Không chọn Môn học,,,,,,"1. Không chọn Môn học
+ 2. Bấm Tạo","Hiển thị ""Vui lòng chọn môn học""",Vui lòng chọn môn học,Pass,
+FR_006_008,Kiểm tra chức năng Tạo khóa học,Negative,Không chọn Lớp,,,,,,"1. Không chọn Lớp
+ 2. Bấm Tạo","Hiển thị ""Vui lòng chọn lớp""",Vui lòng chọn lớp,Pass,
+FR_006_009,Kiểm tra chức năng Tạo khóa học,Negative,Mô tả vượt quá 1000 ký tự,,,,,,"1. Nhập mô tả > 1000 ký tự
+ 2. Bấm Tạo","Hiển thị ""Mô tả không được vượt quá 1000 ký tự""",Mô tả không được vượt quá 1000 ký tự,Pass,
+FR_006_010,Kiểm tra Upload ảnh bìa khóa học,Function,Upload ảnh bìa hợp lệ,,,,,,"1. Mở modal tạo khóa học
+ 2. Bấm ""Upload ảnh""
+ 3. Chọn file JPG < 5MB","Hiển thị progress bar, preview ảnh, toast ""Upload ảnh thành công!""",Upload ảnh thành công!,Pass,
+FR_006_011,Kiểm tra Upload ảnh bìa khóa học,Function,Upload file PNG/GIF/WebP,,,,,,"1. Chọn file PNG
+ 2. Upload","Upload thành công, preview ảnh hiển thị",,Pass,
+FR_006_012,Kiểm tra Upload ảnh bìa khóa học,Negative,Upload file không phải ảnh,,,,,,"1. Bấm ""Upload ảnh""
+ 2. Chọn file PDF","Hiển thị ""Vui lòng chọn file ảnh hợp lệ (JPG, PNG, GIF, WebP)""","Vui lòng chọn file ảnh hợp lệ (JPG, PNG, GIF, WebP)",Pass,
+FR_006_013,Kiểm tra Upload ảnh bìa khóa học,Negative,Upload ảnh vượt 5MB,,,,,,"1. Chọn file ảnh > 5MB
+ 2. Upload","Hiển thị ""Kích thước file không được vượt quá 5MB. File hiện tại: {size}""",Kích thước file không được vượt quá 5MB. File hiện tại: {size},Pass,
+FR_006_014,Kiểm tra Upload ảnh bìa khóa học,Function,Nhập URL ảnh trực tiếp,,,,,,"1. Nhập URL vào ô URL ảnh
+ 2. Quan sát preview",Preview ảnh hiển thị từ URL đã nhập,,Pass,
+FR_006_015,Kiểm tra Upload ảnh bìa khóa học,Function,Xóa ảnh đã upload,,,,,,"1. Upload ảnh thành công
+ 2. Bấm nút X ở góc trên phải ảnh preview","Ảnh bị xóa, preview biến mất",,Pass,
+FR_006_016,Kiểm tra chức năng Xem danh sách khóa học,Function,Xem danh sách khóa học của Teacher,,,,,,"1. Đăng nhập Teacher
+ 2. Vào Quản lý khóa học","Hiển thị danh sách tất cả khóa học đã tạo với: ảnh bìa, tiêu đề, trạng thái, nút Sửa/Xóa",,Pass,
+FR_006_017,Kiểm tra chức năng Sửa khóa học,Function,Cập nhật thông tin khóa học,,,,,,"1. Chọn khóa học đã tạo
+ 2. Bấm Chỉnh sửa
+ 3. Sửa tiêu đề
+ 4. Bấm ""Cập nhật""","Hiển thị ""Cập nhật khóa học thành công!"" và thông tin được cập nhật",Cập nhật khóa học thành công!,Fail,Message 'Cập nhật khóa học thành công!' hiển thị qua alert() (L196) thay vì toast notification
+FR_006_018,Kiểm tra chức năng Sửa khóa học,Function,Bấm Hủy trong modal Sửa,,,,,,"1. Mở modal Sửa khóa học
+ 2. Thay đổi thông tin
+ 3. Bấm Hủy","Modal đóng, thông tin không được lưu",,Pass,
+FR_006_019,Kiểm tra chức năng Xóa khóa học,Function,Xóa khóa học thành công,,,,,,"1. Chọn khóa học
+ 2. Bấm nút Xóa
+ 3. Xác nhận xóa","Khóa học bị xóa khỏi danh sách, hiển thị thông báo thành công",,Fail,"Confirm dialog 'Bạn có chắc chắn muốn xóa khóa học này?' và message 'Xóa khóa học thành công!' hiển thị qua alert() (courses/page.tsx L113, L117)"
+FR_006_020,Kiểm tra chức năng Xóa khóa học,Function,Hủy xóa khóa học,,,,,,"1. Chọn khóa học
+ 2. Bấm Xóa
+ 3. Trong dialog xác nhận, bấm ""Hủy""","Khóa học không bị xóa, vẫn ở trong danh sách",,Pass,

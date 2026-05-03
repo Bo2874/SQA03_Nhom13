@@ -1,0 +1,41 @@
+﻿tc_id,section,type,objective,email,fullname,phone,password,confirm_password,steps,expected,expected_messages,expected_in_sheet_result,note
+FR_008_001,Kiểm tra giao diện Quản lý bài giảng,UI/UX,Kiểm tra modal Thêm bài học,,,,,,"1. Vào chi tiết khóa học
+ 2. Expand chương
+ 3. Bấm ""Thêm bài học mới""","Modal ""Thêm bài học mới"" hiển thị: Tiêu đề, Thứ tự, Video (toggle YouTube URL/Upload File), Thời lượng",Thêm bài học mới,Pass,
+FR_008_002,Kiểm tra giao diện Quản lý bài giảng,UI/UX,Kiểm tra toggle YouTube/Upload,,,,,,"1. Mở modal Thêm bài học
+ 2. Bấm nút ""YouTube URL""
+ 3. Bấm nút ""Upload File""",Toggle giữa 2 mode: YouTube URL (nhập link) và Upload File (chọn file video),,Pass,
+FR_008_003,Kiểm tra Thêm bài giảng YouTube,Function,Thêm bài giảng YouTube thành công,,,,,,"1. Bấm ""Thêm bài học mới""
+ 2. Chọn YouTube URL
+ 3. Nhập thông tin
+ 4. Bấm ""Tạo bài học""","Hiển thị ""Tạo bài học mới thành công!"" và bài giảng xuất hiện",Tạo bài học mới thành công!,Fail,Message 'Tạo bài học mới thành công!' hiển thị qua alert() (EpisodeModal.tsx L192) thay vì toast
+FR_008_004,Kiểm tra Thêm bài giảng YouTube,Negative,Thiếu URL YouTube,,,,,,"1. Không nhập URL YouTube
+ 2. Bấm Tạo bài học","Hiển thị ""Vui lòng cung cấp URL video hoặc upload file video""",Vui lòng cung cấp URL video hoặc upload file video,Pass,
+FR_008_005,Kiểm tra Thêm bài giảng YouTube,Negative,URL YouTube không hợp lệ,,,,,,"1. Nhập URL sai format
+ 2. Bấm Tạo",Hiển thị lỗi URL không hợp lệ,,Pass,
+FR_008_006,Kiểm tra Upload video file,Function,Upload video MP4 thành công,,,,,,"1. Bấm Thêm bài học mới
+ 2. Chọn tab Upload File
+ 3. Chọn file MP4 < 100MB
+ 4. Đợi upload
+ 5. Bấm ""Tạo bài học""","Progress bar, toast ""Upload video thành công!"", tạo bài học thành công",Upload video thành công!,Pass,
+FR_008_007,Kiểm tra Upload video file,Function,Upload video WebM,,,,,,"1. Chọn file WebM
+ 2. Upload",Upload thành công (WebM là format hỗ trợ),,Pass,
+FR_008_008,Kiểm tra Upload video file,Negative,Upload video > 100MB,,,,,,"1. Chọn file > 100MB
+ 2. Upload","Hiển thị ""Kích thước file không được vượt quá 100MB. File hiện tại: {size}""",Kích thước file không được vượt quá 100MB. File hiện tại: {size},Pass,
+FR_008_009,Kiểm tra Upload video file,Negative,Upload file không phải video,,,,,,"1. Chọn file PDF
+ 2. Upload","Hiển thị ""Vui lòng chọn file video hợp lệ (MP4, WebM, OGG, QuickTime)""","Vui lòng chọn file video hợp lệ (MP4, WebM, OGG, QuickTime)",Pass,
+FR_008_010,Kiểm tra validation các trường bài giảng,Negative,Tiêu đề bài học để trống,,,,,,"1. Để trống tiêu đề
+ 2. Bấm Tạo","Hiển thị ""Tiêu đề bài học không được để trống""",Tiêu đề bài học không được để trống,Pass,
+FR_008_011,Kiểm tra validation các trường bài giảng,Negative,Tiêu đề bài học < 5 ký tự,,,,,,"1. Nhập tiêu đề 4 ký tự
+ 2. Bấm Tạo","Hiển thị ""Tiêu đề phải có ít nhất 5 ký tự""",Tiêu đề phải có ít nhất 5 ký tự,Pass,
+FR_008_012,Kiểm tra validation các trường bài giảng,Negative,Thứ tự bài học không hợp lệ,,,,,,"1. Nhập thứ tự = 0
+ 2. Bấm Tạo","Hiển thị ""Thứ tự phải lớn hơn 0""",Thứ tự phải lớn hơn 0,Pass,
+FR_008_013,Kiểm tra validation các trường bài giảng,Negative,Thời lượng video để trống,,,,,,"1. Để trống thời lượng
+ 2. Bấm Tạo","Hiển thị ""Thời lượng video không được để trống""",Thời lượng video không được để trống,Pass,
+FR_008_014,Kiểm tra validation các trường bài giảng,Negative,Thời lượng âm hoặc = 0,,,,,,"1. Nhập thời lượng = 0
+ 2. Bấm Tạo","Hiển thị ""Thời lượng phải lớn hơn 0""",Thời lượng phải lớn hơn 0,Pass,
+FR_008_015,Kiểm tra chức năng Sửa bài giảng,Function,Sửa bài giảng thành công,,,,,,"1. Bấm Sửa ở bài giảng
+ 2. Thay đổi thông tin
+ 3. Bấm Cập nhật","Hiển thị ""Cập nhật bài học thành công!"" và thông tin được cập nhật",Cập nhật bài học thành công!,Fail,Message 'Cập nhật bài học thành công!' hiển thị qua alert() (EpisodeModal.tsx L188) thay vì toast
+FR_008_016,Kiểm tra chức năng Xóa bài giảng,Function,Xóa bài giảng thành công,,,,,,"1. Bấm nút Xóa ở bài giảng
+ 2. Xác nhận xóa",Bài giảng bị xóa khỏi danh sách,,Fail,Confirm dialog 'Bạn có chắc chắn muốn xóa bài học này?' (page.tsx L120 / edit L271). Success 'Xóa bài học thành công!' hiển thị qua alert() (L124/L275)

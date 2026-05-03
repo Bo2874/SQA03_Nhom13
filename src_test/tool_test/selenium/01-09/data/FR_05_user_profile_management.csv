@@ -1,0 +1,37 @@
+﻿tc_id,section,type,objective,email,fullname,phone,password,confirm_password,steps,expected,expected_messages,expected_in_sheet_result,note
+FR_005_001,Kiểm tra giao diện trang Hồ sơ cá nhân,UI/UX,Truy cập trang hồ sơ cá nhân,,,,,,"1. Đăng nhập
+ 2. Click avatar góc phải
+ 3. Chọn 'Tài khoản của tôi'","Chuyển đến trang hồ sơ cá nhân, hiển thị thông tin: họ tên, email, SĐT, avatar",,Inactive,Trang /user/my-account CHƯA được implement. TopHeader.tsx có TODO comment (L188-209). Menu item 'Tài khoản của tôi' bị comment out
+FR_005_002,Kiểm tra giao diện trang Hồ sơ cá nhân,UI/UX,Kiểm tra hiển thị thông tin user,,,,,,"1. Vào trang hồ sơ cá nhân
+ 2. Quan sát các trường","Hiển thị đúng thông tin user đang đăng nhập: email, họ tên, số điện thoại, avatar",,Inactive,Trang hồ sơ cá nhân không tồn tại. Thông tin user chỉ hiển thị trong dropdown của TopHeader
+FR_005_003,Kiểm tra giao diện trang Hồ sơ cá nhân,UI/UX,Email hiển thị ở chế độ read-only,,,,,,"1. Vào trang chỉnh sửa hồ sơ
+ 2. Quan sát trường email",Email không cho phép chỉnh sửa (disabled) vì đã được xác thực,,Inactive,Trang hồ sơ chưa tồn tại
+FR_005_004,Kiểm tra chức năng Cập nhật thông tin giáo viên,Function,Cập nhật họ tên thành công,,,,,,"1. Vào trang admin, chọn Quản lý giáo viên
+ 2. Sửa họ tên
+ 3. Bấm ""Lưu thay đổi""","Hiển thị thông báo cập nhật thành công, thông tin mới hiển thị trên trang",,Pass,
+FR_005_005,Kiểm tra chức năng Cập nhật thông tin giáo viên,Function,Cập nhật số điện thoại,,,,,,"1. Vào trang admin, chọn Quản lý giáo viên
+ 2. Sửa SĐT
+ 3. Lưu","SĐT được cập nhật, hiển thị thông báo thành công",,Pass,
+FR_005_006,Kiểm tra chức năng Cập nhật thông tin giáo viên,Negative,Để trống họ tên,,,,,,"1. Xóa trắng họ tên
+ 2. Bấm Lưu","Hiển thị lỗi validation, không cho phép lưu",,Pass,
+FR_005_007,Kiểm tra chức năng Cập nhật thông tin giáo viên,Negative,Nhập SĐT sai format,,,abc123def,,,"1. Nhập SĐT chứa chữ cái
+ 2. Bấm Lưu","Hiển thị ""Số điện thoại không hợp lệ""",Số điện thoại không hợp lệ,Fail,Vẫn lưu được SĐT
+FR_005_008,Kiểm tra chức năng Cập nhật thông tin giáo viên,Negative,Nhập SĐT ít hơn 10 số,,,091234,,,"1. Nhập SĐT quá ngắn
+ 2. Bấm Lưu",Hiển thị lỗi số điện thoại không hợp lệ,,Fail,Vẫn lưu được SĐT
+FR_005_009,Kiểm tra Upload ảnh đại diện giáo viên,Function,Upload ảnh đại diện thành công,,,,,,"1. Vào trang admin, quản lý giáo viên
+ 2. Click vào avatar
+ 3. Chọn file ảnh JPG < 5MB
+ 4. Upload","Hiển thị progress bar, sau đó ảnh mới hiển thị. Toast upload thành công",,Pass,
+FR_005_010,Kiểm tra Upload ảnh đại diện giáo viên,Negative,Upload file không phải ảnh,,,,,,"1. Click vào avatar
+ 2. Chọn file PDF","Hiển thị ""Vui lòng chọn file ảnh hợp lệ (JPG, PNG, GIF, WebP)""","Vui lòng chọn file ảnh hợp lệ (JPG, PNG, GIF, WebP)",Pass,
+FR_005_011,Kiểm tra Upload ảnh đại diện giáo viên,Negative,Upload ảnh vượt 5MB,,,,,,"1. Click avatar
+ 2. Chọn file > 5MB","Hiển thị ""Kích thước file không được vượt quá 5MB. File hiện tại: {size}""",Kích thước file không được vượt quá 5MB. File hiện tại: {size},Pass,
+FR_005_012,Kiểm tra chức năng Đổi mật khẩu,Function,Đổi mật khẩu thành công,,,,,NewPass456,"1. Vào trang đổi mật khẩu
+ 2. Nhập đủ 3 trường hợp lệ
+ 3. Bấm Lưu","Cập nhật mật khẩu thành công, hiển thị thông báo thành công",,Inactive,Không có chức năng đổi mật khẩu trong tài khoản đã đăng nhập
+FR_005_013,Kiểm tra chức năng Đổi mật khẩu,Negative,Nhập sai mật khẩu hiện tại,,,,,,"1. Nhập sai mật khẩu hiện tại
+ 2. Bấm Lưu","Hiển thị lỗi mật khẩu hiện tại không đúng, không cho phép đổi",,Inactive,Không có chức năng đổi mật khẩu trong tài khoản đã đăng nhập
+FR_005_014,Kiểm tra chức năng Đổi mật khẩu,Negative,Mật khẩu mới trùng mật khẩu cũ,,,,,,"1. Nhập mật khẩu mới giống cũ
+ 2. Bấm Lưu",Hiển thị cảnh báo mật khẩu mới phải khác mật khẩu cũ,,Inactive,Không có chức năng đổi mật khẩu trong tài khoản đã đăng nhập
+FR_005_015,Kiểm tra chức năng Đổi mật khẩu,Negative,Xác nhận mật khẩu không khớp,,,,,DifferentPass,"1. Nhập 2 mật khẩu khác nhau
+ 2. Bấm Lưu","Hiển thị ""Mật khẩu không trùng khớp""",Mật khẩu không trùng khớp,Inactive,Không có chức năng đổi mật khẩu trong tài khoản đã đăng nhập

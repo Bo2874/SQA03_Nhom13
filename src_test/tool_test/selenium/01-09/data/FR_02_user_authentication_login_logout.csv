@@ -1,0 +1,48 @@
+﻿tc_id,section,type,objective,email,fullname,phone,password,confirm_password,steps,expected,expected_messages,expected_in_sheet_result,note
+FR_002_001,Kiểm tra giao diện trang Đăng nhập,UI/UX,Kiểm tra bố cục trang Đăng nhập,,,,,,"1. Mở trang Đăng nhập (/login)
+ 2. Quan sát bố cục","Form hiển thị cân đối giữa màn hình, màu sắc font chữ nhất quán",,Pass,
+FR_002_002,Kiểm tra giao diện trang Đăng nhập,UI/UX,Kiểm tra hiển thị đầy đủ các trường,,,,,,"1. Mở trang Đăng nhập
+ 2. Quan sát các trường",Hiển thị 2 trường: Email và Mật khẩu,,Pass,
+FR_002_003,Kiểm tra giao diện trang Đăng nhập,UI/UX,Kiểm tra Placeholder các trường,,,,,,"1. Mở trang Đăng nhập
+ 2. Quan sát placeholder","Placeholder đúng:
+ - Email: ""example@gmail.com""
+ - Mật khẩu: ""Nhập mật khẩu""",example@gmail.com | Nhập mật khẩu,Pass,
+FR_002_004,Kiểm tra giao diện trang Đăng nhập,UI/UX,Kiểm tra các nút và link,,,,,,"1. Mở trang Đăng nhập
+ 2. Quan sát các nút và link","Hiển thị: toggle ""Lưu đăng nhập"", link ""Quên mật khẩu?"" (→ /forget-password), nút ""Đăng nhập"", link ""Đăng ký ngay"" (→ /register)",Lưu đăng nhập | Quên mật khẩu? | Đăng nhập | Đăng ký ngay,Pass,
+FR_002_005,Kiểm tra giao diện trang Đăng nhập,UI/UX,Kiểm tra icon hiển thị/ẩn mật khẩu,,,,Abc123456,,"1. Nhập mật khẩu
+ 2. Click icon mắt
+ 3. Click lại",Toggle hiện/ẩn mật khẩu hoạt động đúng,,Pass,
+FR_002_006,Kiểm tra chức năng Đăng nhập,Function,Đăng nhập thành công - vai trò Student,student@gmail.com,,,Abc123456,,"1. Mở trang Đăng nhập
+ 2. Nhập email và mật khẩu hợp lệ
+ 3. Bấm Đăng nhập","Hiển thị toast ""Đăng nhập thành công!"" và chuyển đến trang chủ /",Đăng nhập thành công!,Pass,
+FR_002_007,Kiểm tra chức năng Đăng nhập,Function,Đăng nhập thành công - vai trò Teacher,teacher@gmail.com,,,Abc123456,,"1. Nhập email/mật khẩu tài khoản Teacher
+ 2. Bấm Đăng nhập","Đăng nhập thành công, chuyển đến /teacher/dashboard",,Pass,
+FR_002_008,Kiểm tra chức năng Đăng nhập,Function,Đăng nhập thành công - vai trò Admin,admin@gmail.com,,,Admin123,,"1. Nhập email/mật khẩu tài khoản Admin
+ 2. Bấm Đăng nhập","Đăng nhập thành công, chuyển đến trang admin http://localhost:5173",,Pass,
+FR_002_009,Kiểm tra các trường hợp đăng nhập lỗi,Negative,Đăng nhập với mật khẩu sai,student@gmail.com,,,SaiMatKhau,,"1. Nhập email đúng, mật khẩu sai
+ 2. Bấm Đăng nhập","Hiển thị thông báo lỗi ""Tài khoản hoặc mật khẩu không đúng.""",Tài khoản hoặc mật khẩu không đúng.,Pass,
+FR_002_010,Kiểm tra các trường hợp đăng nhập lỗi,Negative,Đăng nhập với email chưa đăng ký,notexist@gmail.com,,,Abc123456,,"1. Nhập email chưa đăng ký
+ 2. Bấm Đăng nhập","Hiển thị thông báo ""Tài khoản hoặc mật khẩu không đúng.""",Tài khoản hoặc mật khẩu không đúng.,Pass,
+FR_002_011,Kiểm tra các trường hợp đăng nhập lỗi,Negative,Để trống cả 2 trường,,,,,,"1. Để trống cả 2 trường
+ 2. Bấm Đăng nhập","Hiển thị lỗi ""Vui lòng nhập email"" và ""Vui lòng nhập mật khẩu""",Vui lòng nhập email | Vui lòng nhập mật khẩu,Pass,
+FR_002_012,Kiểm tra các trường hợp đăng nhập lỗi,Negative,Để trống Email,,,,Abc123456,,"1. Để trống email
+ 2. Nhập mật khẩu
+ 3. Bấm Đăng nhập","Hiển thị lỗi ""Vui lòng nhập email""",Vui lòng nhập email,Pass,
+FR_002_013,Kiểm tra các trường hợp đăng nhập lỗi,Negative,Để trống Mật khẩu,student@gmail.com,,,,,"1. Nhập email
+ 2. Để trống mật khẩu
+ 3. Bấm Đăng nhập","Hiển thị lỗi ""Vui lòng nhập mật khẩu""",Vui lòng nhập mật khẩu,Pass,
+FR_002_014,Kiểm tra các trường hợp đăng nhập lỗi,Negative,Nhập email sai format,notanemail,,,Abc123456,,"1. Nhập email sai format
+ 2. Click ra ngoài","Hiển thị ""Email không hợp lệ""",Email không hợp lệ,Pass,
+FR_002_015,Kiểm tra các trường hợp đăng nhập lỗi,Negative,Bấm nút Đăng nhập liên tục,student@gmail.com,,,Abc123456,,1. Bấm nút Đăng nhập liên tục 5 lần,"Nút disable khi đang loading, chỉ gửi 1 request",,Pass,
+FR_002_016,Kiểm tra các trường hợp đăng nhập lỗi,Negative,Nhập mật khẩu chỉ khoảng trắng,student@gmail.com,,,' ',,"1. Nhập mật khẩu chỉ khoảng trắng
+ 2. Bấm Đăng nhập","Hệ thống xử lý lỗi đúng, không cho phép đăng nhập",,Pass,
+FR_002_017,Kiểm tra chức năng Đăng xuất,Function,Đăng xuất thành công,,,,,,"1. Đăng nhập thành công
+ 2. Click avatar góc phải
+ 3. Bấm Đăng xuất","Kết thúc phiên làm việc, xóa cookie JWT và localStorage, chuyển về /login",,Pass,
+FR_002_018,Kiểm tra chức năng Đăng xuất,Function,Kiểm tra truy cập sau khi đăng xuất,,,,,,"1. Đăng xuất
+ 2. Truy cập trang yêu cầu đăng nhập (/student/my-courses)","Chuyển hướng về trang đăng nhập, không cho phép truy cập trang bảo vệ",,Pass,
+FR_002_019,Kiểm tra chức năng Lưu đăng nhập và Google login,Function,Toggle Lưu đăng nhập,,,,,,"1. Bấm toggle ""Lưu đăng nhập""
+ 2. Đăng nhập
+ 3. Đóng trình duyệt
+ 4. Mở lại","Trạng thái đăng nhập được lưu, không cần đăng nhập lại",,Fail,"Toggle 'Lưu đăng nhập' chỉ cập nhật state local (L46, L135), KHÔNG persist. localStorage.setItem('user') luôn được gọi bất kể toggle. Toggle không có tác dụng thực tế"
+FR_002_020,Kiểm tra chức năng Lưu đăng nhập và Google login,Function,Đăng nhập bằng Google,,,,,,"1. Bấm nút ""Đăng nhập bằng Google""","Chuyển hướng đến Google OAuth, đăng nhập bằng tài khoản Google",,Fail,Nút 'Đăng nhập bằng Google' không được render trong form (button không tồn tại trong JSX của LoginForm.tsx)
