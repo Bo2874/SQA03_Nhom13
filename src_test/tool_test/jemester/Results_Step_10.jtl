@@ -1,0 +1,671 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1777555808204,118,AUTH_01_SignIn_Admin,200,OK,Enterprise Stress Load 1-1,text,true,,707,244,1,1,http://localhost:3000/api/v1/auth/sign-in,111,0,28
+1777555808326,9,AUTH_05_GetMe_Admin,200,OK,Enterprise Stress Load 1-1,text,true,,428,404,1,1,http://localhost:3000/api/v1/auth/me,9,0,1
+1777555808335,28,SUBJ_02_Create,201,Created,Enterprise Stress Load 1-1,text,true,,357,456,1,1,http://localhost:3000/api/v1/subjects,27,0,1
+1777555808386,7,SUBJ_01_GetAll,200,OK,Enterprise Stress Load 1-1,text,true,,11162,405,1,1,http://localhost:3000/api/v1/subjects,7,0,1
+1777555808394,35,SUBJ_03_Update,200,OK,Enterprise Stress Load 1-1,text,true,,370,464,1,1,http://localhost:3000/api/v1/subjects/1522,34,0,1
+1777555808430,32,SUBJ_04_Delete,200,OK,Enterprise Stress Load 1-1,text,true,,317,432,1,1,http://localhost:3000/api/v1/subjects/1522,32,0,1
+1777555808463,26,GRADE_02_Create,201,Created,Enterprise Stress Load 1-1,text,true,,362,461,1,1,http://localhost:3000/api/v1/grade-levels,25,0,2
+1777555808490,13,GRADE_01_GetAll,200,OK,Enterprise Stress Load 1-1,text,true,,10542,409,1,1,http://localhost:3000/api/v1/grade-levels,12,0,2
+1777555808504,33,GRADE_03_Update,200,OK,Enterprise Stress Load 1-1,text,true,,375,469,1,1,http://localhost:3000/api/v1/grade-levels/1510,33,0,1
+1777555808538,32,GRADE_04_Delete,200,OK,Enterprise Stress Load 1-1,text,true,,321,436,1,1,http://localhost:3000/api/v1/grade-levels/1510,32,0,1
+1777555808571,83,USER_05_CreateTeacher,201,Created,Enterprise Stress Load 1-1,text,true,,541,545,1,1,http://localhost:3000/api/v1/teachers,83,0,1
+1777555808654,16,USER_04_GetAllTeachers,200,OK,Enterprise Stress Load 1-1,text,true,,2611,405,1,1,http://localhost:3000/api/v1/teachers,16,0,1
+1777555808671,20,USER_06_UpdateTeacher,200,OK,Enterprise Stress Load 1-1,text,true,,618,463,1,1,http://localhost:3000/api/v1/teachers/1993,20,0,0
+1777555808692,16,CRS_09_ApproveCourse,404,Not Found,Enterprise Stress Load 1-1,text,false,,312,457,1,1,http://localhost:3000/api/v1/courses/1/by-admin,16,0,1
+1777555808710,20,ADM_09_PlatformStats,200,OK,Enterprise Stress Load 1-1,text,true,,372,419,1,1,http://localhost:3000/api/v1/courses/stats/platform,20,0,1
+1777555808119,488,ADMIN_MODULE,,"Number of samples in transaction : 15, number of failing samples : 1",Enterprise Stress Load 1-1,,false,,29395,6469,1,1,null,477,123,43
+1777555808731,76,AUTH_02_SignIn_Teacher,200,OK,Enterprise Stress Load 1-1,text,true,,711,492,1,1,http://localhost:3000/api/v1/auth/sign-in,76,0,2
+1777555808808,22,CRS_07_CreateCourse,201,Created,Enterprise Stress Load 1-1,text,true,,630,557,1,1,http://localhost:3000/api/v1/courses,21,0,1
+1777555808830,51,CRS_08_UpdateCourse,200,OK,Enterprise Stress Load 1-1,text,true,,1015,470,1,1,http://localhost:3000/api/v1/courses/732,51,0,1
+1777555808882,6,MAT_01_Create,400,Bad Request,Enterprise Stress Load 1-1,text,false,,348,516,1,1,http://localhost:3000/api/v1/courses/732/materials,5,0,2
+1777555808888,7,MAT_02_GetAll,200,OK,Enterprise Stress Load 1-1,text,true,,294,426,1,1,http://localhost:3000/api/v1/courses/732/materials,7,0,2
+1777555808896,6,MAT_03_GetById,200,OK,Enterprise Stress Load 1-1,text,true,,294,427,1,1,http://localhost:3000/api/v1/courses/732/materials/,5,0,1
+1777555808902,3,MAT_04_Update,404,Not Found,Enterprise Stress Load 1-1,text,false,,337,481,1,1,http://localhost:3000/api/v1/courses/732/materials/,3,0,1
+1777555808905,4,CHAP_01_Create,400,Bad Request,Enterprise Stress Load 1-1,text,false,,391,497,1,1,http://localhost:3000/api/v1/courses/732/chapters,3,0,1
+1777555808909,6,CHAP_02_GetAll,200,OK,Enterprise Stress Load 1-1,text,true,,294,425,1,1,http://localhost:3000/api/v1/courses/732/chapters,6,0,1
+1777555808916,4,CHAP_03_GetById,200,OK,Enterprise Stress Load 1-1,text,true,,294,426,1,1,http://localhost:3000/api/v1/courses/732/chapters/,4,0,0
+1777555808921,2,CHAP_04_Update,404,Not Found,Enterprise Stress Load 1-1,text,false,,336,481,1,1,http://localhost:3000/api/v1/courses/732/chapters/,1,0,0
+1777555808923,2,EP_01_Create,404,Not Found,Enterprise Stress Load 1-1,text,false,,345,541,1,1,http://localhost:3000/api/v1/courses/732/chapters//episodes,2,0,1
+1777555808925,15,EP_02_GetAll,500,Internal Server Error,Enterprise Stress Load 1-1,text,false,,329,434,1,1,http://localhost:3000/api/v1/courses/732/chapters//episodes,15,0,1
+1777555808941,8,EP_03_GetById,500,Internal Server Error,Enterprise Stress Load 1-1,text,false,,329,435,1,1,http://localhost:3000/api/v1/courses/732/chapters//episodes/,8,0,1
+1777555808950,10,EP_04_Update,500,Internal Server Error,Enterprise Stress Load 1-1,text,false,,329,488,1,1,http://localhost:3000/api/v1/courses/732/chapters//episodes/,10,0,1
+1777555808960,2,QUIZ_01_CreateQuestion,404,Not Found,Enterprise Stress Load 1-1,text,false,,355,514,1,1,http://localhost:3000/api/v1/courses/732/chapters//episodes//questions,2,0,1
+1777555808963,2,QUIZ_02_GetAllQuestions,404,Not Found,Enterprise Stress Load 1-1,text,false,,354,444,1,1,http://localhost:3000/api/v1/courses/732/chapters//episodes//questions,2,0,1
+1777555808965,4,QUIZ_03_CreateAnswer,404,Not Found,Enterprise Stress Load 1-1,text,false,,363,528,1,1,http://localhost:3000/api/v1/courses/732/chapters//episodes//questions//answers,4,0,2
+1777555808970,3,QUIZ_04_GetAllAnswers,404,Not Found,Enterprise Stress Load 1-1,text,false,,362,452,1,1,http://localhost:3000/api/v1/courses/732/chapters//episodes//questions//answers,2,0,1
+1777555808973,5,EXAM_03_Create,400,Bad Request,Enterprise Stress Load 1-1,text,false,,442,561,1,1,http://localhost:3000/api/v1/exams,5,0,2
+1777555808979,12,EXAM_01_GetAll_Teacher,200,OK,Enterprise Stress Load 1-1,text,true,,294,410,1,1,http://localhost:3000/api/v1/exams,12,0,0
+1777555808992,6,EXAM_02_GetById_Teacher,200,OK,Enterprise Stress Load 1-1,text,true,,294,411,1,1,http://localhost:3000/api/v1/exams/,6,0,1
+1777555808999,2,EXAM_04_Update_Teacher,404,Not Found,Enterprise Stress Load 1-1,text,false,,321,466,1,1,http://localhost:3000/api/v1/exams/,2,0,1
+1777555809002,2,EXAM_05_CreateQuestion,404,Not Found,Enterprise Stress Load 1-1,text,false,,331,489,1,1,http://localhost:3000/api/v1/exams//questions,1,0,0
+1777555809004,2,EXAM_06_CreateAnswer,404,Not Found,Enterprise Stress Load 1-1,text,false,,339,504,1,1,http://localhost:3000/api/v1/exams//questions//answers,2,0,1
+1777555809007,9,EXAM_07_GetLeaderboard_Teacher,500,Internal Server Error,Enterprise Stress Load 1-1,text,false,,329,422,1,1,http://localhost:3000/api/v1/exams//leaderboard,9,0,0
+1777555808731,271,TEACHER_MODULE,,"Number of samples in transaction : 26, number of failing samples : 17",Enterprise Stress Load 1-1,,false,,10060,12297,1,1,null,264,15,26
+1777555811110,65,AUTH_01_SignIn_Admin,200,OK,Enterprise Stress Load 1-2,text,true,,707,244,2,2,http://localhost:3000/api/v1/auth/sign-in,64,0,1
+1777555811176,8,AUTH_05_GetMe_Admin,200,OK,Enterprise Stress Load 1-2,text,true,,428,404,2,2,http://localhost:3000/api/v1/auth/me,7,0,1
+1777555811184,24,SUBJ_02_Create,201,Created,Enterprise Stress Load 1-2,text,true,,357,456,2,2,http://localhost:3000/api/v1/subjects,24,0,1
+1777555811209,7,SUBJ_01_GetAll,200,OK,Enterprise Stress Load 1-2,text,true,,11162,405,2,2,http://localhost:3000/api/v1/subjects,7,0,1
+1777555811217,33,SUBJ_03_Update,200,OK,Enterprise Stress Load 1-2,text,true,,370,464,2,2,http://localhost:3000/api/v1/subjects/1523,32,0,0
+1777555811250,22,SUBJ_04_Delete,200,OK,Enterprise Stress Load 1-2,text,true,,317,432,2,2,http://localhost:3000/api/v1/subjects/1523,21,0,1
+1777555811273,14,GRADE_02_Create,201,Created,Enterprise Stress Load 1-2,text,true,,362,461,2,2,http://localhost:3000/api/v1/grade-levels,14,0,0
+1777555811288,5,GRADE_01_GetAll,200,OK,Enterprise Stress Load 1-2,text,true,,10542,409,2,2,http://localhost:3000/api/v1/grade-levels,5,0,1
+1777555811294,24,GRADE_03_Update,200,OK,Enterprise Stress Load 1-2,text,true,,375,469,2,2,http://localhost:3000/api/v1/grade-levels/1511,24,0,0
+1777555811319,19,GRADE_04_Delete,200,OK,Enterprise Stress Load 1-2,text,true,,321,436,2,2,http://localhost:3000/api/v1/grade-levels/1511,19,0,1
+1777555811338,82,USER_05_CreateTeacher,201,Created,Enterprise Stress Load 1-2,text,true,,541,545,2,2,http://localhost:3000/api/v1/teachers,82,0,1
+1777555811421,8,USER_04_GetAllTeachers,200,OK,Enterprise Stress Load 1-2,text,true,,2611,405,2,2,http://localhost:3000/api/v1/teachers,7,0,0
+1777555811429,31,USER_06_UpdateTeacher,200,OK,Enterprise Stress Load 1-2,text,true,,618,463,2,2,http://localhost:3000/api/v1/teachers/1994,30,0,1
+1777555811460,11,CRS_09_ApproveCourse,404,Not Found,Enterprise Stress Load 1-2,text,false,,312,457,2,2,http://localhost:3000/api/v1/courses/1/by-admin,10,0,1
+1777555811471,13,ADM_09_PlatformStats,200,OK,Enterprise Stress Load 1-2,text,true,,372,419,2,2,http://localhost:3000/api/v1/courses/stats/platform,12,0,1
+1777555811109,366,ADMIN_MODULE,,"Number of samples in transaction : 15, number of failing samples : 1",Enterprise Stress Load 1-2,,false,,29395,6469,2,2,null,358,9,11
+1777555811484,73,AUTH_02_SignIn_Teacher,200,OK,Enterprise Stress Load 1-2,text,true,,711,492,2,2,http://localhost:3000/api/v1/auth/sign-in,73,0,1
+1777555811558,24,CRS_07_CreateCourse,201,Created,Enterprise Stress Load 1-2,text,true,,630,557,2,2,http://localhost:3000/api/v1/courses,23,0,1
+1777555811582,44,CRS_08_UpdateCourse,200,OK,Enterprise Stress Load 1-2,text,true,,1015,470,2,2,http://localhost:3000/api/v1/courses/733,44,0,1
+1777555811627,4,MAT_01_Create,400,Bad Request,Enterprise Stress Load 1-2,text,false,,348,516,2,2,http://localhost:3000/api/v1/courses/733/materials,3,0,1
+1777555811631,5,MAT_02_GetAll,200,OK,Enterprise Stress Load 1-2,text,true,,294,426,2,2,http://localhost:3000/api/v1/courses/733/materials,5,0,1
+1777555811637,7,MAT_03_GetById,200,OK,Enterprise Stress Load 1-2,text,true,,294,427,2,2,http://localhost:3000/api/v1/courses/733/materials/,6,0,1
+1777555811644,2,MAT_04_Update,404,Not Found,Enterprise Stress Load 1-2,text,false,,337,481,2,2,http://localhost:3000/api/v1/courses/733/materials/,2,0,1
+1777555811647,3,CHAP_01_Create,400,Bad Request,Enterprise Stress Load 1-2,text,false,,391,497,2,2,http://localhost:3000/api/v1/courses/733/chapters,3,0,1
+1777555811651,5,CHAP_02_GetAll,200,OK,Enterprise Stress Load 1-2,text,true,,294,425,2,2,http://localhost:3000/api/v1/courses/733/chapters,5,0,1
+1777555811656,5,CHAP_03_GetById,200,OK,Enterprise Stress Load 1-2,text,true,,294,426,2,2,http://localhost:3000/api/v1/courses/733/chapters/,5,0,1
+1777555811662,1,CHAP_04_Update,404,Not Found,Enterprise Stress Load 1-2,text,false,,336,481,2,2,http://localhost:3000/api/v1/courses/733/chapters/,1,0,0
+1777555811664,2,EP_01_Create,404,Not Found,Enterprise Stress Load 1-2,text,false,,345,541,2,2,http://localhost:3000/api/v1/courses/733/chapters//episodes,2,0,1
+1777555811667,7,EP_02_GetAll,500,Internal Server Error,Enterprise Stress Load 1-2,text,false,,329,434,2,2,http://localhost:3000/api/v1/courses/733/chapters//episodes,7,0,0
+1777555811674,8,EP_03_GetById,500,Internal Server Error,Enterprise Stress Load 1-2,text,false,,329,435,2,2,http://localhost:3000/api/v1/courses/733/chapters//episodes/,8,0,1
+1777555811683,8,EP_04_Update,500,Internal Server Error,Enterprise Stress Load 1-2,text,false,,329,488,2,2,http://localhost:3000/api/v1/courses/733/chapters//episodes/,8,0,0
+1777555811691,2,QUIZ_01_CreateQuestion,404,Not Found,Enterprise Stress Load 1-2,text,false,,355,514,2,2,http://localhost:3000/api/v1/courses/733/chapters//episodes//questions,2,0,1
+1777555811694,1,QUIZ_02_GetAllQuestions,404,Not Found,Enterprise Stress Load 1-2,text,false,,354,444,2,2,http://localhost:3000/api/v1/courses/733/chapters//episodes//questions,1,0,0
+1777555811696,2,QUIZ_03_CreateAnswer,404,Not Found,Enterprise Stress Load 1-2,text,false,,363,528,2,2,http://localhost:3000/api/v1/courses/733/chapters//episodes//questions//answers,1,0,0
+1777555811698,2,QUIZ_04_GetAllAnswers,404,Not Found,Enterprise Stress Load 1-2,text,false,,362,452,2,2,http://localhost:3000/api/v1/courses/733/chapters//episodes//questions//answers,2,0,1
+1777555811700,3,EXAM_03_Create,400,Bad Request,Enterprise Stress Load 1-2,text,false,,442,561,2,2,http://localhost:3000/api/v1/exams,3,0,1
+1777555811704,8,EXAM_01_GetAll_Teacher,200,OK,Enterprise Stress Load 1-2,text,true,,294,410,2,2,http://localhost:3000/api/v1/exams,8,0,0
+1777555811713,8,EXAM_02_GetById_Teacher,200,OK,Enterprise Stress Load 1-2,text,true,,294,411,2,2,http://localhost:3000/api/v1/exams/,8,0,0
+1777555811722,1,EXAM_04_Update_Teacher,404,Not Found,Enterprise Stress Load 1-2,text,false,,321,466,2,2,http://localhost:3000/api/v1/exams/,1,0,0
+1777555811724,1,EXAM_05_CreateQuestion,404,Not Found,Enterprise Stress Load 1-2,text,false,,331,489,2,2,http://localhost:3000/api/v1/exams//questions,1,0,0
+1777555811726,1,EXAM_06_CreateAnswer,404,Not Found,Enterprise Stress Load 1-2,text,false,,339,504,2,2,http://localhost:3000/api/v1/exams//questions//answers,1,0,0
+1777555811728,8,EXAM_07_GetLeaderboard_Teacher,500,Internal Server Error,Enterprise Stress Load 1-2,text,false,,329,422,2,2,http://localhost:3000/api/v1/exams//leaderboard,8,0,0
+1777555811484,235,TEACHER_MODULE,,"Number of samples in transaction : 26, number of failing samples : 17",Enterprise Stress Load 1-2,,false,,10060,12297,2,2,null,231,17,15
+1777555812609,435,Generate Rand Email,200,OK,Enterprise Stress Load 1-1,text,true,,0,0,2,2,null,0,0,0
+1777555812320,724,Generate Rand Email,200,OK,Enterprise Stress Load 1-2,text,true,,0,0,2,2,null,0,0,0
+1777555813690,208,Seed OTP Redis,200,OK,Enterprise Stress Load 1-2,text,true,,0,0,2,2,null,0,0,0
+1777555813827,75,Seed OTP Redis,200,OK,Enterprise Stress Load 1-1,text,true,,0,0,2,2,null,0,0,0
+1777555814108,67,AUTH_01_SignIn_Admin,200,OK,Enterprise Stress Load 1-3,text,true,,707,244,3,3,http://localhost:3000/api/v1/auth/sign-in,66,0,2
+1777555814176,5,AUTH_05_GetMe_Admin,200,OK,Enterprise Stress Load 1-3,text,true,,428,404,3,3,http://localhost:3000/api/v1/auth/me,5,0,1
+1777555814181,19,SUBJ_02_Create,201,Created,Enterprise Stress Load 1-3,text,true,,357,456,3,3,http://localhost:3000/api/v1/subjects,19,0,1
+1777555814201,6,SUBJ_01_GetAll,200,OK,Enterprise Stress Load 1-3,text,true,,11162,405,3,3,http://localhost:3000/api/v1/subjects,5,0,1
+1777555814207,21,SUBJ_03_Update,200,OK,Enterprise Stress Load 1-3,text,true,,370,464,3,3,http://localhost:3000/api/v1/subjects/1524,21,0,1
+1777555814228,19,SUBJ_04_Delete,200,OK,Enterprise Stress Load 1-3,text,true,,317,432,3,3,http://localhost:3000/api/v1/subjects/1524,19,0,1
+1777555814248,15,GRADE_02_Create,201,Created,Enterprise Stress Load 1-3,text,true,,362,461,3,3,http://localhost:3000/api/v1/grade-levels,14,0,0
+1777555814264,5,GRADE_01_GetAll,200,OK,Enterprise Stress Load 1-3,text,true,,10542,409,3,3,http://localhost:3000/api/v1/grade-levels,5,0,1
+1777555814269,21,GRADE_03_Update,200,OK,Enterprise Stress Load 1-3,text,true,,375,469,3,3,http://localhost:3000/api/v1/grade-levels/1512,21,0,1
+1777555814290,21,GRADE_04_Delete,200,OK,Enterprise Stress Load 1-3,text,true,,321,436,3,3,http://localhost:3000/api/v1/grade-levels/1512,21,0,1
+1777555814311,76,USER_05_CreateTeacher,201,Created,Enterprise Stress Load 1-3,text,true,,541,545,3,3,http://localhost:3000/api/v1/teachers,76,0,1
+1777555814388,6,USER_04_GetAllTeachers,200,OK,Enterprise Stress Load 1-3,text,true,,2611,405,3,3,http://localhost:3000/api/v1/teachers,6,0,0
+1777555814395,16,USER_06_UpdateTeacher,200,OK,Enterprise Stress Load 1-3,text,true,,618,463,3,3,http://localhost:3000/api/v1/teachers/1995,16,0,1
+1777555814411,7,CRS_09_ApproveCourse,404,Not Found,Enterprise Stress Load 1-3,text,false,,312,457,3,3,http://localhost:3000/api/v1/courses/1/by-admin,7,0,1
+1777555814419,11,ADM_09_PlatformStats,200,OK,Enterprise Stress Load 1-3,text,true,,372,419,3,3,http://localhost:3000/api/v1/courses/stats/platform,10,0,1
+1777555814107,315,ADMIN_MODULE,,"Number of samples in transaction : 15, number of failing samples : 1",Enterprise Stress Load 1-3,,false,,29395,6469,3,3,null,311,8,14
+1777555814430,60,AUTH_02_SignIn_Teacher,200,OK,Enterprise Stress Load 1-3,text,true,,711,492,3,3,http://localhost:3000/api/v1/auth/sign-in,59,0,1
+1777555814490,27,CRS_07_CreateCourse,201,Created,Enterprise Stress Load 1-3,text,true,,630,557,3,3,http://localhost:3000/api/v1/courses,27,0,1
+1777555814518,55,CRS_08_UpdateCourse,200,OK,Enterprise Stress Load 1-3,text,true,,1015,470,3,3,http://localhost:3000/api/v1/courses/734,55,0,0
+1777555814573,4,MAT_01_Create,400,Bad Request,Enterprise Stress Load 1-3,text,false,,348,516,3,3,http://localhost:3000/api/v1/courses/734/materials,4,0,2
+1777555814578,7,MAT_02_GetAll,200,OK,Enterprise Stress Load 1-3,text,true,,294,426,3,3,http://localhost:3000/api/v1/courses/734/materials,6,0,1
+1777555814585,6,MAT_03_GetById,200,OK,Enterprise Stress Load 1-3,text,true,,294,427,3,3,http://localhost:3000/api/v1/courses/734/materials/,5,0,1
+1777555814591,4,MAT_04_Update,404,Not Found,Enterprise Stress Load 1-3,text,false,,337,481,3,3,http://localhost:3000/api/v1/courses/734/materials/,3,0,2
+1777555814595,4,CHAP_01_Create,400,Bad Request,Enterprise Stress Load 1-3,text,false,,391,497,3,3,http://localhost:3000/api/v1/courses/734/chapters,4,0,1
+1777555814599,6,CHAP_02_GetAll,200,OK,Enterprise Stress Load 1-3,text,true,,294,425,3,3,http://localhost:3000/api/v1/courses/734/chapters,6,0,1
+1777555814606,5,CHAP_03_GetById,200,OK,Enterprise Stress Load 1-3,text,true,,294,426,3,3,http://localhost:3000/api/v1/courses/734/chapters/,5,0,1
+1777555814611,2,CHAP_04_Update,404,Not Found,Enterprise Stress Load 1-3,text,false,,336,481,3,3,http://localhost:3000/api/v1/courses/734/chapters/,2,0,1
+1777555814613,2,EP_01_Create,404,Not Found,Enterprise Stress Load 1-3,text,false,,345,541,3,3,http://localhost:3000/api/v1/courses/734/chapters//episodes,2,0,1
+1777555814616,6,EP_02_GetAll,500,Internal Server Error,Enterprise Stress Load 1-3,text,false,,329,434,3,3,http://localhost:3000/api/v1/courses/734/chapters//episodes,6,0,0
+1777555814622,8,EP_03_GetById,500,Internal Server Error,Enterprise Stress Load 1-3,text,false,,329,435,3,3,http://localhost:3000/api/v1/courses/734/chapters//episodes/,7,0,1
+1777555814630,9,EP_04_Update,500,Internal Server Error,Enterprise Stress Load 1-3,text,false,,329,488,3,3,http://localhost:3000/api/v1/courses/734/chapters//episodes/,9,0,1
+1777555814639,2,QUIZ_01_CreateQuestion,404,Not Found,Enterprise Stress Load 1-3,text,false,,355,514,3,3,http://localhost:3000/api/v1/courses/734/chapters//episodes//questions,2,0,1
+1777555814641,2,QUIZ_02_GetAllQuestions,404,Not Found,Enterprise Stress Load 1-3,text,false,,354,444,3,3,http://localhost:3000/api/v1/courses/734/chapters//episodes//questions,2,0,1
+1777555814643,2,QUIZ_03_CreateAnswer,404,Not Found,Enterprise Stress Load 1-3,text,false,,363,528,3,3,http://localhost:3000/api/v1/courses/734/chapters//episodes//questions//answers,1,0,1
+1777555814645,2,QUIZ_04_GetAllAnswers,404,Not Found,Enterprise Stress Load 1-3,text,false,,362,452,3,3,http://localhost:3000/api/v1/courses/734/chapters//episodes//questions//answers,1,0,1
+1777555814647,2,EXAM_03_Create,400,Bad Request,Enterprise Stress Load 1-3,text,false,,442,561,3,3,http://localhost:3000/api/v1/exams,2,0,0
+1777555814650,6,EXAM_01_GetAll_Teacher,200,OK,Enterprise Stress Load 1-3,text,true,,294,410,3,3,http://localhost:3000/api/v1/exams,5,0,0
+1777555814656,6,EXAM_02_GetById_Teacher,200,OK,Enterprise Stress Load 1-3,text,true,,294,411,3,3,http://localhost:3000/api/v1/exams/,6,0,1
+1777555814662,2,EXAM_04_Update_Teacher,404,Not Found,Enterprise Stress Load 1-3,text,false,,321,466,3,3,http://localhost:3000/api/v1/exams/,2,0,1
+1777555814664,2,EXAM_05_CreateQuestion,404,Not Found,Enterprise Stress Load 1-3,text,false,,331,489,3,3,http://localhost:3000/api/v1/exams//questions,2,0,1
+1777555814666,2,EXAM_06_CreateAnswer,404,Not Found,Enterprise Stress Load 1-3,text,false,,339,504,3,3,http://localhost:3000/api/v1/exams//questions//answers,2,0,1
+1777555814668,8,EXAM_07_GetLeaderboard_Teacher,500,Internal Server Error,Enterprise Stress Load 1-3,text,false,,329,422,3,3,http://localhost:3000/api/v1/exams//leaderboard,8,0,1
+1777555814430,241,TEACHER_MODULE,,"Number of samples in transaction : 26, number of failing samples : 17",Enterprise Stress Load 1-3,,false,,10060,12297,3,3,null,233,5,24
+1777555816619,0,Generate Rand Email,200,OK,Enterprise Stress Load 1-3,text,true,,0,0,3,3,null,0,0,0
+1777555817108,62,AUTH_01_SignIn_Admin,200,OK,Enterprise Stress Load 1-4,text,true,,707,244,4,4,http://localhost:3000/api/v1/auth/sign-in,62,0,1
+1777555817171,6,AUTH_05_GetMe_Admin,200,OK,Enterprise Stress Load 1-4,text,true,,428,404,4,4,http://localhost:3000/api/v1/auth/me,6,0,0
+1777555817177,22,SUBJ_02_Create,201,Created,Enterprise Stress Load 1-4,text,true,,357,456,4,4,http://localhost:3000/api/v1/subjects,22,0,1
+1777555817199,5,SUBJ_01_GetAll,200,OK,Enterprise Stress Load 1-4,text,true,,11162,405,4,4,http://localhost:3000/api/v1/subjects,5,0,1
+1777555817205,24,SUBJ_03_Update,200,OK,Enterprise Stress Load 1-4,text,true,,370,464,4,4,http://localhost:3000/api/v1/subjects/1525,24,0,1
+1777555817230,17,SUBJ_04_Delete,200,OK,Enterprise Stress Load 1-4,text,true,,317,432,4,4,http://localhost:3000/api/v1/subjects/1525,16,0,0
+1777555817247,13,GRADE_02_Create,201,Created,Enterprise Stress Load 1-4,text,true,,362,461,4,4,http://localhost:3000/api/v1/grade-levels,13,0,1
+1777555817261,4,GRADE_01_GetAll,200,OK,Enterprise Stress Load 1-4,text,true,,10542,409,4,4,http://localhost:3000/api/v1/grade-levels,4,0,1
+1777555817266,19,GRADE_03_Update,200,OK,Enterprise Stress Load 1-4,text,true,,375,469,4,4,http://localhost:3000/api/v1/grade-levels/1513,19,0,0
+1777555817285,20,GRADE_04_Delete,200,OK,Enterprise Stress Load 1-4,text,true,,321,436,4,4,http://localhost:3000/api/v1/grade-levels/1513,20,0,1
+1777555817305,71,USER_05_CreateTeacher,201,Created,Enterprise Stress Load 1-4,text,true,,541,545,4,4,http://localhost:3000/api/v1/teachers,70,0,1
+1777555817376,7,USER_04_GetAllTeachers,200,OK,Enterprise Stress Load 1-4,text,true,,2611,405,4,4,http://localhost:3000/api/v1/teachers,7,0,1
+1777555817383,17,USER_06_UpdateTeacher,200,OK,Enterprise Stress Load 1-4,text,true,,618,463,4,4,http://localhost:3000/api/v1/teachers/1996,17,0,1
+1777555817401,6,CRS_09_ApproveCourse,404,Not Found,Enterprise Stress Load 1-4,text,false,,312,457,4,4,http://localhost:3000/api/v1/courses/1/by-admin,6,0,1
+1777555817408,9,ADM_09_PlatformStats,200,OK,Enterprise Stress Load 1-4,text,true,,372,419,4,4,http://localhost:3000/api/v1/courses/stats/platform,9,0,0
+1777555817107,302,ADMIN_MODULE,,"Number of samples in transaction : 15, number of failing samples : 1",Enterprise Stress Load 1-4,,false,,29395,6469,4,4,null,300,8,11
+1777555817417,66,AUTH_02_SignIn_Teacher,200,OK,Enterprise Stress Load 1-4,text,true,,711,492,4,4,http://localhost:3000/api/v1/auth/sign-in,66,0,1
+1777555817484,26,CRS_07_CreateCourse,201,Created,Enterprise Stress Load 1-4,text,true,,630,557,4,4,http://localhost:3000/api/v1/courses,25,0,1
+1777555817510,33,CRS_08_UpdateCourse,200,OK,Enterprise Stress Load 1-4,text,true,,1015,470,4,4,http://localhost:3000/api/v1/courses/735,33,0,1
+1777555817543,3,MAT_01_Create,400,Bad Request,Enterprise Stress Load 1-4,text,false,,348,516,4,4,http://localhost:3000/api/v1/courses/735/materials,3,0,1
+1777555817547,4,MAT_02_GetAll,200,OK,Enterprise Stress Load 1-4,text,true,,294,426,4,4,http://localhost:3000/api/v1/courses/735/materials,4,0,0
+1777555817551,4,MAT_03_GetById,200,OK,Enterprise Stress Load 1-4,text,true,,294,427,4,4,http://localhost:3000/api/v1/courses/735/materials/,4,0,1
+1777555817555,2,MAT_04_Update,404,Not Found,Enterprise Stress Load 1-4,text,false,,337,481,4,4,http://localhost:3000/api/v1/courses/735/materials/,2,0,1
+1777555817558,2,CHAP_01_Create,400,Bad Request,Enterprise Stress Load 1-4,text,false,,391,497,4,4,http://localhost:3000/api/v1/courses/735/chapters,2,0,0
+1777555817561,4,CHAP_02_GetAll,200,OK,Enterprise Stress Load 1-4,text,true,,294,425,4,4,http://localhost:3000/api/v1/courses/735/chapters,4,0,1
+1777555817566,4,CHAP_03_GetById,200,OK,Enterprise Stress Load 1-4,text,true,,294,426,4,4,http://localhost:3000/api/v1/courses/735/chapters/,4,0,0
+1777555817570,2,CHAP_04_Update,404,Not Found,Enterprise Stress Load 1-4,text,false,,336,481,4,4,http://localhost:3000/api/v1/courses/735/chapters/,2,0,1
+1777555817473,100,AUTH_03_Register_Student,201,Created,Enterprise Stress Load 1-1,text,true,,460,585,4,4,http://localhost:3000/api/v1/auth/register,100,0,1
+1777555817573,2,EP_01_Create,404,Not Found,Enterprise Stress Load 1-4,text,false,,345,541,4,4,http://localhost:3000/api/v1/courses/735/chapters//episodes,1,0,1
+1777555817575,9,EP_02_GetAll,500,Internal Server Error,Enterprise Stress Load 1-4,text,false,,329,434,4,4,http://localhost:3000/api/v1/courses/735/chapters//episodes,9,0,1
+1777555817584,7,EP_03_GetById,500,Internal Server Error,Enterprise Stress Load 1-4,text,false,,329,435,4,4,http://localhost:3000/api/v1/courses/735/chapters//episodes/,7,0,1
+1777555817592,8,EP_04_Update,500,Internal Server Error,Enterprise Stress Load 1-4,text,false,,329,488,4,4,http://localhost:3000/api/v1/courses/735/chapters//episodes/,7,0,1
+1777555817600,2,QUIZ_01_CreateQuestion,404,Not Found,Enterprise Stress Load 1-4,text,false,,355,514,4,4,http://localhost:3000/api/v1/courses/735/chapters//episodes//questions,2,0,1
+1777555817602,2,QUIZ_02_GetAllQuestions,404,Not Found,Enterprise Stress Load 1-4,text,false,,354,444,4,4,http://localhost:3000/api/v1/courses/735/chapters//episodes//questions,1,0,1
+1777555817604,2,QUIZ_03_CreateAnswer,404,Not Found,Enterprise Stress Load 1-4,text,false,,363,528,4,4,http://localhost:3000/api/v1/courses/735/chapters//episodes//questions//answers,1,0,0
+1777555817606,2,QUIZ_04_GetAllAnswers,404,Not Found,Enterprise Stress Load 1-4,text,false,,362,452,4,4,http://localhost:3000/api/v1/courses/735/chapters//episodes//questions//answers,2,0,1
+1777555817608,3,EXAM_03_Create,400,Bad Request,Enterprise Stress Load 1-4,text,false,,442,561,4,4,http://localhost:3000/api/v1/exams,2,0,1
+1777555817611,6,EXAM_01_GetAll_Teacher,200,OK,Enterprise Stress Load 1-4,text,true,,294,410,4,4,http://localhost:3000/api/v1/exams,6,0,1
+1777555817618,6,EXAM_02_GetById_Teacher,200,OK,Enterprise Stress Load 1-4,text,true,,294,411,4,4,http://localhost:3000/api/v1/exams/,6,0,0
+1777555817624,2,EXAM_04_Update_Teacher,404,Not Found,Enterprise Stress Load 1-4,text,false,,321,466,4,4,http://localhost:3000/api/v1/exams/,2,0,1
+1777555817626,1,EXAM_05_CreateQuestion,404,Not Found,Enterprise Stress Load 1-4,text,false,,331,489,4,4,http://localhost:3000/api/v1/exams//questions,1,0,1
+1777555817628,2,EXAM_06_CreateAnswer,404,Not Found,Enterprise Stress Load 1-4,text,false,,339,504,4,4,http://localhost:3000/api/v1/exams//questions//answers,2,0,1
+1777555817630,9,EXAM_07_GetLeaderboard_Teacher,500,Internal Server Error,Enterprise Stress Load 1-4,text,false,,329,422,4,4,http://localhost:3000/api/v1/exams//leaderboard,9,0,1
+1777555817417,213,TEACHER_MODULE,,"Number of samples in transaction : 26, number of failing samples : 17",Enterprise Stress Load 1-4,,false,,10060,12297,4,4,null,207,9,21
+1777555818351,64,AUTH_04_SignIn_Student,200,OK,Enterprise Stress Load 1-1,text,true,,738,517,4,4,http://localhost:3000/api/v1/auth/sign-in,63,0,2
+1777555819387,84,AUTH_03_Register_Student,201,Created,Enterprise Stress Load 1-2,text,true,,460,585,4,4,http://localhost:3000/api/v1/auth/register,83,0,3
+1777555820108,61,AUTH_01_SignIn_Admin,200,OK,Enterprise Stress Load 1-5,text,true,,707,244,5,5,http://localhost:3000/api/v1/auth/sign-in,61,0,3
+1777555820170,6,AUTH_05_GetMe_Admin,200,OK,Enterprise Stress Load 1-5,text,true,,428,404,5,5,http://localhost:3000/api/v1/auth/me,5,0,0
+1777555820176,21,SUBJ_02_Create,201,Created,Enterprise Stress Load 1-5,text,true,,357,456,5,5,http://localhost:3000/api/v1/subjects,21,0,1
+1777555820197,6,SUBJ_01_GetAll,200,OK,Enterprise Stress Load 1-5,text,true,,11162,405,5,5,http://localhost:3000/api/v1/subjects,6,0,1
+1777555820203,24,SUBJ_03_Update,200,OK,Enterprise Stress Load 1-5,text,true,,370,464,5,5,http://localhost:3000/api/v1/subjects/1526,24,0,1
+1777555820228,19,SUBJ_04_Delete,200,OK,Enterprise Stress Load 1-5,text,true,,317,432,5,5,http://localhost:3000/api/v1/subjects/1526,19,0,0
+1777555820247,16,GRADE_02_Create,201,Created,Enterprise Stress Load 1-5,text,true,,362,461,5,5,http://localhost:3000/api/v1/grade-levels,15,0,1
+1777555820263,5,GRADE_01_GetAll,200,OK,Enterprise Stress Load 1-5,text,true,,10542,409,5,5,http://localhost:3000/api/v1/grade-levels,5,0,1
+1777555820268,23,GRADE_03_Update,200,OK,Enterprise Stress Load 1-5,text,true,,375,469,5,5,http://localhost:3000/api/v1/grade-levels/1514,23,0,1
+1777555820292,17,GRADE_04_Delete,200,OK,Enterprise Stress Load 1-5,text,true,,321,436,5,5,http://localhost:3000/api/v1/grade-levels/1514,17,0,0
+1777555820310,70,USER_05_CreateTeacher,201,Created,Enterprise Stress Load 1-5,text,true,,541,545,5,5,http://localhost:3000/api/v1/teachers,70,0,1
+1777555820381,6,USER_04_GetAllTeachers,200,OK,Enterprise Stress Load 1-5,text,true,,2611,405,5,5,http://localhost:3000/api/v1/teachers,6,0,0
+1777555820388,25,USER_06_UpdateTeacher,200,OK,Enterprise Stress Load 1-5,text,true,,618,463,5,5,http://localhost:3000/api/v1/teachers/1999,25,0,1
+1777555820414,8,CRS_09_ApproveCourse,404,Not Found,Enterprise Stress Load 1-5,text,false,,312,457,5,5,http://localhost:3000/api/v1/courses/1/by-admin,8,0,0
+1777555820422,10,ADM_09_PlatformStats,200,OK,Enterprise Stress Load 1-5,text,true,,372,419,5,5,http://localhost:3000/api/v1/courses/stats/platform,10,0,1
+1777555820108,317,ADMIN_MODULE,,"Number of samples in transaction : 15, number of failing samples : 1",Enterprise Stress Load 1-5,,false,,29395,6469,5,5,null,315,7,12
+1777555820432,57,AUTH_02_SignIn_Teacher,200,OK,Enterprise Stress Load 1-5,text,true,,711,492,5,5,http://localhost:3000/api/v1/auth/sign-in,57,0,1
+1777555820489,17,CRS_07_CreateCourse,201,Created,Enterprise Stress Load 1-5,text,true,,630,557,5,5,http://localhost:3000/api/v1/courses,17,0,1
+1777555820507,25,CRS_08_UpdateCourse,200,OK,Enterprise Stress Load 1-5,text,true,,1015,470,5,5,http://localhost:3000/api/v1/courses/736,25,0,0
+1777555820532,2,MAT_01_Create,400,Bad Request,Enterprise Stress Load 1-5,text,false,,348,516,5,5,http://localhost:3000/api/v1/courses/736/materials,2,0,1
+1777555820535,4,MAT_02_GetAll,200,OK,Enterprise Stress Load 1-5,text,true,,294,426,5,5,http://localhost:3000/api/v1/courses/736/materials,3,0,0
+1777555820539,3,MAT_03_GetById,200,OK,Enterprise Stress Load 1-5,text,true,,294,427,5,5,http://localhost:3000/api/v1/courses/736/materials/,3,0,1
+1777555820543,2,MAT_04_Update,404,Not Found,Enterprise Stress Load 1-5,text,false,,337,481,5,5,http://localhost:3000/api/v1/courses/736/materials/,1,0,1
+1777555820545,2,CHAP_01_Create,400,Bad Request,Enterprise Stress Load 1-5,text,false,,391,497,5,5,http://localhost:3000/api/v1/courses/736/chapters,2,0,0
+1777555820547,4,CHAP_02_GetAll,200,OK,Enterprise Stress Load 1-5,text,true,,294,425,5,5,http://localhost:3000/api/v1/courses/736/chapters,4,0,1
+1777555820551,4,CHAP_03_GetById,200,OK,Enterprise Stress Load 1-5,text,true,,294,426,5,5,http://localhost:3000/api/v1/courses/736/chapters/,4,0,1
+1777555820555,2,CHAP_04_Update,404,Not Found,Enterprise Stress Load 1-5,text,false,,336,481,5,5,http://localhost:3000/api/v1/courses/736/chapters/,2,0,1
+1777555820557,2,EP_01_Create,404,Not Found,Enterprise Stress Load 1-5,text,false,,345,541,5,5,http://localhost:3000/api/v1/courses/736/chapters//episodes,2,0,1
+1777555820560,6,EP_02_GetAll,500,Internal Server Error,Enterprise Stress Load 1-5,text,false,,329,434,5,5,http://localhost:3000/api/v1/courses/736/chapters//episodes,6,0,0
+1777555820567,6,EP_03_GetById,500,Internal Server Error,Enterprise Stress Load 1-5,text,false,,329,435,5,5,http://localhost:3000/api/v1/courses/736/chapters//episodes/,6,0,0
+1777555820574,7,EP_04_Update,500,Internal Server Error,Enterprise Stress Load 1-5,text,false,,329,488,5,5,http://localhost:3000/api/v1/courses/736/chapters//episodes/,7,0,0
+1777555820582,1,QUIZ_01_CreateQuestion,404,Not Found,Enterprise Stress Load 1-5,text,false,,355,514,5,5,http://localhost:3000/api/v1/courses/736/chapters//episodes//questions,1,0,0
+1777555820583,2,QUIZ_02_GetAllQuestions,404,Not Found,Enterprise Stress Load 1-5,text,false,,354,444,5,5,http://localhost:3000/api/v1/courses/736/chapters//episodes//questions,2,0,1
+1777555820585,2,QUIZ_03_CreateAnswer,404,Not Found,Enterprise Stress Load 1-5,text,false,,363,528,5,5,http://localhost:3000/api/v1/courses/736/chapters//episodes//questions//answers,2,0,1
+1777555820587,2,QUIZ_04_GetAllAnswers,404,Not Found,Enterprise Stress Load 1-5,text,false,,362,452,5,5,http://localhost:3000/api/v1/courses/736/chapters//episodes//questions//answers,2,0,1
+1777555820589,3,EXAM_03_Create,400,Bad Request,Enterprise Stress Load 1-5,text,false,,442,561,5,5,http://localhost:3000/api/v1/exams,3,0,1
+1777555820592,7,EXAM_01_GetAll_Teacher,200,OK,Enterprise Stress Load 1-5,text,true,,294,410,5,5,http://localhost:3000/api/v1/exams,7,0,1
+1777555820599,6,EXAM_02_GetById_Teacher,200,OK,Enterprise Stress Load 1-5,text,true,,294,411,5,5,http://localhost:3000/api/v1/exams/,6,0,1
+1777555820605,2,EXAM_04_Update_Teacher,404,Not Found,Enterprise Stress Load 1-5,text,false,,321,466,5,5,http://localhost:3000/api/v1/exams/,2,0,1
+1777555820608,2,EXAM_05_CreateQuestion,404,Not Found,Enterprise Stress Load 1-5,text,false,,331,489,5,5,http://localhost:3000/api/v1/exams//questions,2,0,0
+1777555820610,2,EXAM_06_CreateAnswer,404,Not Found,Enterprise Stress Load 1-5,text,false,,339,504,5,5,http://localhost:3000/api/v1/exams//questions//answers,2,0,1
+1777555820613,7,EXAM_07_GetLeaderboard_Teacher,500,Internal Server Error,Enterprise Stress Load 1-5,text,false,,329,422,5,5,http://localhost:3000/api/v1/exams//leaderboard,7,0,0
+1777555820432,179,TEACHER_MODULE,,"Number of samples in transaction : 26, number of failing samples : 17",Enterprise Stress Load 1-5,,false,,10060,12297,5,5,null,177,10,17
+1777555820692,84,Seed OTP Redis,200,OK,Enterprise Stress Load 1-3,text,true,,0,0,5,5,null,0,0,0
+1777555821259,3,Generate Rand Email,200,OK,Enterprise Stress Load 1-4,text,true,,0,0,5,5,null,0,0,0
+1777555821620,60,AUTH_04_SignIn_Student,200,OK,Enterprise Stress Load 1-2,text,true,,738,517,5,5,http://localhost:3000/api/v1/auth/sign-in,60,0,2
+1777555822282,79,AUTH_03_Register_Student,201,Created,Enterprise Stress Load 1-3,text,true,,460,585,5,5,http://localhost:3000/api/v1/auth/register,79,0,3
+1777555822769,6,AUTH_05_GetMe_Student,200,OK,Enterprise Stress Load 1-2,text,true,,446,436,5,5,http://localhost:3000/api/v1/auth/me,5,0,1
+1777555822805,7,AUTH_05_GetMe_Student,200,OK,Enterprise Stress Load 1-1,text,true,,446,436,5,5,http://localhost:3000/api/v1/auth/me,7,0,1
+1777555823096,2,Generate Rand Email,200,OK,Enterprise Stress Load 1-5,text,true,,0,0,5,5,null,0,0,0
+1777555823111,58,AUTH_01_SignIn_Admin,200,OK,Enterprise Stress Load 1-6,text,true,,707,244,6,6,http://localhost:3000/api/v1/auth/sign-in,58,0,1
+1777555823171,5,AUTH_05_GetMe_Admin,200,OK,Enterprise Stress Load 1-6,text,true,,428,404,6,6,http://localhost:3000/api/v1/auth/me,5,0,0
+1777555823176,36,SUBJ_02_Create,201,Created,Enterprise Stress Load 1-6,text,true,,357,456,6,6,http://localhost:3000/api/v1/subjects,36,0,1
+1777555823212,5,SUBJ_01_GetAll,200,OK,Enterprise Stress Load 1-6,text,true,,11162,405,6,6,http://localhost:3000/api/v1/subjects,5,0,1
+1777555823218,23,SUBJ_03_Update,200,OK,Enterprise Stress Load 1-6,text,true,,370,464,6,6,http://localhost:3000/api/v1/subjects/1527,23,0,0
+1777555823242,20,SUBJ_04_Delete,200,OK,Enterprise Stress Load 1-6,text,true,,317,432,6,6,http://localhost:3000/api/v1/subjects/1527,19,0,1
+1777555823262,18,GRADE_02_Create,201,Created,Enterprise Stress Load 1-6,text,true,,362,461,6,6,http://localhost:3000/api/v1/grade-levels,18,0,1
+1777555823280,5,GRADE_01_GetAll,200,OK,Enterprise Stress Load 1-6,text,true,,10542,409,6,6,http://localhost:3000/api/v1/grade-levels,5,0,1
+1777555823285,20,GRADE_03_Update,200,OK,Enterprise Stress Load 1-6,text,true,,375,469,6,6,http://localhost:3000/api/v1/grade-levels/1515,20,0,1
+1777555823305,17,GRADE_04_Delete,200,OK,Enterprise Stress Load 1-6,text,true,,321,436,6,6,http://localhost:3000/api/v1/grade-levels/1515,17,0,1
+1777555823322,73,USER_05_CreateTeacher,201,Created,Enterprise Stress Load 1-6,text,true,,541,545,6,6,http://localhost:3000/api/v1/teachers,72,0,1
+1777555823395,7,USER_04_GetAllTeachers,200,OK,Enterprise Stress Load 1-6,text,true,,2611,405,6,6,http://localhost:3000/api/v1/teachers,7,0,1
+1777555823402,17,USER_06_UpdateTeacher,200,OK,Enterprise Stress Load 1-6,text,true,,618,463,6,6,http://localhost:3000/api/v1/teachers/2001,17,0,1
+1777555823419,7,CRS_09_ApproveCourse,404,Not Found,Enterprise Stress Load 1-6,text,false,,312,457,6,6,http://localhost:3000/api/v1/courses/1/by-admin,7,0,1
+1777555823426,9,ADM_09_PlatformStats,200,OK,Enterprise Stress Load 1-6,text,true,,372,419,6,6,http://localhost:3000/api/v1/courses/stats/platform,9,0,1
+1777555823107,320,ADMIN_MODULE,,"Number of samples in transaction : 15, number of failing samples : 1",Enterprise Stress Load 1-6,,false,,29395,6469,6,6,null,318,7,13
+1777555823435,60,AUTH_02_SignIn_Teacher,200,OK,Enterprise Stress Load 1-6,text,true,,711,492,6,6,http://localhost:3000/api/v1/auth/sign-in,60,0,1
+1777555823496,14,CRS_07_CreateCourse,201,Created,Enterprise Stress Load 1-6,text,true,,630,557,6,6,http://localhost:3000/api/v1/courses,14,0,0
+1777555823511,34,CRS_08_UpdateCourse,200,OK,Enterprise Stress Load 1-6,text,true,,1015,470,6,6,http://localhost:3000/api/v1/courses/737,34,0,1
+1777555823546,2,MAT_01_Create,400,Bad Request,Enterprise Stress Load 1-6,text,false,,348,516,6,6,http://localhost:3000/api/v1/courses/737/materials,2,0,0
+1777555823549,4,MAT_02_GetAll,200,OK,Enterprise Stress Load 1-6,text,true,,294,426,6,6,http://localhost:3000/api/v1/courses/737/materials,4,0,0
+1777555823553,4,MAT_03_GetById,200,OK,Enterprise Stress Load 1-6,text,true,,294,427,6,6,http://localhost:3000/api/v1/courses/737/materials/,4,0,1
+1777555823557,1,MAT_04_Update,404,Not Found,Enterprise Stress Load 1-6,text,false,,337,481,6,6,http://localhost:3000/api/v1/courses/737/materials/,1,0,1
+1777555823559,2,CHAP_01_Create,400,Bad Request,Enterprise Stress Load 1-6,text,false,,391,497,6,6,http://localhost:3000/api/v1/courses/737/chapters,2,0,0
+1777555823562,4,CHAP_02_GetAll,200,OK,Enterprise Stress Load 1-6,text,true,,294,425,6,6,http://localhost:3000/api/v1/courses/737/chapters,4,0,0
+1777555823566,4,CHAP_03_GetById,200,OK,Enterprise Stress Load 1-6,text,true,,294,426,6,6,http://localhost:3000/api/v1/courses/737/chapters/,4,0,1
+1777555823570,2,CHAP_04_Update,404,Not Found,Enterprise Stress Load 1-6,text,false,,336,481,6,6,http://localhost:3000/api/v1/courses/737/chapters/,2,0,1
+1777555823572,2,EP_01_Create,404,Not Found,Enterprise Stress Load 1-6,text,false,,345,541,6,6,http://localhost:3000/api/v1/courses/737/chapters//episodes,2,0,1
+1777555823574,7,EP_02_GetAll,500,Internal Server Error,Enterprise Stress Load 1-6,text,false,,329,434,6,6,http://localhost:3000/api/v1/courses/737/chapters//episodes,7,0,1
+1777555823582,7,EP_03_GetById,500,Internal Server Error,Enterprise Stress Load 1-6,text,false,,329,435,6,6,http://localhost:3000/api/v1/courses/737/chapters//episodes/,7,0,0
+1777555823589,8,EP_04_Update,500,Internal Server Error,Enterprise Stress Load 1-6,text,false,,329,488,6,6,http://localhost:3000/api/v1/courses/737/chapters//episodes/,8,0,1
+1777555823597,2,QUIZ_01_CreateQuestion,404,Not Found,Enterprise Stress Load 1-6,text,false,,355,514,6,6,http://localhost:3000/api/v1/courses/737/chapters//episodes//questions,2,0,1
+1777555823599,1,QUIZ_02_GetAllQuestions,404,Not Found,Enterprise Stress Load 1-6,text,false,,354,444,6,6,http://localhost:3000/api/v1/courses/737/chapters//episodes//questions,1,0,1
+1777555823601,1,QUIZ_03_CreateAnswer,404,Not Found,Enterprise Stress Load 1-6,text,false,,363,528,6,6,http://localhost:3000/api/v1/courses/737/chapters//episodes//questions//answers,1,0,0
+1777555823602,2,QUIZ_04_GetAllAnswers,404,Not Found,Enterprise Stress Load 1-6,text,false,,362,452,6,6,http://localhost:3000/api/v1/courses/737/chapters//episodes//questions//answers,2,0,1
+1777555823604,3,EXAM_03_Create,400,Bad Request,Enterprise Stress Load 1-6,text,false,,442,561,6,6,http://localhost:3000/api/v1/exams,3,0,1
+1777555823607,6,EXAM_01_GetAll_Teacher,200,OK,Enterprise Stress Load 1-6,text,true,,294,410,6,6,http://localhost:3000/api/v1/exams,6,0,1
+1777555823614,5,EXAM_02_GetById_Teacher,200,OK,Enterprise Stress Load 1-6,text,true,,294,411,6,6,http://localhost:3000/api/v1/exams/,5,0,0
+1777555823620,1,EXAM_04_Update_Teacher,404,Not Found,Enterprise Stress Load 1-6,text,false,,321,466,6,6,http://localhost:3000/api/v1/exams/,1,0,1
+1777555823622,1,EXAM_05_CreateQuestion,404,Not Found,Enterprise Stress Load 1-6,text,false,,331,489,6,6,http://localhost:3000/api/v1/exams//questions,1,0,0
+1777555823624,2,EXAM_06_CreateAnswer,404,Not Found,Enterprise Stress Load 1-6,text,false,,339,504,6,6,http://localhost:3000/api/v1/exams//questions//answers,2,0,1
+1777555823627,10,EXAM_07_GetLeaderboard_Teacher,500,Internal Server Error,Enterprise Stress Load 1-6,text,false,,329,422,6,6,http://localhost:3000/api/v1/exams//leaderboard,9,0,0
+1777555823435,189,TEACHER_MODULE,,"Number of samples in transaction : 26, number of failing samples : 17",Enterprise Stress Load 1-6,,false,,10060,12297,6,6,null,188,13,16
+1777555824362,70,Seed OTP Redis,200,OK,Enterprise Stress Load 1-4,text,true,,0,0,6,6,null,0,0,0
+1777555825016,13,CRS_01_GetApproved,200,OK,Enterprise Stress Load 1-2,text,true,,316,445,6,6,http://localhost:3000/api/v1/courses/approved,13,0,2
+1777555825949,10,CRS_01_GetApproved,200,OK,Enterprise Stress Load 1-1,text,true,,316,445,6,6,http://localhost:3000/api/v1/courses/approved,10,0,1
+1777555826107,63,AUTH_01_SignIn_Admin,200,OK,Enterprise Stress Load 1-7,text,true,,707,244,7,7,http://localhost:3000/api/v1/auth/sign-in,63,0,2
+1777555826171,6,AUTH_05_GetMe_Admin,200,OK,Enterprise Stress Load 1-7,text,true,,428,404,7,7,http://localhost:3000/api/v1/auth/me,6,0,1
+1777555826177,19,SUBJ_02_Create,201,Created,Enterprise Stress Load 1-7,text,true,,357,456,7,7,http://localhost:3000/api/v1/subjects,19,0,1
+1777555826197,4,SUBJ_01_GetAll,200,OK,Enterprise Stress Load 1-7,text,true,,11162,405,7,7,http://localhost:3000/api/v1/subjects,3,0,0
+1777555826201,19,SUBJ_03_Update,200,OK,Enterprise Stress Load 1-7,text,true,,370,464,7,7,http://localhost:3000/api/v1/subjects/1528,18,0,1
+1777555826220,17,SUBJ_04_Delete,200,OK,Enterprise Stress Load 1-7,text,true,,317,432,7,7,http://localhost:3000/api/v1/subjects/1528,17,0,1
+1777555826238,12,GRADE_02_Create,201,Created,Enterprise Stress Load 1-7,text,true,,362,461,7,7,http://localhost:3000/api/v1/grade-levels,12,0,0
+1777555826250,6,GRADE_01_GetAll,200,OK,Enterprise Stress Load 1-7,text,true,,10542,409,7,7,http://localhost:3000/api/v1/grade-levels,6,0,1
+1777555826256,22,GRADE_03_Update,200,OK,Enterprise Stress Load 1-7,text,true,,375,469,7,7,http://localhost:3000/api/v1/grade-levels/1516,22,0,1
+1777555826278,20,GRADE_04_Delete,200,OK,Enterprise Stress Load 1-7,text,true,,321,436,7,7,http://localhost:3000/api/v1/grade-levels/1516,20,0,1
+1777555826298,110,USER_05_CreateTeacher,201,Created,Enterprise Stress Load 1-7,text,true,,541,545,7,7,http://localhost:3000/api/v1/teachers,110,0,1
+1777555826409,11,USER_04_GetAllTeachers,200,OK,Enterprise Stress Load 1-7,text,true,,2611,405,7,7,http://localhost:3000/api/v1/teachers,11,0,2
+1777555826421,24,USER_06_UpdateTeacher,200,OK,Enterprise Stress Load 1-7,text,true,,618,463,7,7,http://localhost:3000/api/v1/teachers/2002,24,0,0
+1777555826445,9,CRS_09_ApproveCourse,404,Not Found,Enterprise Stress Load 1-7,text,false,,312,457,7,7,http://localhost:3000/api/v1/courses/1/by-admin,9,0,1
+1777555826454,16,ADM_09_PlatformStats,200,OK,Enterprise Stress Load 1-7,text,true,,372,419,7,7,http://localhost:3000/api/v1/courses/stats/platform,16,0,1
+1777555826106,358,ADMIN_MODULE,,"Number of samples in transaction : 15, number of failing samples : 1",Enterprise Stress Load 1-7,,false,,29395,6469,7,7,null,356,6,14
+1777555826453,80,AUTH_04_SignIn_Student,200,OK,Enterprise Stress Load 1-3,text,true,,738,517,7,7,http://localhost:3000/api/v1/auth/sign-in,80,0,1
+1777555826470,75,AUTH_02_SignIn_Teacher,200,OK,Enterprise Stress Load 1-7,text,true,,711,492,7,7,http://localhost:3000/api/v1/auth/sign-in,75,0,1
+1777555826546,18,CRS_07_CreateCourse,201,Created,Enterprise Stress Load 1-7,text,true,,630,557,7,7,http://localhost:3000/api/v1/courses,18,0,1
+1777555826564,26,CRS_08_UpdateCourse,200,OK,Enterprise Stress Load 1-7,text,true,,1015,470,7,7,http://localhost:3000/api/v1/courses/738,26,0,1
+1777555826590,4,MAT_01_Create,400,Bad Request,Enterprise Stress Load 1-7,text,false,,348,516,7,7,http://localhost:3000/api/v1/courses/738/materials,4,0,1
+1777555826594,5,MAT_02_GetAll,200,OK,Enterprise Stress Load 1-7,text,true,,294,426,7,7,http://localhost:3000/api/v1/courses/738/materials,4,0,1
+1777555826599,5,MAT_03_GetById,200,OK,Enterprise Stress Load 1-7,text,true,,294,427,7,7,http://localhost:3000/api/v1/courses/738/materials/,5,0,1
+1777555826604,2,MAT_04_Update,404,Not Found,Enterprise Stress Load 1-7,text,false,,337,481,7,7,http://localhost:3000/api/v1/courses/738/materials/,2,0,1
+1777555826607,3,CHAP_01_Create,400,Bad Request,Enterprise Stress Load 1-7,text,false,,391,497,7,7,http://localhost:3000/api/v1/courses/738/chapters,3,0,1
+1777555826610,4,CHAP_02_GetAll,200,OK,Enterprise Stress Load 1-7,text,true,,294,425,7,7,http://localhost:3000/api/v1/courses/738/chapters,4,0,1
+1777555826615,4,CHAP_03_GetById,200,OK,Enterprise Stress Load 1-7,text,true,,294,426,7,7,http://localhost:3000/api/v1/courses/738/chapters/,4,0,0
+1777555826619,2,CHAP_04_Update,404,Not Found,Enterprise Stress Load 1-7,text,false,,336,481,7,7,http://localhost:3000/api/v1/courses/738/chapters/,2,0,1
+1777555826621,2,EP_01_Create,404,Not Found,Enterprise Stress Load 1-7,text,false,,345,541,7,7,http://localhost:3000/api/v1/courses/738/chapters//episodes,2,0,1
+1777555826623,8,EP_02_GetAll,500,Internal Server Error,Enterprise Stress Load 1-7,text,false,,329,434,7,7,http://localhost:3000/api/v1/courses/738/chapters//episodes,8,0,1
+1777555826631,8,EP_03_GetById,500,Internal Server Error,Enterprise Stress Load 1-7,text,false,,329,435,7,7,http://localhost:3000/api/v1/courses/738/chapters//episodes/,8,0,1
+1777555826639,9,EP_04_Update,500,Internal Server Error,Enterprise Stress Load 1-7,text,false,,329,488,7,7,http://localhost:3000/api/v1/courses/738/chapters//episodes/,9,0,1
+1777555826648,2,QUIZ_01_CreateQuestion,404,Not Found,Enterprise Stress Load 1-7,text,false,,355,514,7,7,http://localhost:3000/api/v1/courses/738/chapters//episodes//questions,2,0,1
+1777555826651,2,QUIZ_02_GetAllQuestions,404,Not Found,Enterprise Stress Load 1-7,text,false,,354,444,7,7,http://localhost:3000/api/v1/courses/738/chapters//episodes//questions,1,0,0
+1777555826653,4,QUIZ_03_CreateAnswer,404,Not Found,Enterprise Stress Load 1-7,text,false,,363,528,7,7,http://localhost:3000/api/v1/courses/738/chapters//episodes//questions//answers,3,0,2
+1777555826658,4,QUIZ_04_GetAllAnswers,404,Not Found,Enterprise Stress Load 1-7,text,false,,362,452,7,7,http://localhost:3000/api/v1/courses/738/chapters//episodes//questions//answers,4,0,1
+1777555826663,5,EXAM_03_Create,400,Bad Request,Enterprise Stress Load 1-7,text,false,,442,561,7,7,http://localhost:3000/api/v1/exams,5,0,1
+1777555826669,7,EXAM_01_GetAll_Teacher,200,OK,Enterprise Stress Load 1-7,text,true,,294,410,7,7,http://localhost:3000/api/v1/exams,7,0,1
+1777555826677,9,EXAM_02_GetById_Teacher,200,OK,Enterprise Stress Load 1-7,text,true,,294,411,7,7,http://localhost:3000/api/v1/exams/,8,0,1
+1777555826686,3,EXAM_04_Update_Teacher,404,Not Found,Enterprise Stress Load 1-7,text,false,,321,466,7,7,http://localhost:3000/api/v1/exams/,2,0,1
+1777555826689,2,EXAM_05_CreateQuestion,404,Not Found,Enterprise Stress Load 1-7,text,false,,331,489,7,7,http://localhost:3000/api/v1/exams//questions,2,0,1
+1777555826692,2,EXAM_06_CreateAnswer,404,Not Found,Enterprise Stress Load 1-7,text,false,,339,504,7,7,http://localhost:3000/api/v1/exams//questions//answers,2,0,1
+1777555826694,10,EXAM_07_GetLeaderboard_Teacher,500,Internal Server Error,Enterprise Stress Load 1-7,text,false,,329,422,7,7,http://localhost:3000/api/v1/exams//leaderboard,10,0,1
+1777555826470,225,TEACHER_MODULE,,"Number of samples in transaction : 26, number of failing samples : 17",Enterprise Stress Load 1-7,,false,,10060,12297,7,7,null,220,9,25
+1777555826956,3,Generate Rand Email,200,OK,Enterprise Stress Load 1-6,text,true,,0,0,7,7,null,0,0,0
+1777555828093,8,CRS_02_Search,200,OK,Enterprise Stress Load 1-2,text,true,,351,458,7,7,http://localhost:3000/api/v1/courses/search?keyword=STRESS,7,0,1
+1777555828557,84,AUTH_03_Register_Student,201,Created,Enterprise Stress Load 1-4,text,true,,460,585,7,7,http://localhost:3000/api/v1/auth/register,84,0,1
+1777555829102,73,AUTH_01_SignIn_Admin,200,OK,Enterprise Stress Load 1-8,text,true,,707,244,8,8,http://localhost:3000/api/v1/auth/sign-in,73,0,1
+1777555829176,5,AUTH_05_GetMe_Admin,200,OK,Enterprise Stress Load 1-8,text,true,,428,404,8,8,http://localhost:3000/api/v1/auth/me,5,0,0
+1777555829182,18,SUBJ_02_Create,201,Created,Enterprise Stress Load 1-8,text,true,,357,456,8,8,http://localhost:3000/api/v1/subjects,18,0,0
+1777555829201,5,SUBJ_01_GetAll,200,OK,Enterprise Stress Load 1-8,text,true,,11162,405,8,8,http://localhost:3000/api/v1/subjects,5,0,1
+1777555829207,34,SUBJ_03_Update,200,OK,Enterprise Stress Load 1-8,text,true,,370,464,8,8,http://localhost:3000/api/v1/subjects/1529,34,0,1
+1777555829241,1,Generate Rand Email,200,OK,Enterprise Stress Load 1-7,text,true,,0,0,8,8,null,0,0,0
+1777555829241,26,SUBJ_04_Delete,200,OK,Enterprise Stress Load 1-8,text,true,,317,432,8,8,http://localhost:3000/api/v1/subjects/1529,26,0,1
+1777555829268,19,GRADE_02_Create,201,Created,Enterprise Stress Load 1-8,text,true,,362,461,8,8,http://localhost:3000/api/v1/grade-levels,19,0,1
+1777555829288,5,GRADE_01_GetAll,200,OK,Enterprise Stress Load 1-8,text,true,,10542,409,8,8,http://localhost:3000/api/v1/grade-levels,5,0,1
+1777555829294,29,GRADE_03_Update,200,OK,Enterprise Stress Load 1-8,text,true,,375,469,8,8,http://localhost:3000/api/v1/grade-levels/1517,29,0,0
+1777555829323,27,GRADE_04_Delete,200,OK,Enterprise Stress Load 1-8,text,true,,321,436,8,8,http://localhost:3000/api/v1/grade-levels/1517,26,0,1
+1777555829308,75,Seed OTP Redis,200,OK,Enterprise Stress Load 1-5,text,true,,0,0,8,8,null,0,0,0
+1777555829350,89,USER_05_CreateTeacher,201,Created,Enterprise Stress Load 1-8,text,true,,541,545,8,8,http://localhost:3000/api/v1/teachers,89,0,1
+1777555829440,7,USER_04_GetAllTeachers,200,OK,Enterprise Stress Load 1-8,text,true,,2611,405,8,8,http://localhost:3000/api/v1/teachers,7,0,0
+1777555829447,19,USER_06_UpdateTeacher,200,OK,Enterprise Stress Load 1-8,text,true,,618,463,8,8,http://localhost:3000/api/v1/teachers/2004,19,0,1
+1777555829466,7,CRS_09_ApproveCourse,404,Not Found,Enterprise Stress Load 1-8,text,false,,312,457,8,8,http://localhost:3000/api/v1/courses/1/by-admin,7,0,1
+1777555829474,10,ADM_09_PlatformStats,200,OK,Enterprise Stress Load 1-8,text,true,,372,419,8,8,http://localhost:3000/api/v1/courses/stats/platform,10,0,0
+1777555829102,373,ADMIN_MODULE,,"Number of samples in transaction : 15, number of failing samples : 1",Enterprise Stress Load 1-8,,false,,29395,6469,8,8,null,372,9,10
+1777555829484,69,AUTH_02_SignIn_Teacher,200,OK,Enterprise Stress Load 1-8,text,true,,711,492,8,8,http://localhost:3000/api/v1/auth/sign-in,69,0,1
+1777555829554,22,CRS_07_CreateCourse,201,Created,Enterprise Stress Load 1-8,text,true,,630,557,8,8,http://localhost:3000/api/v1/courses,22,0,1
+1777555829576,41,CRS_08_UpdateCourse,200,OK,Enterprise Stress Load 1-8,text,true,,1015,470,8,8,http://localhost:3000/api/v1/courses/739,40,0,1
+1777555829617,3,MAT_01_Create,400,Bad Request,Enterprise Stress Load 1-8,text,false,,348,516,8,8,http://localhost:3000/api/v1/courses/739/materials,3,0,1
+1777555829620,5,MAT_02_GetAll,200,OK,Enterprise Stress Load 1-8,text,true,,294,426,8,8,http://localhost:3000/api/v1/courses/739/materials,5,0,1
+1777555829625,5,MAT_03_GetById,200,OK,Enterprise Stress Load 1-8,text,true,,294,427,8,8,http://localhost:3000/api/v1/courses/739/materials/,5,0,1
+1777555829631,2,MAT_04_Update,404,Not Found,Enterprise Stress Load 1-8,text,false,,337,481,8,8,http://localhost:3000/api/v1/courses/739/materials/,2,0,1
+1777555829633,3,CHAP_01_Create,400,Bad Request,Enterprise Stress Load 1-8,text,false,,391,497,8,8,http://localhost:3000/api/v1/courses/739/chapters,3,0,1
+1777555829636,5,CHAP_02_GetAll,200,OK,Enterprise Stress Load 1-8,text,true,,294,425,8,8,http://localhost:3000/api/v1/courses/739/chapters,5,0,1
+1777555829642,4,CHAP_03_GetById,200,OK,Enterprise Stress Load 1-8,text,true,,294,426,8,8,http://localhost:3000/api/v1/courses/739/chapters/,4,0,0
+1777555829646,2,CHAP_04_Update,404,Not Found,Enterprise Stress Load 1-8,text,false,,336,481,8,8,http://localhost:3000/api/v1/courses/739/chapters/,2,0,1
+1777555829648,2,EP_01_Create,404,Not Found,Enterprise Stress Load 1-8,text,false,,345,541,8,8,http://localhost:3000/api/v1/courses/739/chapters//episodes,2,0,1
+1777555829650,8,EP_02_GetAll,500,Internal Server Error,Enterprise Stress Load 1-8,text,false,,329,434,8,8,http://localhost:3000/api/v1/courses/739/chapters//episodes,8,0,1
+1777555829658,7,EP_03_GetById,500,Internal Server Error,Enterprise Stress Load 1-8,text,false,,329,435,8,8,http://localhost:3000/api/v1/courses/739/chapters//episodes/,7,0,1
+1777555829666,8,EP_04_Update,500,Internal Server Error,Enterprise Stress Load 1-8,text,false,,329,488,8,8,http://localhost:3000/api/v1/courses/739/chapters//episodes/,8,0,0
+1777555829674,2,QUIZ_01_CreateQuestion,404,Not Found,Enterprise Stress Load 1-8,text,false,,355,514,8,8,http://localhost:3000/api/v1/courses/739/chapters//episodes//questions,2,0,1
+1777555829676,2,QUIZ_02_GetAllQuestions,404,Not Found,Enterprise Stress Load 1-8,text,false,,354,444,8,8,http://localhost:3000/api/v1/courses/739/chapters//episodes//questions,2,0,1
+1777555829679,2,QUIZ_03_CreateAnswer,404,Not Found,Enterprise Stress Load 1-8,text,false,,363,528,8,8,http://localhost:3000/api/v1/courses/739/chapters//episodes//questions//answers,1,0,0
+1777555829681,2,QUIZ_04_GetAllAnswers,404,Not Found,Enterprise Stress Load 1-8,text,false,,362,452,8,8,http://localhost:3000/api/v1/courses/739/chapters//episodes//questions//answers,2,0,1
+1777555829683,4,EXAM_03_Create,400,Bad Request,Enterprise Stress Load 1-8,text,false,,442,561,8,8,http://localhost:3000/api/v1/exams,3,0,1
+1777555829687,6,EXAM_01_GetAll_Teacher,200,OK,Enterprise Stress Load 1-8,text,true,,294,410,8,8,http://localhost:3000/api/v1/exams,6,0,1
+1777555829694,6,EXAM_02_GetById_Teacher,200,OK,Enterprise Stress Load 1-8,text,true,,294,411,8,8,http://localhost:3000/api/v1/exams/,6,0,1
+1777555829700,2,EXAM_04_Update_Teacher,404,Not Found,Enterprise Stress Load 1-8,text,false,,321,466,8,8,http://localhost:3000/api/v1/exams/,2,0,1
+1777555829703,2,EXAM_05_CreateQuestion,404,Not Found,Enterprise Stress Load 1-8,text,false,,331,489,8,8,http://localhost:3000/api/v1/exams//questions,1,0,1
+1777555829705,3,EXAM_06_CreateAnswer,404,Not Found,Enterprise Stress Load 1-8,text,false,,339,504,8,8,http://localhost:3000/api/v1/exams//questions//answers,2,0,1
+1777555829708,9,EXAM_07_GetLeaderboard_Teacher,500,Internal Server Error,Enterprise Stress Load 1-8,text,false,,329,422,8,8,http://localhost:3000/api/v1/exams//leaderboard,9,0,0
+1777555829484,226,TEACHER_MODULE,,"Number of samples in transaction : 26, number of failing samples : 17",Enterprise Stress Load 1-8,,false,,10060,12297,8,8,null,221,7,22
+1777555830260,61,Seed OTP Redis,200,OK,Enterprise Stress Load 1-7,text,true,,0,0,8,8,null,0,0,0
+1777555831343,63,AUTH_04_SignIn_Student,200,OK,Enterprise Stress Load 1-4,text,true,,738,517,8,8,http://localhost:3000/api/v1/auth/sign-in,63,0,1
+1777555831885,8,AUTH_05_GetMe_Student,200,OK,Enterprise Stress Load 1-3,text,true,,446,436,8,8,http://localhost:3000/api/v1/auth/me,7,0,1
+1777555832076,87,AUTH_03_Register_Student,201,Created,Enterprise Stress Load 1-5,text,true,,460,585,9,9,http://localhost:3000/api/v1/auth/register,86,0,0
+1777555832100,71,AUTH_01_SignIn_Admin,200,OK,Enterprise Stress Load 1-9,text,true,,707,244,9,9,http://localhost:3000/api/v1/auth/sign-in,71,0,1
+1777555832172,6,CRS_03_Featured,200,OK,Enterprise Stress Load 1-2,text,true,,306,453,9,9,http://localhost:3000/api/v1/courses/featured/courses,6,0,0
+1777555832172,7,AUTH_05_GetMe_Admin,200,OK,Enterprise Stress Load 1-9,text,true,,428,404,9,9,http://localhost:3000/api/v1/auth/me,7,0,0
+1777555832179,18,SUBJ_02_Create,201,Created,Enterprise Stress Load 1-9,text,true,,357,456,9,9,http://localhost:3000/api/v1/subjects,17,0,1
+1777555832197,5,SUBJ_01_GetAll,200,OK,Enterprise Stress Load 1-9,text,true,,11162,405,9,9,http://localhost:3000/api/v1/subjects,5,0,1
+1777555832203,29,SUBJ_03_Update,200,OK,Enterprise Stress Load 1-9,text,true,,370,464,9,9,http://localhost:3000/api/v1/subjects/1530,29,0,1
+1777555832233,25,SUBJ_04_Delete,200,OK,Enterprise Stress Load 1-9,text,true,,317,432,9,9,http://localhost:3000/api/v1/subjects/1530,25,0,1
+1777555832259,19,GRADE_02_Create,201,Created,Enterprise Stress Load 1-9,text,true,,362,461,9,9,http://localhost:3000/api/v1/grade-levels,19,0,1
+1777555832278,5,GRADE_01_GetAll,200,OK,Enterprise Stress Load 1-9,text,true,,10542,409,9,9,http://localhost:3000/api/v1/grade-levels,5,0,1
+1777555832283,25,GRADE_03_Update,200,OK,Enterprise Stress Load 1-9,text,true,,375,469,9,9,http://localhost:3000/api/v1/grade-levels/1518,25,0,1
+1777555832327,8,CRS_02_Search,200,OK,Enterprise Stress Load 1-1,text,true,,351,458,9,9,http://localhost:3000/api/v1/courses/search?keyword=STRESS,8,0,1
+1777555832308,36,GRADE_04_Delete,200,OK,Enterprise Stress Load 1-9,text,true,,321,436,9,9,http://localhost:3000/api/v1/grade-levels/1518,35,0,1
+1777555832344,88,USER_05_CreateTeacher,201,Created,Enterprise Stress Load 1-9,text,true,,541,545,9,9,http://localhost:3000/api/v1/teachers,88,0,1
+1777555832433,9,USER_04_GetAllTeachers,200,OK,Enterprise Stress Load 1-9,text,true,,2611,405,9,9,http://localhost:3000/api/v1/teachers,8,0,0
+1777555832442,21,USER_06_UpdateTeacher,200,OK,Enterprise Stress Load 1-9,text,true,,618,463,9,9,http://localhost:3000/api/v1/teachers/2006,21,0,1
+1777555832464,8,CRS_09_ApproveCourse,404,Not Found,Enterprise Stress Load 1-9,text,false,,312,457,9,9,http://localhost:3000/api/v1/courses/1/by-admin,7,0,1
+1777555832472,12,ADM_09_PlatformStats,200,OK,Enterprise Stress Load 1-9,text,true,,372,419,9,9,http://localhost:3000/api/v1/courses/stats/platform,12,0,1
+1777555832100,378,ADMIN_MODULE,,"Number of samples in transaction : 15, number of failing samples : 1",Enterprise Stress Load 1-9,,false,,29395,6469,9,9,null,374,6,13
+1777555832484,73,AUTH_02_SignIn_Teacher,200,OK,Enterprise Stress Load 1-9,text,true,,711,492,9,9,http://localhost:3000/api/v1/auth/sign-in,72,0,1
+1777555832557,21,CRS_07_CreateCourse,201,Created,Enterprise Stress Load 1-9,text,true,,630,557,9,9,http://localhost:3000/api/v1/courses,20,0,1
+1777555832578,34,CRS_08_UpdateCourse,200,OK,Enterprise Stress Load 1-9,text,true,,1015,470,9,9,http://localhost:3000/api/v1/courses/740,34,0,1
+1777555832612,3,MAT_01_Create,400,Bad Request,Enterprise Stress Load 1-9,text,false,,348,516,9,9,http://localhost:3000/api/v1/courses/740/materials,3,0,1
+1777555832616,4,MAT_02_GetAll,200,OK,Enterprise Stress Load 1-9,text,true,,294,426,9,9,http://localhost:3000/api/v1/courses/740/materials,4,0,1
+1777555832620,6,MAT_03_GetById,200,OK,Enterprise Stress Load 1-9,text,true,,294,427,9,9,http://localhost:3000/api/v1/courses/740/materials/,6,0,1
+1777555832626,3,MAT_04_Update,404,Not Found,Enterprise Stress Load 1-9,text,false,,337,481,9,9,http://localhost:3000/api/v1/courses/740/materials/,2,0,1
+1777555832629,3,CHAP_01_Create,400,Bad Request,Enterprise Stress Load 1-9,text,false,,391,497,9,9,http://localhost:3000/api/v1/courses/740/chapters,3,0,1
+1777555832632,4,CHAP_02_GetAll,200,OK,Enterprise Stress Load 1-9,text,true,,294,425,9,9,http://localhost:3000/api/v1/courses/740/chapters,4,0,1
+1777555832636,4,CHAP_03_GetById,200,OK,Enterprise Stress Load 1-9,text,true,,294,426,9,9,http://localhost:3000/api/v1/courses/740/chapters/,4,0,1
+1777555832641,1,CHAP_04_Update,404,Not Found,Enterprise Stress Load 1-9,text,false,,336,481,9,9,http://localhost:3000/api/v1/courses/740/chapters/,1,0,0
+1777555832643,2,EP_01_Create,404,Not Found,Enterprise Stress Load 1-9,text,false,,345,541,9,9,http://localhost:3000/api/v1/courses/740/chapters//episodes,1,0,0
+1777555832645,6,EP_02_GetAll,500,Internal Server Error,Enterprise Stress Load 1-9,text,false,,329,434,9,9,http://localhost:3000/api/v1/courses/740/chapters//episodes,6,0,1
+1777555832652,8,EP_03_GetById,500,Internal Server Error,Enterprise Stress Load 1-9,text,false,,329,435,9,9,http://localhost:3000/api/v1/courses/740/chapters//episodes/,8,0,0
+1777555832660,8,EP_04_Update,500,Internal Server Error,Enterprise Stress Load 1-9,text,false,,329,488,9,9,http://localhost:3000/api/v1/courses/740/chapters//episodes/,8,0,1
+1777555832669,2,QUIZ_01_CreateQuestion,404,Not Found,Enterprise Stress Load 1-9,text,false,,355,514,9,9,http://localhost:3000/api/v1/courses/740/chapters//episodes//questions,1,0,0
+1777555832671,2,QUIZ_02_GetAllQuestions,404,Not Found,Enterprise Stress Load 1-9,text,false,,354,444,9,9,http://localhost:3000/api/v1/courses/740/chapters//episodes//questions,2,0,1
+1777555832673,2,QUIZ_03_CreateAnswer,404,Not Found,Enterprise Stress Load 1-9,text,false,,363,528,9,9,http://localhost:3000/api/v1/courses/740/chapters//episodes//questions//answers,1,0,1
+1777555832675,2,QUIZ_04_GetAllAnswers,404,Not Found,Enterprise Stress Load 1-9,text,false,,362,452,9,9,http://localhost:3000/api/v1/courses/740/chapters//episodes//questions//answers,2,0,1
+1777555832677,3,EXAM_03_Create,400,Bad Request,Enterprise Stress Load 1-9,text,false,,442,561,9,9,http://localhost:3000/api/v1/exams,3,0,1
+1777555832680,6,EXAM_01_GetAll_Teacher,200,OK,Enterprise Stress Load 1-9,text,true,,294,410,9,9,http://localhost:3000/api/v1/exams,6,0,1
+1777555832686,6,EXAM_02_GetById_Teacher,200,OK,Enterprise Stress Load 1-9,text,true,,294,411,9,9,http://localhost:3000/api/v1/exams/,6,0,1
+1777555832692,2,EXAM_04_Update_Teacher,404,Not Found,Enterprise Stress Load 1-9,text,false,,321,466,9,9,http://localhost:3000/api/v1/exams/,2,0,1
+1777555832694,2,EXAM_05_CreateQuestion,404,Not Found,Enterprise Stress Load 1-9,text,false,,331,489,9,9,http://localhost:3000/api/v1/exams//questions,2,0,1
+1777555832696,2,EXAM_06_CreateAnswer,404,Not Found,Enterprise Stress Load 1-9,text,false,,339,504,9,9,http://localhost:3000/api/v1/exams//questions//answers,2,0,1
+1777555832698,8,EXAM_07_GetLeaderboard_Teacher,500,Internal Server Error,Enterprise Stress Load 1-9,text,false,,329,422,9,9,http://localhost:3000/api/v1/exams//leaderboard,8,0,1
+1777555832484,217,TEACHER_MODULE,,"Number of samples in transaction : 26, number of failing samples : 17",Enterprise Stress Load 1-9,,false,,10060,12297,9,9,null,211,5,22
+1777555834637,82,Seed OTP Redis,200,OK,Enterprise Stress Load 1-6,text,true,,0,0,9,9,null,0,0,0
+1777555835099,69,AUTH_01_SignIn_Admin,200,OK,Enterprise Stress Load 1-10,text,true,,707,244,10,10,http://localhost:3000/api/v1/auth/sign-in,69,0,1
+1777555835169,5,AUTH_05_GetMe_Admin,200,OK,Enterprise Stress Load 1-10,text,true,,428,404,10,10,http://localhost:3000/api/v1/auth/me,4,0,0
+1777555835174,17,SUBJ_02_Create,201,Created,Enterprise Stress Load 1-10,text,true,,357,456,10,10,http://localhost:3000/api/v1/subjects,17,0,1
+1777555835192,4,SUBJ_01_GetAll,200,OK,Enterprise Stress Load 1-10,text,true,,11162,405,10,10,http://localhost:3000/api/v1/subjects,4,0,1
+1777555835196,22,SUBJ_03_Update,200,OK,Enterprise Stress Load 1-10,text,true,,370,464,10,10,http://localhost:3000/api/v1/subjects/1531,22,0,1
+1777555835218,20,SUBJ_04_Delete,200,OK,Enterprise Stress Load 1-10,text,true,,317,432,10,10,http://localhost:3000/api/v1/subjects/1531,20,0,1
+1777555835239,16,GRADE_02_Create,201,Created,Enterprise Stress Load 1-10,text,true,,362,461,10,10,http://localhost:3000/api/v1/grade-levels,16,0,0
+1777555835255,5,GRADE_01_GetAll,200,OK,Enterprise Stress Load 1-10,text,true,,10542,409,10,10,http://localhost:3000/api/v1/grade-levels,5,0,1
+1777555835260,23,GRADE_03_Update,200,OK,Enterprise Stress Load 1-10,text,true,,375,469,10,10,http://localhost:3000/api/v1/grade-levels/1519,22,0,1
+1777555835283,20,GRADE_04_Delete,200,OK,Enterprise Stress Load 1-10,text,true,,321,436,10,10,http://localhost:3000/api/v1/grade-levels/1519,20,0,1
+1777555835366,0,Generate Rand Email,200,OK,Enterprise Stress Load 1-8,text,true,,0,0,10,10,null,0,0,0
+1777555835303,77,USER_05_CreateTeacher,201,Created,Enterprise Stress Load 1-10,text,true,,541,545,10,10,http://localhost:3000/api/v1/teachers,77,0,1
+1777555835381,8,USER_04_GetAllTeachers,200,OK,Enterprise Stress Load 1-10,text,true,,2611,405,10,10,http://localhost:3000/api/v1/teachers,8,0,0
+1777555835390,17,USER_06_UpdateTeacher,200,OK,Enterprise Stress Load 1-10,text,true,,618,463,10,10,http://localhost:3000/api/v1/teachers/2007,17,0,0
+1777555835408,6,CRS_09_ApproveCourse,404,Not Found,Enterprise Stress Load 1-10,text,false,,312,457,10,10,http://localhost:3000/api/v1/courses/1/by-admin,6,0,0
+1777555835414,10,ADM_09_PlatformStats,200,OK,Enterprise Stress Load 1-10,text,true,,372,419,10,10,http://localhost:3000/api/v1/courses/stats/platform,10,0,1
+1777555835098,319,ADMIN_MODULE,,"Number of samples in transaction : 15, number of failing samples : 1",Enterprise Stress Load 1-10,,false,,29395,6469,10,10,null,317,7,10
+1777555835424,70,AUTH_02_SignIn_Teacher,200,OK,Enterprise Stress Load 1-10,text,true,,711,492,10,10,http://localhost:3000/api/v1/auth/sign-in,70,0,1
+1777555835495,23,CRS_07_CreateCourse,201,Created,Enterprise Stress Load 1-10,text,true,,630,557,10,10,http://localhost:3000/api/v1/courses,22,0,1
+1777555835518,40,CRS_08_UpdateCourse,200,OK,Enterprise Stress Load 1-10,text,true,,1015,470,10,10,http://localhost:3000/api/v1/courses/741,40,0,1
+1777555835559,3,MAT_01_Create,400,Bad Request,Enterprise Stress Load 1-10,text,false,,348,516,10,10,http://localhost:3000/api/v1/courses/741/materials,3,0,1
+1777555835563,5,MAT_02_GetAll,200,OK,Enterprise Stress Load 1-10,text,true,,294,426,10,10,http://localhost:3000/api/v1/courses/741/materials,4,0,0
+1777555835568,6,MAT_03_GetById,200,OK,Enterprise Stress Load 1-10,text,true,,294,427,10,10,http://localhost:3000/api/v1/courses/741/materials/,5,0,1
+1777555835574,2,MAT_04_Update,404,Not Found,Enterprise Stress Load 1-10,text,false,,337,481,10,10,http://localhost:3000/api/v1/courses/741/materials/,2,0,1
+1777555835576,4,CHAP_01_Create,400,Bad Request,Enterprise Stress Load 1-10,text,false,,391,497,10,10,http://localhost:3000/api/v1/courses/741/chapters,4,0,1
+1777555835580,6,CHAP_02_GetAll,200,OK,Enterprise Stress Load 1-10,text,true,,294,425,10,10,http://localhost:3000/api/v1/courses/741/chapters,6,0,1
+1777555835586,5,CHAP_03_GetById,200,OK,Enterprise Stress Load 1-10,text,true,,294,426,10,10,http://localhost:3000/api/v1/courses/741/chapters/,5,0,1
+1777555835592,2,CHAP_04_Update,404,Not Found,Enterprise Stress Load 1-10,text,false,,336,481,10,10,http://localhost:3000/api/v1/courses/741/chapters/,1,0,0
+1777555835594,2,EP_01_Create,404,Not Found,Enterprise Stress Load 1-10,text,false,,345,541,10,10,http://localhost:3000/api/v1/courses/741/chapters//episodes,2,0,1
+1777555835597,8,EP_02_GetAll,500,Internal Server Error,Enterprise Stress Load 1-10,text,false,,329,434,10,10,http://localhost:3000/api/v1/courses/741/chapters//episodes,8,0,0
+1777555835605,9,EP_03_GetById,500,Internal Server Error,Enterprise Stress Load 1-10,text,false,,329,435,10,10,http://localhost:3000/api/v1/courses/741/chapters//episodes/,9,0,1
+1777555835615,9,EP_04_Update,500,Internal Server Error,Enterprise Stress Load 1-10,text,false,,329,488,10,10,http://localhost:3000/api/v1/courses/741/chapters//episodes/,9,0,1
+1777555835624,2,QUIZ_01_CreateQuestion,404,Not Found,Enterprise Stress Load 1-10,text,false,,355,514,10,10,http://localhost:3000/api/v1/courses/741/chapters//episodes//questions,2,0,1
+1777555835627,2,QUIZ_02_GetAllQuestions,404,Not Found,Enterprise Stress Load 1-10,text,false,,354,444,10,10,http://localhost:3000/api/v1/courses/741/chapters//episodes//questions,1,0,0
+1777555835629,2,QUIZ_03_CreateAnswer,404,Not Found,Enterprise Stress Load 1-10,text,false,,363,528,10,10,http://localhost:3000/api/v1/courses/741/chapters//episodes//questions//answers,2,0,1
+1777555835631,2,QUIZ_04_GetAllAnswers,404,Not Found,Enterprise Stress Load 1-10,text,false,,362,452,10,10,http://localhost:3000/api/v1/courses/741/chapters//episodes//questions//answers,2,0,1
+1777555835633,3,EXAM_03_Create,400,Bad Request,Enterprise Stress Load 1-10,text,false,,442,561,10,10,http://localhost:3000/api/v1/exams,3,0,1
+1777555835636,6,EXAM_01_GetAll_Teacher,200,OK,Enterprise Stress Load 1-10,text,true,,294,410,10,10,http://localhost:3000/api/v1/exams,6,0,1
+1777555835643,5,EXAM_02_GetById_Teacher,200,OK,Enterprise Stress Load 1-10,text,true,,294,411,10,10,http://localhost:3000/api/v1/exams/,5,0,0
+1777555835648,2,EXAM_04_Update_Teacher,404,Not Found,Enterprise Stress Load 1-10,text,false,,321,466,10,10,http://localhost:3000/api/v1/exams/,2,0,1
+1777555835650,2,EXAM_05_CreateQuestion,404,Not Found,Enterprise Stress Load 1-10,text,false,,331,489,10,10,http://localhost:3000/api/v1/exams//questions,2,0,1
+1777555835652,2,EXAM_06_CreateAnswer,404,Not Found,Enterprise Stress Load 1-10,text,false,,339,504,10,10,http://localhost:3000/api/v1/exams//questions//answers,2,0,1
+1777555835654,18,EXAM_07_GetLeaderboard_Teacher,500,Internal Server Error,Enterprise Stress Load 1-10,text,false,,329,422,10,10,http://localhost:3000/api/v1/exams//leaderboard,18,0,1
+1777555835424,240,TEACHER_MODULE,,"Number of samples in transaction : 26, number of failing samples : 17",Enterprise Stress Load 1-10,,false,,10060,12297,10,10,null,235,8,21
+1777555835687,7,CRS_04_BySubject,200,OK,Enterprise Stress Load 1-2,text,true,,306,446,10,10,http://localhost:3000/api/v1/courses/subject/1,7,0,1
+1777555835843,80,AUTH_03_Register_Student,201,Created,Enterprise Stress Load 1-7,text,true,,460,585,10,10,http://localhost:3000/api/v1/auth/register,80,0,1
+1777555836119,11,AUTH_05_GetMe_Student,200,OK,Enterprise Stress Load 1-4,text,true,,446,436,10,10,http://localhost:3000/api/v1/auth/me,10,0,2
+1777555836203,7,CRS_03_Featured,200,OK,Enterprise Stress Load 1-1,text,true,,306,453,10,10,http://localhost:3000/api/v1/courses/featured/courses,6,0,1
+1777555837272,11,CRS_04_BySubject,200,OK,Enterprise Stress Load 1-1,text,true,,306,446,10,10,http://localhost:3000/api/v1/courses/subject/1,10,0,3
+1777555837987,2,Generate Rand Email,200,OK,Enterprise Stress Load 1-10,text,true,,0,0,10,10,null,0,0,0
+1777555838042,70,AUTH_04_SignIn_Student,200,OK,Enterprise Stress Load 1-5,text,true,,738,517,10,10,http://localhost:3000/api/v1/auth/sign-in,69,0,2
+1777555838379,65,Seed OTP Redis,200,OK,Enterprise Stress Load 1-8,text,true,,0,0,10,10,null,0,0,0
+1777555838590,1,Generate Rand Email,200,OK,Enterprise Stress Load 1-9,text,true,,0,0,10,10,null,0,0,0
+1777555838788,8,CRS_01_GetApproved,200,OK,Enterprise Stress Load 1-3,text,true,,316,445,10,10,http://localhost:3000/api/v1/courses/approved,8,0,2
+1777555838994,12,CRS_01_GetApproved,200,OK,Enterprise Stress Load 1-4,text,true,,316,445,10,10,http://localhost:3000/api/v1/courses/approved,11,0,1
+1777555839178,80,AUTH_03_Register_Student,201,Created,Enterprise Stress Load 1-6,text,true,,460,585,10,10,http://localhost:3000/api/v1/auth/register,80,0,1
+1777555839279,106,AUTH_03_Register_Student,201,Created,Enterprise Stress Load 1-8,text,true,,460,585,10,10,http://localhost:3000/api/v1/auth/register,106,0,1
+1777555839842,29,USER_01_SearchTeachers,200,OK,Enterprise Stress Load 1-2,text,true,,3647,444,10,10,http://localhost:3000/api/v1/teachers/search,29,0,1
+1777555840312,71,Seed OTP Redis,200,OK,Enterprise Stress Load 1-9,text,true,,0,0,10,10,null,0,0,0
+1777555840851,89,Seed OTP Redis,200,OK,Enterprise Stress Load 1-10,text,true,,0,0,10,10,null,0,0,0
+1777555840968,54,USER_01_SearchTeachers,200,OK,Enterprise Stress Load 1-1,text,true,,3647,444,10,10,http://localhost:3000/api/v1/teachers/search,53,0,1
+1777555841680,10,CRS_02_Search,200,OK,Enterprise Stress Load 1-4,text,true,,351,458,10,10,http://localhost:3000/api/v1/courses/search?keyword=STRESS,9,0,1
+1777555842358,70,AUTH_04_SignIn_Student,200,OK,Enterprise Stress Load 1-6,text,true,,738,517,10,10,http://localhost:3000/api/v1/auth/sign-in,70,0,3
+1777555842582,81,AUTH_04_SignIn_Student,200,OK,Enterprise Stress Load 1-8,text,true,,738,517,10,10,http://localhost:3000/api/v1/auth/sign-in,80,0,4
+1777555842779,11,CRS_02_Search,200,OK,Enterprise Stress Load 1-3,text,true,,351,458,10,10,http://localhost:3000/api/v1/courses/search?keyword=STRESS,11,0,2
+1777555842911,77,AUTH_03_Register_Student,201,Created,Enterprise Stress Load 1-9,text,true,,460,585,10,10,http://localhost:3000/api/v1/auth/register,76,0,2
+1777555843493,61,AUTH_04_SignIn_Student,200,OK,Enterprise Stress Load 1-7,text,true,,738,517,10,10,http://localhost:3000/api/v1/auth/sign-in,60,0,1
+1777555843694,83,AUTH_03_Register_Student,201,Created,Enterprise Stress Load 1-10,text,true,,460,585,10,10,http://localhost:3000/api/v1/auth/register,83,0,3
+1777555844316,6,AUTH_05_GetMe_Student,200,OK,Enterprise Stress Load 1-5,text,true,,446,436,10,10,http://localhost:3000/api/v1/auth/me,6,0,1
+1777555844363,65,AUTH_04_SignIn_Student,200,OK,Enterprise Stress Load 1-9,text,true,,738,517,10,10,http://localhost:3000/api/v1/auth/sign-in,64,0,2
+1777555844650,28,USER_03_FeaturedTeachers,201,Created,Enterprise Stress Load 1-1,text,true,,542,504,10,10,http://localhost:3000/api/v1/teachers/featured,28,0,1
+1777555845095,27,USER_03_FeaturedTeachers,201,Created,Enterprise Stress Load 1-2,text,true,,542,504,10,10,http://localhost:3000/api/v1/teachers/featured,27,0,2
+1777555845529,10,AUTH_05_GetMe_Student,200,OK,Enterprise Stress Load 1-8,text,true,,446,436,10,10,http://localhost:3000/api/v1/auth/me,10,0,2
+1777555846936,10,CRS_03_Featured,200,OK,Enterprise Stress Load 1-4,text,true,,306,453,10,10,http://localhost:3000/api/v1/courses/featured/courses,10,0,2
+1777555847266,11,CRS_03_Featured,200,OK,Enterprise Stress Load 1-3,text,true,,306,453,10,10,http://localhost:3000/api/v1/courses/featured/courses,10,0,2
+1777555847674,9,AUTH_05_GetMe_Student,200,OK,Enterprise Stress Load 1-6,text,true,,446,436,10,10,http://localhost:3000/api/v1/auth/me,9,0,1
+1777555848433,8,CRS_01_GetApproved,200,OK,Enterprise Stress Load 1-5,text,true,,316,445,10,10,http://localhost:3000/api/v1/courses/approved,8,0,2
+1777555848468,12,CRS_04_BySubject,200,OK,Enterprise Stress Load 1-4,text,true,,306,446,10,10,http://localhost:3000/api/v1/courses/subject/1,11,0,1
+1777555848472,67,AUTH_04_SignIn_Student,200,OK,Enterprise Stress Load 1-10,text,true,,738,517,10,10,http://localhost:3000/api/v1/auth/sign-in,67,0,2
+1777555848833,7,CRS_01_GetApproved,200,OK,Enterprise Stress Load 1-8,text,true,,316,445,10,10,http://localhost:3000/api/v1/courses/approved,7,0,1
+1777555849433,12,CRS_06_GetCourseById_Student,404,Not Found,Enterprise Stress Load 1-2,text,false,,312,438,10,10,http://localhost:3000/api/v1/courses/1,12,0,1
+1777555849500,10,AUTH_05_GetMe_Student,200,OK,Enterprise Stress Load 1-9,text,true,,446,436,10,10,http://localhost:3000/api/v1/auth/me,10,0,2
+1777555849673,11,CRS_06_GetCourseById_Student,404,Not Found,Enterprise Stress Load 1-1,text,false,,312,438,10,10,http://localhost:3000/api/v1/courses/1,11,0,2
+1777555850056,10,AUTH_05_GetMe_Student,200,OK,Enterprise Stress Load 1-7,text,true,,446,436,10,10,http://localhost:3000/api/v1/auth/me,10,0,2
+1777555850957,14,CRS_02_Search,200,OK,Enterprise Stress Load 1-5,text,true,,351,458,10,10,http://localhost:3000/api/v1/courses/search?keyword=STRESS,14,0,2
+1777555852312,10,AUTH_05_GetMe_Student,200,OK,Enterprise Stress Load 1-10,text,true,,446,436,10,10,http://localhost:3000/api/v1/auth/me,10,0,2
+1777555852696,8,CRS_04_BySubject,200,OK,Enterprise Stress Load 1-3,text,true,,306,446,10,10,http://localhost:3000/api/v1/courses/subject/1,8,0,2
+1777555853086,6,ENR_02_EnrollCourse,400,Bad Request,Enterprise Stress Load 1-2,text,false,,366,470,10,10,http://localhost:3000/api/v1/courses/1/enrollments,6,0,2
+1777555853112,24,USER_01_SearchTeachers,200,OK,Enterprise Stress Load 1-4,text,true,,3647,444,10,10,http://localhost:3000/api/v1/teachers/search,24,0,1
+1777555853241,25,USER_01_SearchTeachers,200,OK,Enterprise Stress Load 1-3,text,true,,3647,444,10,10,http://localhost:3000/api/v1/teachers/search,24,0,3
+1777555853404,9,CRS_01_GetApproved,200,OK,Enterprise Stress Load 1-6,text,true,,316,445,10,10,http://localhost:3000/api/v1/courses/approved,9,0,1
+1777555854016,6,ENR_02_EnrollCourse,400,Bad Request,Enterprise Stress Load 1-1,text,false,,366,470,10,10,http://localhost:3000/api/v1/courses/1/enrollments,5,0,2
+1777555854098,103,USER_03_FeaturedTeachers,201,Created,Enterprise Stress Load 1-3,text,true,,542,504,10,10,http://localhost:3000/api/v1/teachers/featured,103,0,1
+1777555854536,5,CRS_01_GetApproved,200,OK,Enterprise Stress Load 1-9,text,true,,316,445,10,10,http://localhost:3000/api/v1/courses/approved,5,0,1
+1777555854703,7,CRS_01_GetApproved,200,OK,Enterprise Stress Load 1-7,text,true,,316,445,10,10,http://localhost:3000/api/v1/courses/approved,7,0,1
+1777555854704,7,CRS_02_Search,200,OK,Enterprise Stress Load 1-8,text,true,,351,458,10,10,http://localhost:3000/api/v1/courses/search?keyword=STRESS,7,0,1
+1777555854782,11,ENR_01_GetStudentEnrollments,200,OK,Enterprise Stress Load 1-2,text,true,,310,457,10,10,http://localhost:3000/api/v1/courses/students/enrollments,10,0,1
+1777555855238,11,CRS_01_GetApproved,200,OK,Enterprise Stress Load 1-10,text,true,,316,445,10,10,http://localhost:3000/api/v1/courses/approved,11,0,2
+1777555855507,11,CRS_02_Search,200,OK,Enterprise Stress Load 1-9,text,true,,351,458,10,10,http://localhost:3000/api/v1/courses/search?keyword=STRESS,10,0,1
+1777555855842,8,ENR_01_GetStudentEnrollments,200,OK,Enterprise Stress Load 1-1,text,true,,310,457,10,10,http://localhost:3000/api/v1/courses/students/enrollments,7,0,1
+1777555855949,11,CRS_02_Search,200,OK,Enterprise Stress Load 1-10,text,true,,351,458,10,10,http://localhost:3000/api/v1/courses/search?keyword=STRESS,11,0,2
+1777555856384,10,CRS_06_GetCourseById_Student,404,Not Found,Enterprise Stress Load 1-3,text,false,,312,438,10,10,http://localhost:3000/api/v1/courses/1,10,0,1
+1777555857460,11,CRS_02_Search,200,OK,Enterprise Stress Load 1-7,text,true,,351,458,10,10,http://localhost:3000/api/v1/courses/search?keyword=STRESS,10,0,2
+1777555857650,5,CRS_02_Search,200,OK,Enterprise Stress Load 1-6,text,true,,351,458,10,10,http://localhost:3000/api/v1/courses/search?keyword=STRESS,5,0,1
+1777555857663,4,CRS_03_Featured,200,OK,Enterprise Stress Load 1-8,text,true,,306,453,10,10,http://localhost:3000/api/v1/courses/featured/courses,4,0,1
+1777555857917,27,USER_03_FeaturedTeachers,201,Created,Enterprise Stress Load 1-4,text,true,,542,504,10,10,http://localhost:3000/api/v1/teachers/featured,27,0,2
+1777555858053,11,CRS_03_Featured,200,OK,Enterprise Stress Load 1-5,text,true,,306,453,10,10,http://localhost:3000/api/v1/courses/featured/courses,11,0,2
+1777555858650,7,CRS_03_Featured,200,OK,Enterprise Stress Load 1-7,text,true,,306,453,10,10,http://localhost:3000/api/v1/courses/featured/courses,7,0,1
+1777555858840,4,QZAT_01_Submit,400,Bad Request,Enterprise Stress Load 1-2,text,false,,371,507,10,10,http://localhost:3000/api/v1/quiz-attempts,3,0,2
+1777555858840,8,CRS_04_BySubject,200,OK,Enterprise Stress Load 1-5,text,true,,306,446,10,10,http://localhost:3000/api/v1/courses/subject/1,8,0,2
+1777555859087,8,CRS_03_Featured,200,OK,Enterprise Stress Load 1-9,text,true,,306,453,10,10,http://localhost:3000/api/v1/courses/featured/courses,8,0,2
+1777555859482,11,CRS_04_BySubject,200,OK,Enterprise Stress Load 1-8,text,true,,306,446,10,10,http://localhost:3000/api/v1/courses/subject/1,11,0,3
+1777555859749,5,QZAT_01_Submit,400,Bad Request,Enterprise Stress Load 1-1,text,false,,371,507,10,10,http://localhost:3000/api/v1/quiz-attempts,5,0,2
+1777555859870,10,CRS_06_GetCourseById_Student,404,Not Found,Enterprise Stress Load 1-4,text,false,,312,438,10,10,http://localhost:3000/api/v1/courses/1,10,0,1
+1777555860766,4,ENR_02_EnrollCourse,400,Bad Request,Enterprise Stress Load 1-3,text,false,,366,470,10,10,http://localhost:3000/api/v1/courses/1/enrollments,4,0,2
+1777555861255,12,CRS_04_BySubject,200,OK,Enterprise Stress Load 1-7,text,true,,306,446,10,10,http://localhost:3000/api/v1/courses/subject/1,12,0,3
+1777555861276,18,USER_01_SearchTeachers,200,OK,Enterprise Stress Load 1-8,text,true,,3647,444,10,10,http://localhost:3000/api/v1/teachers/search,18,0,1
+1777555861310,16,USER_01_SearchTeachers,200,OK,Enterprise Stress Load 1-5,text,true,,3647,444,10,10,http://localhost:3000/api/v1/teachers/search,15,0,0
+1777555861398,9,QZAT_02_GetByStudent,400,Bad Request,Enterprise Stress Load 1-2,text,false,,344,451,10,10,http://localhost:3000/api/v1/quiz-attempts/student/,8,0,2
+1777555862244,10,CRS_03_Featured,200,OK,Enterprise Stress Load 1-6,text,true,,306,453,10,10,http://localhost:3000/api/v1/courses/featured/courses,10,0,2
+1777555862526,11,CRS_03_Featured,200,OK,Enterprise Stress Load 1-10,text,true,,306,453,10,10,http://localhost:3000/api/v1/courses/featured/courses,10,0,2
+1777555863507,6,CRS_04_BySubject,200,OK,Enterprise Stress Load 1-6,text,true,,306,446,10,10,http://localhost:3000/api/v1/courses/subject/1,6,0,1
+1777555863675,5,CRS_04_BySubject,200,OK,Enterprise Stress Load 1-9,text,true,,306,446,10,10,http://localhost:3000/api/v1/courses/subject/1,5,0,1
+1777555864381,23,USER_03_FeaturedTeachers,201,Created,Enterprise Stress Load 1-5,text,true,,542,504,10,10,http://localhost:3000/api/v1/teachers/featured,23,0,2
+1777555865392,11,ENR_01_GetStudentEnrollments,200,OK,Enterprise Stress Load 1-3,text,true,,310,457,10,10,http://localhost:3000/api/v1/courses/students/enrollments,10,0,2
+1777555865496,6,QZAT_05_GetResult,400,Bad Request,Enterprise Stress Load 1-2,text,false,,344,449,10,10,http://localhost:3000/api/v1/quiz-attempts//result,5,0,2
+1777555865557,5,CRS_04_BySubject,200,OK,Enterprise Stress Load 1-10,text,true,,306,446,10,10,http://localhost:3000/api/v1/courses/subject/1,5,0,1
+1777555865561,3,QZAT_02_GetByStudent,400,Bad Request,Enterprise Stress Load 1-1,text,false,,344,451,10,10,http://localhost:3000/api/v1/quiz-attempts/student/,3,0,1
+1777555866090,5,ENR_02_EnrollCourse,400,Bad Request,Enterprise Stress Load 1-4,text,false,,366,470,10,10,http://localhost:3000/api/v1/courses/1/enrollments,5,0,1
+1777555866192,24,USER_01_SearchTeachers,200,OK,Enterprise Stress Load 1-10,text,true,,3647,444,10,10,http://localhost:3000/api/v1/teachers/search,24,0,2
+1777555866673,3,QZAT_05_GetResult,400,Bad Request,Enterprise Stress Load 1-1,text,false,,344,449,10,10,http://localhost:3000/api/v1/quiz-attempts//result,3,0,1
+1777555866693,30,USER_01_SearchTeachers,200,OK,Enterprise Stress Load 1-6,text,true,,3647,444,10,10,http://localhost:3000/api/v1/teachers/search,30,0,1
+1777555866765,20,USER_03_FeaturedTeachers,201,Created,Enterprise Stress Load 1-8,text,true,,542,504,10,10,http://localhost:3000/api/v1/teachers/featured,20,0,1
+1777555866962,7,QZAT_06_CheckAttempt,404,Not Found,Enterprise Stress Load 1-2,text,false,,336,450,10,10,http://localhost:3000/api/v1/quiz-attempts/check//1,7,0,4
+1777555867488,10,QZAT_01_Submit,400,Bad Request,Enterprise Stress Load 1-3,text,false,,371,507,10,10,http://localhost:3000/api/v1/quiz-attempts,10,0,4
+1777555867782,25,USER_01_SearchTeachers,200,OK,Enterprise Stress Load 1-7,text,true,,3647,444,10,10,http://localhost:3000/api/v1/teachers/search,25,0,1
+1777555868690,19,USER_03_FeaturedTeachers,201,Created,Enterprise Stress Load 1-10,text,true,,542,504,10,10,http://localhost:3000/api/v1/teachers/featured,19,0,1
+1777555868877,26,USER_01_SearchTeachers,200,OK,Enterprise Stress Load 1-9,text,true,,3647,444,10,10,http://localhost:3000/api/v1/teachers/search,26,0,2
+1777555869104,12,CRS_06_GetCourseById_Student,404,Not Found,Enterprise Stress Load 1-5,text,false,,312,438,10,10,http://localhost:3000/api/v1/courses/1,11,0,1
+1777555869218,8,EXAM_01_GetAll_Student,200,OK,Enterprise Stress Load 1-2,text,true,,294,434,10,10,http://localhost:3000/api/v1/exams,8,0,1
+1777555869937,5,QZAT_02_GetByStudent,400,Bad Request,Enterprise Stress Load 1-3,text,false,,344,451,10,10,http://localhost:3000/api/v1/quiz-attempts/student/,4,0,1
+1777555870481,4,QZAT_06_CheckAttempt,404,Not Found,Enterprise Stress Load 1-1,text,false,,336,450,10,10,http://localhost:3000/api/v1/quiz-attempts/check//1,4,0,2
+1777555870542,11,ENR_01_GetStudentEnrollments,200,OK,Enterprise Stress Load 1-4,text,true,,310,457,10,10,http://localhost:3000/api/v1/courses/students/enrollments,11,0,3
+1777555870728,11,EXAT_01_StartAttempt,404,Not Found,Enterprise Stress Load 1-2,text,false,,310,471,10,10,http://localhost:3000/api/v1/exams/1/attempts/start,10,0,2
+1777555871116,21,USER_03_FeaturedTeachers,201,Created,Enterprise Stress Load 1-7,text,true,,542,504,10,10,http://localhost:3000/api/v1/teachers/featured,21,0,1
+1777555871195,5,ENR_02_EnrollCourse,400,Bad Request,Enterprise Stress Load 1-5,text,false,,366,470,10,10,http://localhost:3000/api/v1/courses/1/enrollments,5,0,1
+1777555871345,12,CRS_06_GetCourseById_Student,404,Not Found,Enterprise Stress Load 1-10,text,false,,312,438,10,10,http://localhost:3000/api/v1/courses/1,12,0,2
+1777555871722,1,EXAT_02_SubmitAttempt,404,Not Found,Enterprise Stress Load 1-2,text,false,,339,488,10,10,http://localhost:3000/api/v1/exams/1/attempts//submit,1,0,0
+1777555871792,4,QZAT_01_Submit,400,Bad Request,Enterprise Stress Load 1-4,text,false,,371,507,10,10,http://localhost:3000/api/v1/quiz-attempts,4,0,2
+1777555872119,10,ENR_01_GetStudentEnrollments,200,OK,Enterprise Stress Load 1-5,text,true,,310,457,10,10,http://localhost:3000/api/v1/courses/students/enrollments,10,0,3
+1777555872219,24,USER_03_FeaturedTeachers,201,Created,Enterprise Stress Load 1-6,text,true,,542,504,10,10,http://localhost:3000/api/v1/teachers/featured,24,0,2
+1777555872719,24,USER_03_FeaturedTeachers,201,Created,Enterprise Stress Load 1-9,text,true,,542,504,10,10,http://localhost:3000/api/v1/teachers/featured,24,0,2
+1777555872869,18,EXAT_03_GetMyAttempt,200,OK,Enterprise Stress Load 1-2,text,true,,296,456,10,10,http://localhost:3000/api/v1/exams/1/attempts/my-attempt,18,0,2
+1777555873564,12,EXAM_07_GetLeaderboard_Student,200,OK,Enterprise Stress Load 1-2,text,true,,294,448,10,10,http://localhost:3000/api/v1/exams/1/leaderboard,12,0,1
+1777555811736,1277,STUDENT_MODULE,,"Number of samples in transaction : 23, number of failing samples : 8",Enterprise Stress Load 1-2,,false,,11028,9807,10,10,null,337,60563,33
+1777555874764,9,CRS_06_GetCourseById_Student,404,Not Found,Enterprise Stress Load 1-7,text,false,,312,438,9,9,http://localhost:3000/api/v1/courses/1,9,0,2
+1777555875529,5,QZAT_02_GetByStudent,400,Bad Request,Enterprise Stress Load 1-4,text,false,,344,451,9,9,http://localhost:3000/api/v1/quiz-attempts/student/,4,0,2
+1777555875637,4,ENR_02_EnrollCourse,400,Bad Request,Enterprise Stress Load 1-10,text,false,,366,470,9,9,http://localhost:3000/api/v1/courses/1/enrollments,4,0,2
+1777555875920,5,QZAT_05_GetResult,400,Bad Request,Enterprise Stress Load 1-3,text,false,,344,449,9,9,http://localhost:3000/api/v1/quiz-attempts//result,5,0,2
+1777555876314,15,CRS_06_GetCourseById_Student,404,Not Found,Enterprise Stress Load 1-8,text,false,,312,438,9,9,http://localhost:3000/api/v1/courses/1,15,0,2
+1777555876607,12,CRS_06_GetCourseById_Student,404,Not Found,Enterprise Stress Load 1-6,text,false,,312,438,9,9,http://localhost:3000/api/v1/courses/1,12,0,1
+1777555876881,13,EXAM_01_GetAll_Student,200,OK,Enterprise Stress Load 1-1,text,true,,294,434,9,9,http://localhost:3000/api/v1/exams,13,0,2
+1777555877401,4,QZAT_01_Submit,400,Bad Request,Enterprise Stress Load 1-5,text,false,,371,507,9,9,http://localhost:3000/api/v1/quiz-attempts,3,0,2
+1777555877745,10,CRS_06_GetCourseById_Student,404,Not Found,Enterprise Stress Load 1-9,text,false,,312,438,9,9,http://localhost:3000/api/v1/courses/1,9,0,1
+1777555877962,6,ENR_02_EnrollCourse,400,Bad Request,Enterprise Stress Load 1-7,text,false,,366,470,9,9,http://localhost:3000/api/v1/courses/1/enrollments,6,0,2
+1777555878749,5,ENR_02_EnrollCourse,400,Bad Request,Enterprise Stress Load 1-6,text,false,,366,470,9,9,http://localhost:3000/api/v1/courses/1/enrollments,4,0,1
+1777555879147,10,ENR_01_GetStudentEnrollments,200,OK,Enterprise Stress Load 1-10,text,true,,310,457,9,9,http://localhost:3000/api/v1/courses/students/enrollments,10,0,2
+1777555879239,6,QZAT_05_GetResult,400,Bad Request,Enterprise Stress Load 1-4,text,false,,344,449,9,9,http://localhost:3000/api/v1/quiz-attempts//result,5,0,2
+1777555879353,4,ENR_02_EnrollCourse,400,Bad Request,Enterprise Stress Load 1-8,text,false,,366,470,9,9,http://localhost:3000/api/v1/courses/1/enrollments,4,0,2
+1777555879376,3,QZAT_02_GetByStudent,400,Bad Request,Enterprise Stress Load 1-5,text,false,,344,451,9,9,http://localhost:3000/api/v1/quiz-attempts/student/,3,0,1
+1777555879839,11,ENR_01_GetStudentEnrollments,200,OK,Enterprise Stress Load 1-6,text,true,,310,457,9,9,http://localhost:3000/api/v1/courses/students/enrollments,10,0,1
+1777555880441,5,QZAT_01_Submit,400,Bad Request,Enterprise Stress Load 1-10,text,false,,371,507,9,9,http://localhost:3000/api/v1/quiz-attempts,5,0,2
+1777555880918,13,EXAT_01_StartAttempt,404,Not Found,Enterprise Stress Load 1-1,text,false,,310,471,9,9,http://localhost:3000/api/v1/exams/1/attempts/start,12,0,2
+1777555881343,3,QZAT_06_CheckAttempt,404,Not Found,Enterprise Stress Load 1-3,text,false,,336,450,9,9,http://localhost:3000/api/v1/quiz-attempts/check//1,2,0,1
+1777555881432,3,QZAT_01_Submit,400,Bad Request,Enterprise Stress Load 1-6,text,false,,371,507,9,9,http://localhost:3000/api/v1/quiz-attempts,3,0,1
+1777555882125,3,QZAT_06_CheckAttempt,404,Not Found,Enterprise Stress Load 1-4,text,false,,336,450,9,9,http://localhost:3000/api/v1/quiz-attempts/check//1,3,0,1
+1777555882181,4,EXAT_02_SubmitAttempt,404,Not Found,Enterprise Stress Load 1-1,text,false,,339,488,9,9,http://localhost:3000/api/v1/exams/1/attempts//submit,4,0,2
+1777555883040,12,ENR_01_GetStudentEnrollments,200,OK,Enterprise Stress Load 1-8,text,true,,310,457,9,9,http://localhost:3000/api/v1/courses/students/enrollments,11,0,2
+1777555883205,6,ENR_01_GetStudentEnrollments,200,OK,Enterprise Stress Load 1-7,text,true,,310,457,9,9,http://localhost:3000/api/v1/courses/students/enrollments,6,0,1
+1777555883489,6,QZAT_05_GetResult,400,Bad Request,Enterprise Stress Load 1-5,text,false,,344,449,9,9,http://localhost:3000/api/v1/quiz-attempts//result,5,0,2
+1777555883816,12,EXAT_03_GetMyAttempt,200,OK,Enterprise Stress Load 1-1,text,true,,296,456,9,9,http://localhost:3000/api/v1/exams/1/attempts/my-attempt,11,0,1
+1777555883937,5,ENR_02_EnrollCourse,400,Bad Request,Enterprise Stress Load 1-9,text,false,,366,470,9,9,http://localhost:3000/api/v1/courses/1/enrollments,5,0,2
+1777555884192,8,EXAM_01_GetAll_Student,200,OK,Enterprise Stress Load 1-3,text,true,,294,434,9,9,http://localhost:3000/api/v1/exams,8,0,2
+1777555884370,5,QZAT_01_Submit,400,Bad Request,Enterprise Stress Load 1-7,text,false,,371,507,9,9,http://localhost:3000/api/v1/quiz-attempts,4,0,2
+1777555884894,5,QZAT_01_Submit,400,Bad Request,Enterprise Stress Load 1-8,text,false,,371,507,9,9,http://localhost:3000/api/v1/quiz-attempts,5,0,2
+1777555885112,7,QZAT_02_GetByStudent,400,Bad Request,Enterprise Stress Load 1-6,text,false,,344,451,9,9,http://localhost:3000/api/v1/quiz-attempts/student/,6,0,2
+1777555885840,13,EXAM_07_GetLeaderboard_Student,200,OK,Enterprise Stress Load 1-1,text,true,,294,448,9,9,http://localhost:3000/api/v1/exams/1/leaderboard,13,0,4
+1777555809017,894,STUDENT_MODULE,,"Number of samples in transaction : 23, number of failing samples : 8",Enterprise Stress Load 1-1,,false,,11028,9807,9,9,null,376,75942,34
+1777555886144,12,EXAM_01_GetAll_Student,200,OK,Enterprise Stress Load 1-4,text,true,,294,434,8,8,http://localhost:3000/api/v1/exams,12,0,2
+1777555887797,6,ENR_01_GetStudentEnrollments,200,OK,Enterprise Stress Load 1-9,text,true,,310,457,8,8,http://localhost:3000/api/v1/courses/students/enrollments,5,0,1
+1777555888368,9,EXAT_01_StartAttempt,404,Not Found,Enterprise Stress Load 1-3,text,false,,310,471,8,8,http://localhost:3000/api/v1/exams/1/attempts/start,8,0,2
+1777555888397,2,QZAT_01_Submit,400,Bad Request,Enterprise Stress Load 1-9,text,false,,371,507,8,8,http://localhost:3000/api/v1/quiz-attempts,2,0,1
+1777555888630,4,QZAT_02_GetByStudent,400,Bad Request,Enterprise Stress Load 1-8,text,false,,344,451,8,8,http://localhost:3000/api/v1/quiz-attempts/student/,4,0,1
+1777555889032,3,QZAT_02_GetByStudent,400,Bad Request,Enterprise Stress Load 1-10,text,false,,344,451,8,8,http://localhost:3000/api/v1/quiz-attempts/student/,3,0,1
+1777555889138,2,QZAT_06_CheckAttempt,404,Not Found,Enterprise Stress Load 1-5,text,false,,336,450,8,8,http://localhost:3000/api/v1/quiz-attempts/check//1,2,0,1
+1777555890701,10,EXAT_01_StartAttempt,404,Not Found,Enterprise Stress Load 1-4,text,false,,310,471,8,8,http://localhost:3000/api/v1/exams/1/attempts/start,10,0,2
+1777555891308,7,QZAT_02_GetByStudent,400,Bad Request,Enterprise Stress Load 1-9,text,false,,344,451,8,8,http://localhost:3000/api/v1/quiz-attempts/student/,6,0,3
+1777555891909,5,QZAT_05_GetResult,400,Bad Request,Enterprise Stress Load 1-10,text,false,,344,449,8,8,http://localhost:3000/api/v1/quiz-attempts//result,5,0,2
+1777555892246,5,QZAT_02_GetByStudent,400,Bad Request,Enterprise Stress Load 1-7,text,false,,344,451,8,8,http://localhost:3000/api/v1/quiz-attempts/student/,5,0,2
+1777555892763,4,EXAT_02_SubmitAttempt,404,Not Found,Enterprise Stress Load 1-3,text,false,,339,488,8,8,http://localhost:3000/api/v1/exams/1/attempts//submit,4,0,2
+1777555892782,4,QZAT_05_GetResult,400,Bad Request,Enterprise Stress Load 1-8,text,false,,344,449,8,8,http://localhost:3000/api/v1/quiz-attempts//result,4,0,1
+1777555892795,3,EXAT_02_SubmitAttempt,404,Not Found,Enterprise Stress Load 1-4,text,false,,339,488,8,8,http://localhost:3000/api/v1/exams/1/attempts//submit,3,0,1
+1777555892947,4,QZAT_05_GetResult,400,Bad Request,Enterprise Stress Load 1-6,text,false,,344,449,8,8,http://localhost:3000/api/v1/quiz-attempts//result,4,0,1
+1777555893413,6,QZAT_05_GetResult,400,Bad Request,Enterprise Stress Load 1-7,text,false,,344,449,8,8,http://localhost:3000/api/v1/quiz-attempts//result,5,0,2
+1777555893798,3,QZAT_06_CheckAttempt,404,Not Found,Enterprise Stress Load 1-6,text,false,,336,450,8,8,http://localhost:3000/api/v1/quiz-attempts/check//1,3,0,1
+1777555894047,11,EXAM_01_GetAll_Student,200,OK,Enterprise Stress Load 1-5,text,true,,294,434,8,8,http://localhost:3000/api/v1/exams,11,0,2
+1777555894173,11,EXAT_03_GetMyAttempt,200,OK,Enterprise Stress Load 1-3,text,true,,296,456,8,8,http://localhost:3000/api/v1/exams/1/attempts/my-attempt,11,0,2
+1777555895525,3,QZAT_06_CheckAttempt,404,Not Found,Enterprise Stress Load 1-10,text,false,,336,450,8,8,http://localhost:3000/api/v1/quiz-attempts/check//1,3,0,2
+1777555895753,9,EXAM_07_GetLeaderboard_Student,200,OK,Enterprise Stress Load 1-3,text,true,,294,448,8,8,http://localhost:3000/api/v1/exams/1/leaderboard,9,0,3
+1777555814676,506,STUDENT_MODULE,,"Number of samples in transaction : 23, number of failing samples : 8",Enterprise Stress Load 1-3,,false,,11028,9807,8,8,null,415,80581,41
+1777555895914,7,QZAT_05_GetResult,400,Bad Request,Enterprise Stress Load 1-9,text,false,,344,449,7,7,http://localhost:3000/api/v1/quiz-attempts//result,7,0,2
+1777555895914,12,EXAT_01_StartAttempt,404,Not Found,Enterprise Stress Load 1-5,text,false,,310,471,7,7,http://localhost:3000/api/v1/exams/1/attempts/start,12,0,2
+1777555896507,6,EXAM_01_GetAll_Student,200,OK,Enterprise Stress Load 1-6,text,true,,294,434,7,7,http://localhost:3000/api/v1/exams,6,0,0
+1777555896748,3,QZAT_06_CheckAttempt,404,Not Found,Enterprise Stress Load 1-9,text,false,,336,450,7,7,http://localhost:3000/api/v1/quiz-attempts/check//1,3,0,2
+1777555897060,4,QZAT_06_CheckAttempt,404,Not Found,Enterprise Stress Load 1-8,text,false,,336,450,7,7,http://localhost:3000/api/v1/quiz-attempts/check//1,4,0,2
+1777555897948,10,EXAT_03_GetMyAttempt,200,OK,Enterprise Stress Load 1-4,text,true,,296,456,7,7,http://localhost:3000/api/v1/exams/1/attempts/my-attempt,9,0,1
+1777555898595,5,EXAM_01_GetAll_Student,200,OK,Enterprise Stress Load 1-9,text,true,,294,434,7,7,http://localhost:3000/api/v1/exams,5,0,0
+1777555900248,13,EXAM_01_GetAll_Student,200,OK,Enterprise Stress Load 1-10,text,true,,294,434,7,7,http://localhost:3000/api/v1/exams,13,0,3
+1777555900303,12,EXAT_01_StartAttempt,404,Not Found,Enterprise Stress Load 1-6,text,false,,310,471,7,7,http://localhost:3000/api/v1/exams/1/attempts/start,12,0,2
+1777555900712,2,QZAT_06_CheckAttempt,404,Not Found,Enterprise Stress Load 1-7,text,false,,336,450,7,7,http://localhost:3000/api/v1/quiz-attempts/check//1,2,0,2
+1777555901129,13,EXAM_01_GetAll_Student,200,OK,Enterprise Stress Load 1-8,text,true,,294,434,7,7,http://localhost:3000/api/v1/exams,13,0,2
+1777555901653,2,EXAT_02_SubmitAttempt,404,Not Found,Enterprise Stress Load 1-5,text,false,,339,488,7,7,http://localhost:3000/api/v1/exams/1/attempts//submit,2,0,1
+1777555901919,12,EXAT_01_StartAttempt,404,Not Found,Enterprise Stress Load 1-9,text,false,,310,471,7,7,http://localhost:3000/api/v1/exams/1/attempts/start,12,0,2
+1777555902015,10,EXAM_07_GetLeaderboard_Student,200,OK,Enterprise Stress Load 1-4,text,true,,294,448,7,7,http://localhost:3000/api/v1/exams/1/leaderboard,9,0,1
+1777555817639,415,STUDENT_MODULE,,"Number of samples in transaction : 23, number of failing samples : 8",Enterprise Stress Load 1-4,,false,,11028,9807,7,7,null,334,83971,31
+1777555904115,13,EXAT_01_StartAttempt,404,Not Found,Enterprise Stress Load 1-10,text,false,,310,471,6,6,http://localhost:3000/api/v1/exams/1/attempts/start,13,0,3
+1777555904518,12,EXAM_01_GetAll_Student,200,OK,Enterprise Stress Load 1-7,text,true,,294,434,6,6,http://localhost:3000/api/v1/exams,12,0,2
+1777555904666,4,EXAT_02_SubmitAttempt,404,Not Found,Enterprise Stress Load 1-9,text,false,,339,488,6,6,http://localhost:3000/api/v1/exams/1/attempts//submit,3,0,2
+1777555905783,13,EXAT_03_GetMyAttempt,200,OK,Enterprise Stress Load 1-5,text,true,,296,456,6,6,http://localhost:3000/api/v1/exams/1/attempts/my-attempt,13,0,3
+1777555906108,4,EXAT_02_SubmitAttempt,404,Not Found,Enterprise Stress Load 1-6,text,false,,339,488,6,6,http://localhost:3000/api/v1/exams/1/attempts//submit,3,0,2
+1777555906368,4,EXAT_02_SubmitAttempt,404,Not Found,Enterprise Stress Load 1-10,text,false,,339,488,6,6,http://localhost:3000/api/v1/exams/1/attempts//submit,4,0,2
+1777555907037,12,EXAT_01_StartAttempt,404,Not Found,Enterprise Stress Load 1-8,text,false,,310,471,6,6,http://localhost:3000/api/v1/exams/1/attempts/start,11,0,2
+1777555907506,11,EXAT_03_GetMyAttempt,200,OK,Enterprise Stress Load 1-9,text,true,,296,456,6,6,http://localhost:3000/api/v1/exams/1/attempts/my-attempt,11,0,2
+1777555908328,7,EXAT_03_GetMyAttempt,200,OK,Enterprise Stress Load 1-6,text,true,,296,456,6,6,http://localhost:3000/api/v1/exams/1/attempts/my-attempt,7,0,1
+1777555909046,1,EXAT_02_SubmitAttempt,404,Not Found,Enterprise Stress Load 1-8,text,false,,339,488,6,6,http://localhost:3000/api/v1/exams/1/attempts//submit,1,0,1
+1777555909170,10,EXAT_03_GetMyAttempt,200,OK,Enterprise Stress Load 1-10,text,true,,296,456,6,6,http://localhost:3000/api/v1/exams/1/attempts/my-attempt,10,0,1
+1777555909825,7,EXAM_07_GetLeaderboard_Student,200,OK,Enterprise Stress Load 1-9,text,true,,294,448,6,6,http://localhost:3000/api/v1/exams/1/leaderboard,6,0,1
+1777555832706,382,STUDENT_MODULE,,"Number of samples in transaction : 23, number of failing samples : 8",Enterprise Stress Load 1-9,,false,,11028,9807,6,6,null,302,76743,34
+1777555910077,16,EXAT_03_GetMyAttempt,200,OK,Enterprise Stress Load 1-8,text,true,,296,456,5,5,http://localhost:3000/api/v1/exams/1/attempts/my-attempt,16,0,2
+1777555910388,7,EXAM_07_GetLeaderboard_Student,200,OK,Enterprise Stress Load 1-5,text,true,,294,448,5,5,http://localhost:3000/api/v1/exams/1/leaderboard,7,0,1
+1777555820621,407,STUDENT_MODULE,,"Number of samples in transaction : 23, number of failing samples : 8",Enterprise Stress Load 1-5,,false,,11028,9807,5,5,null,324,89366,33
+1777555911561,12,EXAT_01_StartAttempt,404,Not Found,Enterprise Stress Load 1-7,text,false,,310,471,4,4,http://localhost:3000/api/v1/exams/1/attempts/start,12,0,2
+1777555912782,10,EXAM_07_GetLeaderboard_Student,200,OK,Enterprise Stress Load 1-10,text,true,,294,448,4,4,http://localhost:3000/api/v1/exams/1/leaderboard,10,0,2
+1777555835672,424,STUDENT_MODULE,,"Number of samples in transaction : 23, number of failing samples : 8",Enterprise Stress Load 1-10,,false,,11028,9807,4,4,null,332,76696,41
+1777555913058,10,EXAM_07_GetLeaderboard_Student,200,OK,Enterprise Stress Load 1-8,text,true,,294,448,3,3,http://localhost:3000/api/v1/exams/1/leaderboard,10,0,2
+1777555829717,429,STUDENT_MODULE,,"Number of samples in transaction : 23, number of failing samples : 8",Enterprise Stress Load 1-8,,false,,11028,9807,3,3,null,361,82921,36
+1777555913099,11,EXAM_07_GetLeaderboard_Student,200,OK,Enterprise Stress Load 1-6,text,true,,294,448,2,2,http://localhost:3000/api/v1/exams/1/leaderboard,10,0,1
+1777555823637,413,STUDENT_MODULE,,"Number of samples in transaction : 23, number of failing samples : 8",Enterprise Stress Load 1-6,,false,,11028,9807,2,2,null,323,89060,27
+1777555915400,3,EXAT_02_SubmitAttempt,404,Not Found,Enterprise Stress Load 1-7,text,false,,339,488,1,1,http://localhost:3000/api/v1/exams/1/attempts//submit,3,0,1
+1777555917650,11,EXAT_03_GetMyAttempt,200,OK,Enterprise Stress Load 1-7,text,true,,296,456,1,1,http://localhost:3000/api/v1/exams/1/attempts/my-attempt,10,0,1
+1777555919574,13,EXAM_07_GetLeaderboard_Student,200,OK,Enterprise Stress Load 1-7,text,true,,294,448,1,1,http://localhost:3000/api/v1/exams/1/leaderboard,13,0,3
+1777555826704,386,STUDENT_MODULE,,"Number of samples in transaction : 23, number of failing samples : 8",Enterprise Stress Load 1-7,,false,,11028,9807,1,1,null,319,92497,35
